@@ -13,22 +13,22 @@ const contacts = [
   {
     Comp: Twitter,
     alt: 'twitter icon',
-    link: 'https://twitter.com/_ijjk',
+    link: 'https://twitter.com/so1owingpixy',
   },
   {
     Comp: GitHub,
     alt: 'github icon',
-    link: 'https://github.com/ijjk',
+    link: 'https://github.com/peinan',
   },
   {
     Comp: LinkedIn,
     alt: 'linkedin icon',
-    link: 'https://www.linkedin.com/in/jj-kasper-0b5392166/',
+    link: 'https://www.linkedin.com/in/peinan-zhang-b5991994/',
   },
   {
     Comp: Envelope,
     alt: 'envelope icon',
-    link: 'mailto:jj@jjsweb.site?subject=Notion Blog',
+    link: 'mailto:zhang_peinan@cyberagent.co.jp',
   },
 ]
 
@@ -37,14 +37,19 @@ export default () => (
     <Header titlePre="Contact" />
     <div className={sharedStyles.layout}>
       <div className={contactStyles.avatar}>
-        <img src="/avatar.png" alt="avatar with letters JJ" height={60} />
+        <img src="/myicon.jpeg" alt="peinan" height={60} />
       </div>
 
-      <h1 style={{ marginTop: 0 }}>Contact</h1>
-
+      <h1 style={{ marginTop: 0 }}>Peinan Zhang</h1>
       <div className={contactStyles.name}>
-        JJ Kasper - Next.js Engineer @{' '}
-        <ExtLink href="https://vercel.com">Vercel</ExtLink>
+        NLP Research Scientist @{' '}
+        <ExtLink
+          href="https://cyberagent.ai/ailab/"
+          className="dotted"
+          style={{ color: 'inherit' }}
+        >
+          AI Lab of CyberAgent, Inc.
+        </ExtLink>
       </div>
 
       <div className={contactStyles.links}>

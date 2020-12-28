@@ -57,6 +57,10 @@
   padding: 2px 7px;
   margin-right: 6px;
 }
+.titleAnchor a {
+  font-family: 'Poppins';
+  font-weight: 600;
+}
 
 .noPosts {
   text-align: center;

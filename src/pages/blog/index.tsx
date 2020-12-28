@@ -63,7 +63,6 @@ export default ({ posts = [], preview }) => {
         </div>
       )}
       <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
-        <h1>My Notion Blog</h1>
         {posts.length === 0 && (
           <p className={blogStyles.noPosts}>There are no posts yet</p>
         )}
@@ -76,13 +75,10 @@ export default ({ posts = [], preview }) => {
                     {!post.Published && (
                       <span className={blogStyles.draftBadge}>Draft</span>
                     )}
-                    <a>{post.Page}</a>
+                    <a className={blogStyles.titleAnchor}>{post.Page}</a>
                   </div>
                 </Link>
               </h3>
-              {post.Authors.length > 0 && (
-                <div className="authors">By: {post.Authors.join(' ')}</div>
-              )}
               {post.Date && (
                 <div className="posted">Posted: {getDateStr(post.Date)}</div>
               )}
