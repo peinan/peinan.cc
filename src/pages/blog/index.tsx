@@ -47,6 +47,59 @@ export async function getStaticProps({ preview }) {
   }
 }
 
+let tmpImgSizes = ['1600x900', '1200x600', '600x800', '1200x900']
+var tmpCards = []
+for (var i = 0; i < 10; i++) {
+  let imgSize = tmpImgSizes[Math.floor(Math.random() * tmpImgSizes.length)]
+  let imgUrl = `https://source.unsplash.com/random/${imgSize}`
+  tmpCards.push(
+    <div className="max-w rounded-xl overflow-hidden shadow-lg bg-white mb-4">
+      <img className="w-full" src={imgUrl} alt="Sunset in the mountains" />
+      <div className="px-6 py-4">
+        <h3 className="text-2xl">
+          <a className="titleAnchor">The Coldest Sunset</a>
+        </h3>
+        <div className="mb-3">
+          <span className="created-time text-gray-400 text-sm">
+            <i className="lar la-clock"></i> 2020-12-28 16:58
+          </span>
+          <span className="updated-time text-gray-400 text-sm px-2">
+            <i className="las la-sync"></i> 2020-12-28 18:00
+          </span>
+        </div>
+        <p className="text-gray-700 text-base">
+          {imgSize} Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem
+          praesentium nihil nihil nihil nihil nihil nihil nihil nihil.
+        </p>
+      </div>
+      <div className="px-6 py-4">
+        <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+          #photography
+        </span>
+        <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+          #travel
+        </span>
+        <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+          #winter
+        </span>
+        <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+          #winter
+        </span>
+        <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+          #winter
+        </span>
+        <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+          #winter
+        </span>
+        <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+          #winter
+        </span>
+      </div>
+    </div>
+  )
+}
+
 export default ({ posts = [], preview }) => {
   return (
     <>
@@ -92,6 +145,10 @@ export default ({ posts = [], preview }) => {
             </div>
           )
         })}
+      </div>
+
+      <div className="container mx-auto">
+        <div className={blogStyles.masonryWithColumns}>{tmpCards}</div>
       </div>
     </>
   )
