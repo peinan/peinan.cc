@@ -140,3 +140,11 @@
 .post :global(a + p) {
   margin-top: 0;
 }
+
+.masonryWithColumns {
+  columns: 3 200px;
+  column-gap: 1rem;
+}
+.masonryWithColumns div {
+  display: inline-block;
+}
