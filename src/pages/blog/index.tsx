@@ -132,8 +132,11 @@ export default ({ posts = [], preview }) => {
                   </div>
                 </Link>
               </h3>
-              {post.Date && (
-                <div className="posted">Posted: {getDateStr(post.Date)}</div>
+              {post.created_time && (
+                <div className="posted">
+                  Posted: {getDateStr(post.created_time)} Edited:{' '}
+                  {getDateStr(post.last_edited_time)}
+                </div>
               )}
               <p>
                 {(!post.preview || post.preview.length === 0) &&

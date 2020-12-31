@@ -90,6 +90,10 @@ export default async function loadTable(collectionBlock: any, isPosts = false) {
     // auto-generate slug from title
     row.Slug = normalizeSlug(row.Slug || slugger.slug(row.Page || ''))
 
+    // auto-insert created_time and last_edited_time
+    row.created_time = entry.value.created_time
+    row.last_edited_time = entry.value.last_edited_time
+
     const key = row.Slug
     if (isPosts && !key) continue
 
