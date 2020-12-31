@@ -148,3 +148,7 @@
 .masonryWithColumns div {
   display: inline-block;
 }
+
+.postTag {
+  /* TODO: implement */
+}

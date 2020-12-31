@@ -28,3 +28,7 @@ export const normalizeSlug = slug => {
   }
   return startingSlash || endingSlash ? normalizeSlug(slug) : slug
 }
+
+export const getTagLink = (tag: string) => {
+  return `/blog/tag/${tag}`
+}

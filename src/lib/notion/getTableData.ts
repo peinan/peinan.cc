@@ -94,6 +94,9 @@ export default async function loadTable(collectionBlock: any, isPosts = false) {
     row.created_time = entry.value.created_time
     row.last_edited_time = entry.value.last_edited_time
 
+    // get Tags
+    row.Tags = row.Tags ? row.Tags.split(',') : []
+
     const key = row.Slug
     if (isPosts && !key) continue
 

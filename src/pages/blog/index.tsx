@@ -138,6 +138,7 @@ export default ({ posts = [], preview }) => {
                   {getDateStr(post.last_edited_time)}
                 </div>
               )}
+              <p>Tags: {post.Tags.join(',')}</p>
               <p>
                 {(!post.preview || post.preview.length === 0) &&
                   'No preview available'}
