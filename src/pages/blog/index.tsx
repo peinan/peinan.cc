@@ -58,92 +58,66 @@ function getRandomImageUrl(imgSizeIndex = undefined): string {
 }
 
 function getPostCards(posts) {
-  var postCards: any[] = posts.map(post => {
-    let imgUrl = getRandomImageUrl()
+  const numCards = 10
+  var postCards: any[] = []
 
-    return (
+  for (var i = 0; i < numCards; i++) {
+    let imgUrl = getRandomImageUrl()
+    let imgSizeStr = imgUrl.split('/')[4]
+    let post = i < posts.length ? posts[i] : undefined
+
+    let TitleBlock = post ? (
+      <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
+        <a className={`${blogStyles.titleAnchor} font-semibold`}>{post.Page}</a>
+      </Link>
+    ) : (
+      <Link href="/blog/foo" as="#">
+        <a
+          className={`${blogStyles.titleAnchor} font-semibold`}
+        >{`The Coldest Sunset No. ${i}`}</a>
+      </Link>
+    )
+    let previewStr = post
+      ? `${post.preview}`
+      : `Lorem ipsum dolor sit amet, consectetur ` +
+        `adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis ` +
+        `eaque, exercitationem praesentium nihil nihil nihil nihil nihil ` +
+        `nihil nihil nihil.`
+    let created_time = post
+      ? getDateTimeStr(post.created_time)
+      : '2021-01-01 00:00'
+    let last_edited_time = post
+      ? getDateTimeStr(post.last_edited_time)
+      : '2021-01-01 10:33'
+    let tags = post
+      ? post.Tags
+      : ['photography', 'travel', 'winter', 'camera', 'fun']
+
+    postCards.push(
       <div className="max-w rounded-xl overflow-hidden shadow-lg bg-white mb-4">
         <img className="w-full" src={imgUrl} alt="Sunset in the mountains" />
         <div className="px-6 py-4">
-          <h3 className="text-2xl">
-            <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-              <a className="font-extrabold">{post.Page}</a>
-            </Link>
-          </h3>
+          <h3 className="text-2xl">{TitleBlock}</h3>
           <div className="mb-3">
             <span className="created-time text-gray-400 text-sm font-light">
-              <i className="lar la-clock"></i>{' '}
-              {getDateTimeStr(post.created_time)}
+              <i className="lar la-clock"></i> {created_time}
             </span>
             <span className="updated-time text-gray-400 text-sm font-light px-2">
-              <i className="las la-sync"></i>{' '}
-              {getDateTimeStr(post.last_edited_time)}
+              <i className="las la-sync"></i> {last_edited_time}
             </span>
           </div>
           <p className="text-gray-700 text-basesm font-light">
-            {imgUrl.split('/')[4]} {post.preview}
+            {imgSizeStr} {previewStr}
           </p>
         </div>
         <div className="px-6 py-4">
-          {post.Tags.map(tag => {
+          {tags.map(tag => {
             return (
               <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm font-medium text-gray-700">
                 #{tag}
               </span>
             )
           })}
-        </div>
-      </div>
-    )
-  })
-
-  // Dummy Cards
-  for (var i = 0; i < 10 - posts.length; i++) {
-    let imgUrl = getRandomImageUrl()
-    postCards.push(
-      <div className="max-w rounded-xl overflow-hidden shadow-lg bg-white mb-4">
-        <img className="w-full" src={imgUrl} alt="Sunset in the mountains" />
-        <div className="px-6 py-4">
-          <h3 className="text-2xl">
-            <a className="titleAnchor">The Coldest Sunset No. {i}</a>
-          </h3>
-          <div className="mb-3">
-            <span className="created-time text-gray-400 text-sm">
-              <i className="lar la-clock"></i> 2020-12-28 16:58
-            </span>
-            <span className="updated-time text-gray-400 text-sm px-2">
-              <i className="las la-sync"></i> 2020-12-28 18:00
-            </span>
-          </div>
-          <p className="text-gray-700 text-base">
-            {imgUrl.split('/')[4]} Lorem ipsum dolor sit amet, consectetur
-            adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
-            eaque, exercitationem praesentium nihil nihil nihil nihil nihil
-            nihil nihil nihil.
-          </p>
-        </div>
-        <div className="px-6 py-4">
-          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
-            #photography
-          </span>
-          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
-            #travel
-          </span>
-          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
-            #winter
-          </span>
-          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
-            #winter
-          </span>
-          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
-            #winter
-          </span>
-          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
-            #winter
-          </span>
-          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
-            #winter
-          </span>
         </div>
       </div>
     )
