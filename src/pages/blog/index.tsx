@@ -67,27 +67,27 @@ function getPostCards(posts) {
         <div className="px-6 py-4">
           <h3 className="text-2xl">
             <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-              <a className="titleAnchor">{post.Page}</a>
+              <a className="font-extrabold">{post.Page}</a>
             </Link>
           </h3>
           <div className="mb-3">
-            <span className="created-time text-gray-400 text-sm">
+            <span className="created-time text-gray-400 text-sm font-light">
               <i className="lar la-clock"></i>{' '}
               {getDateTimeStr(post.created_time)}
             </span>
-            <span className="updated-time text-gray-400 text-sm px-2">
+            <span className="updated-time text-gray-400 text-sm font-light px-2">
               <i className="las la-sync"></i>{' '}
               {getDateTimeStr(post.last_edited_time)}
             </span>
           </div>
-          <p className="text-gray-700 text-base">
+          <p className="text-gray-700 text-basesm font-light">
             {imgUrl.split('/')[4]} {post.preview}
           </p>
         </div>
         <div className="px-6 py-4">
           {post.Tags.map(tag => {
             return (
-              <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+              <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm font-medium text-gray-700">
                 #{tag}
               </span>
             )
