@@ -135,7 +135,7 @@ const getPostCards = ({
         {imgSizeStr} {previewText}
       </p>
     </div>
-    <div className="px-6 py-4">
+    <div className="px-6 py-3">
       {tags.map(tag => {
         return (
           <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm font-medium text-gray-700">
