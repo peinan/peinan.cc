@@ -11,7 +11,7 @@ import getPageData from '../../lib/notion/getPageData'
 import React, { CSSProperties, useEffect } from 'react'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
-import { getBlogLink, getDateStr } from '../../lib/blog-helpers'
+import { getBlogLink, getDateTimeStr, getTagLink } from '../../lib/blog-helpers'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -152,11 +152,18 @@ const RenderPost = ({ post, redirect, preview }) => {
       )}
       <div className={blogStyles.post}>
         <h1>{post.Page || ''}</h1>
+        {post.Tags &&
+          post.Tags.length > 0 &&
+          post.Tags.map(tag => (
+            <Link href="/blog/tag/[tag]" as={getTagLink(tag)}>
+              <span className={blogStyles.postTag}>{tag}</span>
+            </Link>
+          ))}
         {post.Authors.length > 0 && (
           <div className="authors">By: {post.Authors.join(' ')}</div>
         )}
         {post.Date && (
-          <div className="posted">Posted: {getDateStr(post.Date)}</div>
+          <div className="posted">Posted: {getDateTimeStr(post.Date)}</div>
         )}
 
         <hr />

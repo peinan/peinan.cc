@@ -35,11 +35,7 @@ export default ({ titlePre = '' }) => {
         ></link>
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400"
-        ></link>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:300"
+          href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500"
         ></link>
         <link
           rel="stylesheet"

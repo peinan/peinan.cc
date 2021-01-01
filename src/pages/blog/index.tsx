@@ -6,7 +6,7 @@ import sharedStyles from '../../styles/shared.module.css'
 
 import {
   getBlogLink,
-  getDateStr,
+  getDateTimeStr,
   postIsPublished,
 } from '../../lib/blog-helpers'
 import { textBlock } from '../../lib/notion/renderers'
@@ -47,6 +47,111 @@ export async function getStaticProps({ preview }) {
   }
 }
 
+function getRandomImageUrl(imgSizeIndex = undefined): string {
+  let imgSizes = ['1600x900', '1200x600', '600x800', '1200x900']
+  let imgSize = imgSizeIndex
+    ? imgSizes[imgSizeIndex]
+    : imgSizes[Math.floor(Math.random() * imgSizes.length)]
+  let imgUrl = `https://source.unsplash.com/random/${imgSize}`
+
+  return imgUrl
+}
+
+function getPostCards(posts) {
+  var postCards: any[] = posts.map(post => {
+    let imgUrl = getRandomImageUrl()
+
+    return (
+      <div className="max-w rounded-xl overflow-hidden shadow-lg bg-white mb-4">
+        <img className="w-full" src={imgUrl} alt="Sunset in the mountains" />
+        <div className="px-6 py-4">
+          <h3 className="text-2xl">
+            <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
+              <a className="titleAnchor">{post.Page}</a>
+            </Link>
+          </h3>
+          <div className="mb-3">
+            <span className="created-time text-gray-400 text-sm">
+              <i className="lar la-clock"></i>{' '}
+              {getDateTimeStr(post.created_time)}
+            </span>
+            <span className="updated-time text-gray-400 text-sm px-2">
+              <i className="las la-sync"></i>{' '}
+              {getDateTimeStr(post.last_edited_time)}
+            </span>
+          </div>
+          <p className="text-gray-700 text-base">
+            {imgUrl.split('/')[4]} {post.preview}
+          </p>
+        </div>
+        <div className="px-6 py-4">
+          {post.Tags.map(tag => {
+            return (
+              <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+                #{tag}
+              </span>
+            )
+          })}
+        </div>
+      </div>
+    )
+  })
+
+  // Dummy Cards
+  for (var i = 0; i < 10 - posts.length; i++) {
+    let imgUrl = getRandomImageUrl()
+    postCards.push(
+      <div className="max-w rounded-xl overflow-hidden shadow-lg bg-white mb-4">
+        <img className="w-full" src={imgUrl} alt="Sunset in the mountains" />
+        <div className="px-6 py-4">
+          <h3 className="text-2xl">
+            <a className="titleAnchor">The Coldest Sunset No. {i}</a>
+          </h3>
+          <div className="mb-3">
+            <span className="created-time text-gray-400 text-sm">
+              <i className="lar la-clock"></i> 2020-12-28 16:58
+            </span>
+            <span className="updated-time text-gray-400 text-sm px-2">
+              <i className="las la-sync"></i> 2020-12-28 18:00
+            </span>
+          </div>
+          <p className="text-gray-700 text-base">
+            {imgUrl.split('/')[4]} Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis
+            eaque, exercitationem praesentium nihil nihil nihil nihil nihil
+            nihil nihil nihil.
+          </p>
+        </div>
+        <div className="px-6 py-4">
+          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+            #photography
+          </span>
+          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+            #travel
+          </span>
+          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+            #winter
+          </span>
+          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+            #winter
+          </span>
+          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+            #winter
+          </span>
+          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+            #winter
+          </span>
+          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm text-gray-700">
+            #winter
+          </span>
+        </div>
+      </div>
+    )
+  }
+
+  return postCards
+}
+
 export default ({ posts = [], preview }) => {
   return (
     <>
@@ -62,36 +167,9 @@ export default ({ posts = [], preview }) => {
           </div>
         </div>
       )}
-      <div className={`${sharedStyles.layout} ${blogStyles.blogIndex}`}>
-        {posts.length === 0 && (
-          <p className={blogStyles.noPosts}>There are no posts yet</p>
-        )}
-        {posts.map(post => {
-          return (
-            <div className={blogStyles.postPreview} key={post.Slug}>
-              <h3>
-                <Link href="/blog/[slug]" as={getBlogLink(post.Slug)}>
-                  <div className={blogStyles.titleContainer}>
-                    {!post.Published && (
-                      <span className={blogStyles.draftBadge}>Draft</span>
-                    )}
-                    <a className={blogStyles.titleAnchor}>{post.Page}</a>
-                  </div>
-                </Link>
-              </h3>
-              {post.Date && (
-                <div className="posted">Posted: {getDateStr(post.Date)}</div>
-              )}
-              <p>
-                {(!post.preview || post.preview.length === 0) &&
-                  'No preview available'}
-                {(post.preview || []).map((block, idx) =>
-                  textBlock(block, true, `${post.Slug}${idx}`)
-                )}
-              </p>
-            </div>
-          )
-        })}
+
+      <div className="container mx-auto">
+        <div className={blogStyles.masonryGrids}>{getPostCards(posts)}</div>
       </div>
     </>
   )
