@@ -6,7 +6,7 @@ import sharedStyles from '../../styles/shared.module.css'
 
 import {
   getBlogLink,
-  getDateStr,
+  getDateTimeStr,
   postIsPublished,
 } from '../../lib/blog-helpers'
 import { textBlock } from '../../lib/notion/renderers'
