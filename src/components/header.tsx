@@ -19,7 +19,7 @@ export default ({ titlePre = '' }) => {
   return (
     <header className={styles.header}>
       <Head>
-        <title>{titlePre ? `${titlePre} |` : ''} My Notion Blog</title>
+        <title>{titlePre ? `${titlePre} |` : ''} Peinan's Chronicle</title>
 
         <link
           rel="stylesheet"
@@ -42,9 +42,10 @@ export default ({ titlePre = '' }) => {
           href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
         ></link>
 
+        <meta name="title" content="Peinan's Chronicle" />
         <meta
           name="description"
-          content="An example Next.js site using Notion for the blog"
+          content="Tales about Peinan's daily life, development, science, and miscellaneous stuffs."
         />
         <meta name="og:title" content="Peinan's Chronicle" />
         <meta property="og:image" content={ogImageUrl} />
