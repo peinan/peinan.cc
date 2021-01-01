@@ -152,7 +152,7 @@ export default ({ posts = [], preview }) => {
       </div>
 
       <div className="container mx-auto">
-        <div className={blogStyles.masonryWithColumns}>{tmpCards}</div>
+        <div className={blogStyles.masonryGrids}>{getPostCards(posts)}</div>
       </div>
     </>
   )
