@@ -4,9 +4,6 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    fontFamily: {
-      sans: ['Poppins', 'Noto Sans JP'],
-    },
     fontSize: {
       xs: '0.650rem',
       sm: '0.750rem',
@@ -18,6 +15,8 @@ module.exports = {
       '2xl': '1.300rem',
       '3xl': '1.400rem',
       '4xl': '1.500rem',
+      '5xl': '1.750rem',
+      '6xl': '2.000rem',
     },
     extend: {
       colors: {
@@ -28,6 +27,11 @@ module.exports = {
   },
   variants: {
     extend: {},
+  },
+  corePlugins: {
+    fontFamily: false,
+    fontWeight: false,
+    listStyleType: false,
   },
   plugins: [],
 }

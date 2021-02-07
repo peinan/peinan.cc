@@ -45,8 +45,13 @@ export default () => (
         NLP Research Scientist @{' '}
         <ExtLink
           href="https://cyberagent.ai/ailab/"
-          className="dotted"
-          style={{ color: 'inherit' }}
+          style={{
+            color: 'inherit',
+            'text-decoration': 'underline',
+            'text-underline-offset': '0.1rem',
+            'text-decoration-style': 'dashed',
+            'text-decoration-thickness': '1px',
+          }}
         >
           AI Lab of CyberAgent, Inc.
         </ExtLink>

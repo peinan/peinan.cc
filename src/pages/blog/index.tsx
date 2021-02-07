@@ -120,25 +120,27 @@ const getPostCards = ({
     <div className="px-6 py-4">
       <h3 className="text-2xl">
         <Link href={linkHref} as={linkAs}>
-          <a className={`${blogStyles.titleAnchor} font-semibold`}>{title}</a>
+          <a className={`${blogStyles.metaTitle}`}>{title}</a>
         </Link>
       </h3>
       <div className="mb-3">
-        <span className="created-time text-gray-400 text-sm font-light">
+        <span className={`${blogStyles.metaDate} text-sm`}>
           <i className="lar la-clock"></i> {created_time}
         </span>
-        <span className="updated-time text-gray-400 text-sm font-light px-2">
+        <span className={`${blogStyles.metaDate} text-sm px-2`}>
           <i className="las la-sync"></i> {last_edited_time}
         </span>
       </div>
-      <p className="text-gray-700 text-basesm font-light">
+      <p className={`${blogStyles.plainText} text-basesm`}>
         {imgSizeStr} {previewText}
       </p>
     </div>
     <div className="px-6 py-3">
       {tags.map(tag => {
         return (
-          <span className="tag-line inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm font-medium text-gray-700">
+          <span
+            className={`${blogStyles.metaTag} inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm`}
+          >
             #{tag}
           </span>
         )

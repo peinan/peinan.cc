@@ -22,26 +22,31 @@ export default ({ titlePre = '' }) => {
       <Head>
         <title>{titlePre ? `${titlePre} |` : ''} Peinan's Chronicle</title>
 
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Lobster"
-        ></link>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Niconne"
-        ></link>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Poppins:200,300,500,600"
-        ></link>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:300,400,500"
-        ></link>
+        {/*<link rel="preconnect" href="https://fonts.gstatic.com"></link>*/}
+        {/*<link*/}
+        {/*  rel="stylesheet"*/}
+        {/*  href="https://fonts.googleapis.com/css?family=Lobster"*/}
+        {/*></link>*/}
+        {/*<link*/}
+        {/*  rel="stylesheet"*/}
+        {/*  href="https://fonts.googleapis.com/css?family=Niconne"*/}
+        {/*></link>*/}
+        {/*<link*/}
+        {/*  rel="stylesheet"*/}
+        {/*  href="https://fonts.googleapis.com/css?family=Poppins:wght@300,500,700&display=swap"*/}
+        {/*></link>*/}
+        {/*<link*/}
+        {/*  rel="stylesheet"*/}
+        {/*  href="https://fonts.googleapis.com/css?family=Inter:wght@300,500,700&display=swap"*/}
+        {/*></link>*/}
+        {/*<link*/}
+        {/*  rel="stylesheet"*/}
+        {/*  href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:wght@300,500,700&display=swap"*/}
+        {/*></link>*/}
         <link
           rel="stylesheet"
           href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-        ></link>
+        />
 
         <meta name="title" content="Peinan's Chronicle" />
         <meta

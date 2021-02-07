@@ -9,3 +9,11 @@
 .layout h2 {
   text-align: center;
 }
+
+.layout h1 {
+  font-family: var(--font-logo-main);
+}
+
+.layout h2 {
+  font-family: var(--font-logo-lead);
+}

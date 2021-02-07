@@ -151,20 +151,31 @@ const RenderPost = ({ post, redirect, preview }) => {
         </div>
       )}
       <div className={blogStyles.post}>
-        <h1>{post.Page || ''}</h1>
-        {post.Tags &&
-          post.Tags.length > 0 &&
-          post.Tags.map(tag => (
-            <Link href="/blog/tag/[tag]" as={getTagLink(tag)}>
-              <span className={blogStyles.postTag}>{tag}</span>
-            </Link>
-          ))}
-        {post.Authors.length > 0 && (
-          <div className="authors">By: {post.Authors.join(' ')}</div>
-        )}
-        {post.Date && (
-          <div className="posted">Posted: {getDateTimeStr(post.Date)}</div>
-        )}
+        <h1 className={`${blogStyles.metaTitle} text-5xl`}>
+          {post.Page || ''}
+        </h1>
+
+        <div className="mb-2">
+          <span className={`${blogStyles.metaDate} text-gray-400 text-sm`}>
+            <i className="lar la-clock"></i> {getDateTimeStr(post.created_time)}
+          </span>
+          <span className={`${blogStyles.metaDate} text-gray-400 text-sm px-2`}>
+            <i className="las la-sync"></i>{' '}
+            {getDateTimeStr(post.last_edited_time)}
+          </span>
+        </div>
+
+        <div>
+          {post.Tags.map(tag => {
+            return (
+              <span
+                className={`${blogStyles.metaTag} inline-block mr-2 mb-1 text-tiny text-gray-700`}
+              >
+                #{tag}
+              </span>
+            )
+          })}
+        </div>
 
         <hr />
 
@@ -331,13 +342,13 @@ const RenderPost = ({ post, redirect, preview }) => {
               break
             }
             case 'header':
-              renderHeading('h1')
-              break
-            case 'sub_header':
               renderHeading('h2')
               break
-            case 'sub_sub_header':
+            case 'sub_header':
               renderHeading('h3')
+              break
+            case 'sub_sub_header':
+              renderHeading('h4')
               break
             case 'code': {
               if (properties.title) {
