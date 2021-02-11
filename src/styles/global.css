@@ -121,6 +121,25 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
   --font-feature-settings: 'ss01', 'cv05', 'cv07', 'cv08', 'case', 'calt',
     'tnum';
+
+  /* Shadow definition */
+  --ring-offset-shadow: 0 0 #0000;
+  --ring-shadow: 0 0 #0000;
+  --shadow-none: 0 0 #0000;
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --box-shadow-none: var(--ring-offset-shadow), var(--ring-shadow),
+    var(--shadow-none);
+  --box-shadow-md: var(--ring-offset-shadow), var(--ring-shadow),
+    var(--shadow-md);
+  --box-shadow-lg: var(--ring-offset-shadow), var(--ring-shadow),
+    var(--shadow-lg);
+  --box-shadow-xl: var(--ring-offset-shadow), var(--ring-shadow),
+    var(--shadow-xl);
 }
 
 * {
