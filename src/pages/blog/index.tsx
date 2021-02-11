@@ -115,8 +115,18 @@ const getPostCards = ({
     tags: tags,
   },
 }) => (
-  <div className="max-w rounded-xl overflow-hidden shadow-lg bg-white">
-    <img className="w-full" src={imgUrl} alt="Sunset in the mountains" />
+  <div
+    className={`${blogStyles.postCard} max-w rounded-xl overflow-hidden bg-white`}
+  >
+    <Link href={linkHref} as={linkAs}>
+      <a>
+        <img
+          className={`${blogStyles.postCardImg} w-full`}
+          src={imgUrl}
+          alt="Sunset in the mountains"
+        />
+      </a>
+    </Link>
     <div className="px-6 py-4">
       <h3 className="text-2xl">
         <Link href={linkHref} as={linkAs}>

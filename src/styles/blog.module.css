@@ -34,6 +34,23 @@ a.metaTitle:hover {
   display: inline-block;
 }
 
+.postCard {
+  box-shadow: var(--box-shadow-md);
+  transition: all 0.3s;
+}
+.postCard:hover {
+  box-shadow: var(--box-shadow-xl);
+}
+
+.postCardImg {
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+.postCardImg:hover {
+  opacity: 0.95;
+  transition-duration: 0.3s;
+}
+
 .blogIndex {
   padding: 0 5%;
 }
@@ -244,6 +261,7 @@ a.metaTitle:hover {
   text-underline-offset: 0.07rem;
   text-decoration-style: dashed;
   text-decoration-thickness: 1px;
+  transition: all 0.2s;
 }
 .post p a:hover {
   color: var(--text-light-color);
