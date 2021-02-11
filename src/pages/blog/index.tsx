@@ -179,13 +179,15 @@ export default ({ posts = [], preview }) => {
       )}
 
       <div className="container mx-auto">
-        <Masonry
-          items={postCardItems}
-          columnGutter={16}
-          columnWidth={380}
-          overscanBy={5}
-          render={getPostCards}
-        />
+        <div className={blogStyles.inner}>
+          <Masonry
+            items={postCardItems}
+            columnGutter={24}
+            columnWidth={368}
+            overscanBy={5}
+            render={getPostCards}
+          />
+        </div>
       </div>
     </>
   )

@@ -26,12 +26,9 @@ a.metaTitle:hover {
 }
 
 /* Styles only in Blog Index page */
-.masonryGrids {
-  columns: 3 200px;
-  column-gap: 1rem;
-}
-.masonryGrids div {
-  display: inline-block;
+.inner {
+  margin-left: 1.15rem;
+  margin-right: 1.15rem;
 }
 
 .postCard {
