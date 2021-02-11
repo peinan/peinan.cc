@@ -4,14 +4,14 @@
   font-family: 'Lobster';
   src: url('../../assets/fonts/Lobster/Lobster-Regular.ttf') format('truetype');
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
   font-family: 'Niconne';
   src: url('../../assets/fonts/Niconne/Niconne-Regular.ttf') format('truetype');
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   src: url('../../assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   src: url('../../assets/fonts/Inter/static/Inter-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: 'Inter';
@@ -35,7 +35,7 @@
     format('truetype');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: 'Inter';
@@ -43,7 +43,7 @@
     format('truetype');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 /* Noto Sans JP */
@@ -53,7 +53,7 @@
     format('opentype');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: 'NotoSansJP';
@@ -61,7 +61,7 @@
     format('opentype');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 @font-face {
   font-family: 'NotoSansJP';
@@ -69,7 +69,7 @@
     format('opentype');
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 :root {
