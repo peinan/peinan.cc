@@ -169,7 +169,7 @@ a.metaTitle:hover {
 
 .post :global(.underline) {
   text-decoration: underline;
-  text-underline-offset: 0.05rem;
+  text-underline-offset: 0.07rem;
 }
 
 .postPreview :global(.posted) {
@@ -214,4 +214,15 @@ a.metaTitle:hover {
 .post b {
   color: var(--text-gray-700);
   font-weight: 700;
+}
+
+.post p a {
+  color: var(--text-gray-700);
+  text-decoration: underline;
+  text-underline-offset: 0.07rem;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+}
+.post p a:hover {
+  color: var(--text-gray-400);
 }
