@@ -36,9 +36,11 @@ export const getTagLink = (tag: string) => {
 }
 
 export const getCoverUrl = (post: any) => {
+  const fallbackUrl =
+    'https://raw.githubusercontent.com/peinan/notion-blog/develop/public/og-image.png'
   return post.cover
     ? `/api/asset?assetUrl=${encodeURIComponent(
         post.cover.url as any
       )}&blockId=${post.cover.blockId}`
-    : undefined
+    : fallbackUrl
 }

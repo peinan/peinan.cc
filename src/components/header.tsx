@@ -8,17 +8,11 @@ const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'Home', page: '/' },
   { label: 'Blog', page: '/blog' },
   { label: 'Contact', page: '/contact' },
-  // { label: 'Source Code', link: 'https://github.com/ijjk/notion-blog' },
 ]
-
-const ogImageUrlFallback =
-  'https://raw.githubusercontent.com/peinan/notion-blog/develop/public/og-image.png'
 
 export default ({ titlePre = '', coverUrl = undefined }) => {
   const { pathname } = useRouter()
   const ogImageUrl = coverUrl
-    ? `${pathname.split('/', 1)}${coverUrl}`
-    : undefined
 
   return (
     <header className={styles.header}>
@@ -31,10 +25,10 @@ export default ({ titlePre = '', coverUrl = undefined }) => {
           content="Tales about Peinan's daily life, development, science, and miscellaneous stuffs."
         />
         <meta name="og:title" content="Peinan's Chronicle" />
-        <meta property="og:image" content={ogImageUrl || ogImageUrlFallback} />
+        <meta property="og:image" content={ogImageUrl} />
         <meta name="twitter:site" content="@so1owingpixy" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={ogImageUrl || ogImageUrlFallback} />
+        <meta name="twitter:image" content={ogImageUrl} />
       </Head>
 
       <ul>
