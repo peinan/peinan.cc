@@ -33,6 +33,7 @@ export async function getStaticProps({ params: { slug }, preview }) {
   }
   const postData = await getPageData(post.id)
   post.content = postData.blocks
+  post.cover = postData.cover
 
   for (let i = 0; i < postData.blocks.length; i++) {
     const { value } = postData.blocks[i]
@@ -136,9 +137,16 @@ const RenderPost = ({ post, redirect, preview }) => {
     )
   }
 
+  // cover
+  const coverUrl = post.cover
+    ? `/api/asset?assetUrl=${encodeURIComponent(
+        post.cover.url as any
+      )}&blockId=${post.cover.blockId}`
+    : undefined
+
   return (
     <>
-      <Header titlePre={post.Page} />
+      <Header titlePre={post.Page} coverUrl={coverUrl} />
       {preview && (
         <div className={blogStyles.previewAlertContainer}>
           <div className={blogStyles.previewAlert}>
