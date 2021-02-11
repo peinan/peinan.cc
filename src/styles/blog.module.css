@@ -2,9 +2,10 @@
 .metaTitle {
   font-family: var(--font-sans-header);
   font-weight: 700;
+  transition: all 0.3s;
 }
 a.metaTitle:hover {
-  text-decoration: underline;
+  color: var(--text-gray-400);
 }
 .metaTag {
   font-family: var(--font-sans-header);
@@ -41,11 +42,10 @@ a.metaTitle:hover {
 
 .postCardImg {
   cursor: pointer;
-  transition-duration: 0.3s;
+  transition: all 0.3s;
 }
 .postCardImg:hover {
-  opacity: 0.95;
-  transition-duration: 0.3s;
+  opacity: 0.9;
 }
 
 .blogIndex {
