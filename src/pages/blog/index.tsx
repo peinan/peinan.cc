@@ -8,6 +8,7 @@ import {
   getBlogLink,
   getDateTimeStr,
   postIsPublished,
+  getCoverUrl,
 } from '../../lib/blog-helpers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
@@ -65,8 +66,8 @@ function getPostCardItems(posts) {
   for (var i = 0; i < numCards; i++) {
     let post = i < posts.length ? posts[i] : undefined
 
-    let imgUrl = getRandomImageUrl()
-    let imgSizeStr = imgUrl.split('/')[4]
+    let imgUrl = post ? getCoverUrl(post) : getRandomImageUrl()
+    let imgSizeStr = post ? '' : imgUrl.split('/')[4]
     let title = post ? post.Page : `The Coldest Sunset No. ${i}`
     let linkHref = post ? '/blog/[slug]' : '/blog/foo'
     let linkAs = post ? getBlogLink(post.Slug) : '/#'
@@ -123,7 +124,7 @@ const getPostCards = ({
         <img
           className={`${blogStyles.postCardImg} w-full`}
           src={imgUrl}
-          alt="Sunset in the mountains"
+          alt={title}
         />
       </a>
     </Link>

@@ -11,7 +11,11 @@ import getPageData from '../../lib/notion/getPageData'
 import React, { CSSProperties, useEffect } from 'react'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
-import { getBlogLink, getDateTimeStr, getTagLink } from '../../lib/blog-helpers'
+import {
+  getBlogLink,
+  getDateTimeStr,
+  getCoverUrl,
+} from '../../lib/blog-helpers'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -137,16 +141,9 @@ const RenderPost = ({ post, redirect, preview }) => {
     )
   }
 
-  // cover
-  const coverUrl = post.cover
-    ? `/api/asset?assetUrl=${encodeURIComponent(
-        post.cover.url as any
-      )}&blockId=${post.cover.blockId}`
-    : undefined
-
   return (
     <>
-      <Header titlePre={post.Page} coverUrl={coverUrl} />
+      <Header titlePre={post.Page} coverUrl={getCoverUrl(post)} />
       {preview && (
         <div className={blogStyles.previewAlertContainer}>
           <div className={blogStyles.previewAlert}>

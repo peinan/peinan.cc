@@ -34,3 +34,11 @@ export const normalizeSlug = slug => {
 export const getTagLink = (tag: string) => {
   return `/blog/tag/${tag}`
 }
+
+export const getCoverUrl = (post: any) => {
+  return post.cover
+    ? `/api/asset?assetUrl=${encodeURIComponent(
+        post.cover.url as any
+      )}&blockId=${post.cover.blockId}`
+    : undefined
+}
