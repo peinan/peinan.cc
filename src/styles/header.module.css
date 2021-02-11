@@ -17,7 +17,7 @@
 }
 
 .header :global(a) {
-  color: var(--accents-3);
+  color: var(--text-light-color);
   font-family: 'Lobster';
   font-weight: 400;
 }
