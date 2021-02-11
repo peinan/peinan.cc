@@ -208,30 +208,32 @@ const RenderPost = ({ post, redirect, preview }) => {
 
           if (listTagName && (isLast || !isList)) {
             toRender.push(
-              React.createElement(
-                listTagName,
-                { key: listLastId! },
-                Object.keys(listMap).map(itemId => {
-                  if (listMap[itemId].isNested) return null
+              <div className="listWrap">
+                {React.createElement(
+                  listTagName,
+                  { key: listLastId! },
+                  Object.keys(listMap).map(itemId => {
+                    if (listMap[itemId].isNested) return null
 
-                  const createEl = item =>
-                    React.createElement(
-                      components.li || 'ul',
-                      { key: item.key },
-                      item.children,
-                      item.nested.length > 0
-                        ? React.createElement(
-                            components.ul || 'ul',
-                            { key: item + 'sub-list' },
-                            item.nested.map(nestedId =>
-                              createEl(listMap[nestedId])
+                    const createEl = item =>
+                      React.createElement(
+                        components.li || 'ul',
+                        { key: item.key },
+                        item.children,
+                        item.nested.length > 0
+                          ? React.createElement(
+                              components.ul || 'ul',
+                              { key: item + 'sub-list' },
+                              item.nested.map(nestedId =>
+                                createEl(listMap[nestedId])
+                              )
                             )
-                          )
-                        : null
-                    )
-                  return createEl(listMap[itemId])
-                })
-              )
+                          : null
+                      )
+                    return createEl(listMap[itemId])
+                  })
+                )}
+              </div>
             )
             listMap = {}
             listLastId = null
@@ -379,15 +381,13 @@ const RenderPost = ({ post, redirect, preview }) => {
               break
             }
             case 'quote': {
-              if (properties.title) {
-                toRender.push(
-                  React.createElement(
-                    components.blockquote,
-                    { key: id },
-                    properties.title
-                  )
-                )
-              }
+              toRender.push(
+                <blockquote key={id}>
+                  <div className="text">
+                    {textBlock(properties.title, true, id)}
+                  </div>
+                </blockquote>
+              )
               break
             }
             case 'callout': {

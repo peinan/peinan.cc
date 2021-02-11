@@ -16,20 +16,6 @@
 
 @font-face {
   font-family: 'Poppins';
-  src: url('../../assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
-  src: url('../../assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Poppins';
   src: url('../../assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -91,7 +77,6 @@
   --gap-half: 0.5rem;
   --gap: 1rem;
   --gap-double: 2rem;
-  --radius: 8px;
 
   /* Color definition */
   --pure-white: #fff;
@@ -115,6 +100,9 @@
   --bg: var(--pure-white);
   --fg: var(--pure-black);
   --geist-foreground: var(--pure-black);
+
+  --special-block-bg: rgba(235, 236, 237, 0.6);
+  --special-block-radius: 0rem;
 
   /* Font definition */
   --font-logo-main: 'Lobster', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -384,7 +372,7 @@ figure {
 
 mark {
   padding: var(--gap-quarter);
-  border-radius: var(--radius);
+  border-radius: 8px;
   background: rgba(247, 212, 255, 0.8);
 }
 
@@ -442,7 +430,7 @@ code {
   font-size: 0.8rem;
   background: #f1f1f1;
   padding: 0.2rem;
-  border-radius: var(--radius);
+  border-radius: 0.2rem;
   font-family: var(--font-mono);
 }
 
@@ -492,4 +480,8 @@ footer span:nth-child(3) a {
 
 div:focus {
   outline: none;
+}
+
+.katex {
+  font-size: 1em !important;
 }
