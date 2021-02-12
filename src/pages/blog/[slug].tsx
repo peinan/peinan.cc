@@ -156,15 +156,13 @@ const RenderPost = ({ post, redirect, preview }) => {
         </div>
       )}
       <div className={blogStyles.post}>
-        <h1 className={`${blogStyles.metaTitle} text-5xl`}>
-          {post.Page || ''}
-        </h1>
+        <h1 className={`${blogStyles.metaTitle}`}>{post.Page || ''}</h1>
 
         <div className="mb-2">
-          <span className={`${blogStyles.metaDate} text-sm`}>
+          <span className={`${blogStyles.metaDate}`}>
             <i className="lar la-clock"></i> {getDateTimeStr(post.created_time)}
           </span>
-          <span className={`${blogStyles.metaDate} text-sm px-2`}>
+          <span className={`${blogStyles.metaDate}`}>
             <i className="las la-sync"></i>{' '}
             {getDateTimeStr(post.last_edited_time)}
           </span>
@@ -172,13 +170,7 @@ const RenderPost = ({ post, redirect, preview }) => {
 
         <div>
           {post.Tags.map(tag => {
-            return (
-              <span
-                className={`${blogStyles.metaTag} inline-block mr-2 mb-1 text-tiny`}
-              >
-                #{tag}
-              </span>
-            )
+            return <span className={`${blogStyles.metaTag}`}>{tag}</span>
           })}
         </div>
 

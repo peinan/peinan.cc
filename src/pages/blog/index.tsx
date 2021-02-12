@@ -116,45 +116,33 @@ const getPostCards = ({
     tags: tags,
   },
 }) => (
-  <div
-    className={`${blogStyles.postCard} max-w rounded-xl overflow-hidden bg-white`}
-  >
+  <div className={`${blogStyles.postCard}`}>
     <Link href={linkHref} as={linkAs}>
       <a>
-        <img
-          className={`${blogStyles.postCardImg} w-full`}
-          src={imgUrl}
-          alt={title}
-        />
+        <img className={`${blogStyles.postCardImg}`} src={imgUrl} alt={title} />
       </a>
     </Link>
     <div className="px-6 py-4">
-      <h3 className="text-2xl">
+      <h3>
         <Link href={linkHref} as={linkAs}>
           <a className={`${blogStyles.metaTitle}`}>{title}</a>
         </Link>
       </h3>
       <div className="mb-3">
-        <span className={`${blogStyles.metaDate} text-sm`}>
+        <span className={`${blogStyles.metaDate}`}>
           <i className="lar la-clock"></i> {created_time}
         </span>
-        <span className={`${blogStyles.metaDate} text-sm px-2`}>
+        <span className={`${blogStyles.metaDate}`}>
           <i className="las la-sync"></i> {last_edited_time}
         </span>
       </div>
-      <p className={`${blogStyles.plainText} text-basesm`}>
+      <p className={`${blogStyles.plainText}`}>
         {imgSizeStr} {previewText}
       </p>
     </div>
-    <div className="px-6 py-3">
+    <div className="px-6 pb-3">
       {tags.map(tag => {
-        return (
-          <span
-            className={`${blogStyles.metaTag} inline-block bg-gray-200 rounded-full px-3 py-1 mr-2 mb-2 text-sm`}
-          >
-            #{tag}
-          </span>
-        )
+        return <span className={`${blogStyles.metaTag}`}>{tag}</span>
       })}
     </div>
   </div>
@@ -183,7 +171,7 @@ export default ({ posts = [], preview }) => {
           <Masonry
             items={postCardItems}
             columnGutter={24}
-            columnWidth={368}
+            columnWidth={320}
             overscanBy={5}
             render={getPostCards}
           />

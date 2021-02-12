@@ -16,6 +16,13 @@
 
 @font-face {
   font-family: 'Poppins';
+  src: url('../../assets/fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+@font-face {
+  font-family: 'Poppins';
   src: url('../../assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -121,6 +128,18 @@
     Bitstream Vera Sans Mono, Courier New, monospace;
   --font-feature-settings: 'ss01', 'cv05', 'cv07', 'cv08', 'case', 'calt',
     'tnum';
+
+  --text-xs: 0.65rem;
+  --text-sm: 0.7rem;
+  --text-tiny: 0.75rem;
+  --text-base: 0.8rem;
+  --text-lg: 0.9rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.075rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 1.6rem;
+  --text-6xl: 2rem;
 
   /* Shadow definition */
   --ring-offset-shadow: 0 0 #0000;
