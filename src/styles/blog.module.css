@@ -161,6 +161,7 @@ a.metaTitle:hover {
   font-family: var(--font-sans-body);
   font-feature-settings: var(--font-feature-settings);
   color: var(--text-dark-color);
+  display: flex;
 }
 
 .post :global(h2) {
@@ -179,6 +180,24 @@ a.metaTitle:hover {
   margin: 0.7rem 0 0.4rem;
   font-weight: 700;
   font-size: var(--text-xl);
+}
+.post .headingIcon {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-left: 0.4rem;
+  color: var(--text-gray-600);
+  transition: opacity 0.3s;
+  visibility: hidden;
+}
+.post :global(h2):hover .headingIcon,
+.post :global(h3):hover .headingIcon,
+.post :global(h4):hover .headingIcon {
+  font-size: var(--text-lg);
+  visibility: visible;
+}
+.post .headingIcon:hover {
+  opacity: 0.6;
 }
 
 .post b {

@@ -2,7 +2,6 @@ import Link from 'next/link'
 import fetch from 'node-fetch'
 import { useRouter } from 'next/router'
 import Header from '../../components/header'
-import Heading from '../../components/heading'
 import components from '../../components/dynamic'
 import ReactJSXParser from '@zeit/react-jsx-parser'
 import blogStyles from '../../styles/blog.module.css'
@@ -238,10 +237,27 @@ const RenderPost = ({ post, redirect, preview }) => {
           }
 
           const renderHeading = (Type: string | React.ComponentType) => {
+            const headingId = properties.title
+              .toString()
+              .toLowerCase()
+              .replace(/\s/g, '-')
+              .replace(/[?!:]/g, '')
+
             toRender.push(
-              <Heading key={id}>
-                <Type key={id}>{textBlock(properties.title, true, id)}</Type>
-              </Heading>
+              <Type key={id}>
+                {textBlock(properties.title, true, id)}
+                <a
+                  className={blogStyles.headingIcon}
+                  href={`#${headingId}`}
+                  id={headingId}
+                  style={{ color: 'inherit' }}
+                >
+                  <span>
+                    {' '}
+                    <i className="las la-link"></i>
+                  </span>
+                </a>
+              </Type>
             )
           }
 
