@@ -183,17 +183,17 @@ a.metaTitle:hover {
 }
 .post .headingIcon {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin-left: 0.4rem;
   color: var(--text-gray-600);
+  font-size: var(--text-lg);
   transition: opacity 0.3s;
   visibility: hidden;
 }
 .post :global(h2):hover .headingIcon,
 .post :global(h3):hover .headingIcon,
 .post :global(h4):hover .headingIcon {
-  font-size: var(--text-lg);
   visibility: visible;
 }
 .post .headingIcon:hover {

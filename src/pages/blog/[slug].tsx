@@ -253,7 +253,6 @@ const RenderPost = ({ post, redirect, preview }) => {
                   style={{ color: 'inherit' }}
                 >
                   <span>
-                    {' '}
                     <i className="las la-link"></i>
                   </span>
                 </a>
