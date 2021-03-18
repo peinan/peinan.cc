@@ -313,6 +313,13 @@ p {
   font-size: 0.94rem;
   line-height: 1.5rem;
 }
+@media screen and (max-width: 599px) {
+  p {
+    font-size: var(--text-base);
+    line-height: 1.05rem;
+  }
+}
+
 pre {
   white-space: pre;
 }
@@ -327,6 +334,11 @@ code {
   padding: 0.2rem;
   border-radius: 0.2rem;
   font-family: var(--font-mono);
+}
+@media screen and (max-width: 599px) {
+  code {
+    font-size: var(--text-base);
+  }
 }
 
 .slice {

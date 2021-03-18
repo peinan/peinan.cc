@@ -157,7 +157,7 @@ const RenderPost = ({ post, redirect, preview }) => {
       <div className={blogStyles.post}>
         <h1 className={`${blogStyles.metaTitle}`}>{post.Page || ''}</h1>
 
-        <div className="mb-2">
+        <div className={`${blogStyles.metaDate_outer}`}>
           <span className={`${blogStyles.metaDate}`}>
             <i className="lar la-clock"></i> {getDateTimeStr(post.created_time)}
           </span>

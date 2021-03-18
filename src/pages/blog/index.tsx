@@ -122,7 +122,7 @@ const getPostCards = ({
         <img className={`${blogStyles.postCardImg}`} src={imgUrl} alt={title} />
       </a>
     </Link>
-    <div className="px-6 py-4">
+    <div className={`${blogStyles.postCard_inner}`}>
       <h3>
         <Link href={linkHref} as={linkAs}>
           <a className={`${blogStyles.metaTitle}`}>{title}</a>

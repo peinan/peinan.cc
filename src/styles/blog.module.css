@@ -2,8 +2,13 @@
 .metaTitle {
   font-family: var(--font-sans-header);
   font-weight: 700;
-  line-height: 1.15rem;
+  line-height: 1.55rem;
   transition: all 0.3s;
+}
+@media screen and (max-width: 599px) {
+  .metaTitle {
+    line-height: 1.55rem;
+  }
 }
 a.metaTitle {
   font-size: var(--text-2xl);
@@ -15,7 +20,22 @@ a.metaTitle:hover {
   font-size: var(--text-5xl);
   margin-bottom: 3rem;
 }
+@media screen and (max-width: 599px) {
+  .post .metaTitle {
+    font-size: var(--text-3xl);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
 
+.metaDate_outer {
+  margin-bottom: 0.5rem;
+}
+@media screen and (max-width: 599px) {
+  .metaDate_outer {
+    margin-bottom: 0;
+  }
+}
 .metaDate {
   font-family: var(--font-sans-body);
   font-feature-settings: 'ss01', 'cv05', 'cv07', 'cv08', 'case', 'calt';
@@ -57,11 +77,20 @@ a.metaTitle:hover {
   line-height: 1.1rem;
   color: var(--text-base-color);
 }
+/*@media screen and (max-width: 599px) {*/
+/*  .postCard .plainText*/
+/*}*/
 
 /* Styles only in Blog Index page */
 .inner {
   margin-left: 1.15rem;
   margin-right: 1.15rem;
+}
+@media screen and (max-width: 599px) {
+  .inner {
+    margin-left: 0.9rem;
+    margin-right: 0.9rem;
+  }
 }
 
 .postCard {
@@ -73,6 +102,15 @@ a.metaTitle:hover {
 }
 .postCard:hover {
   box-shadow: var(--box-shadow-xl);
+}
+
+.postCard_inner {
+  padding: 1rem 1.5rem;
+}
+@media screen and (max-width: 599px) {
+  .postCard_inner {
+    padding: 1rem 1.2rem;
+  }
 }
 
 .postCardImg {
@@ -171,16 +209,37 @@ a.metaTitle:hover {
   font-size: var(--text-4xl);
   border-left: solid 5px var(--text-base-color);
 }
+@media screen and (max-width: 599px) {
+  .post :global(h2) {
+    margin: 1.2rem 0 0.4rem;
+    font-size: var(--text-2xl);
+  }
+}
+
 .post :global(h3) {
   margin: 0.9rem 0 0.5rem;
   font-weight: 700;
   font-size: var(--text-3xl);
 }
+@media screen and (max-width: 599px) {
+  .post :global(h3) {
+    margin: 0.75rem 0 0.4rem;
+    font-size: var(--text-xl);
+  }
+}
+
 .post :global(h4) {
   margin: 0.7rem 0 0.4rem;
   font-weight: 700;
   font-size: var(--text-xl);
 }
+@media screen and (max-width: 599px) {
+  .post :global(h4) {
+    margin: 0.5rem 0 0.3rem;
+    font-size: var(--text-lg);
+  }
+}
+
 .post .headingIcon {
   display: flex;
   justify-content: flex-end;
@@ -238,8 +297,14 @@ a.metaTitle:hover {
 .post ol {
   padding: 0 0 0 1.3em;
   line-height: 1.2rem;
-  font-size: 0.9rem;
+  font-size: var(--text-lg);
   font-weight: 300;
+}
+@media screen and (max-width: 599px) {
+  .post ul,
+  .post ol {
+    font-size: var(--text-base);
+  }
 }
 .post ul li {
   padding-left: 0.1rem;
@@ -267,8 +332,13 @@ a.metaTitle:hover {
   border-style: solid;
   border-color: transparent;
   background: var(--special-block-bg);
-  font-size: 0.98rem;
+  font-size: var(--text-lg);
   font-weight: 300;
+}
+@media screen and (max-width: 599px) {
+  .post :global(.callout) {
+    font-size: var(--text-base);
+  }
 }
 .post :global(.callout .text) {
   margin-left: 8px;
@@ -284,8 +354,13 @@ a.metaTitle:hover {
   border-left: 4px solid var(--text-base-color);
 }
 .post blockquote div {
-  font-size: 0.98rem;
+  font-size: var(--text-lg);
   font-weight: 300;
+}
+@media screen and (max-width: 599px) {
+  .post blockquote div {
+    font-size: var(--text-base);
+  }
 }
 
 .post :global(video),
