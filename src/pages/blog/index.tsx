@@ -14,6 +14,7 @@ import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 
 import { Masonry } from 'masonic'
+import sharedStyles from '../../styles/shared.module.css'
 
 export async function getStaticProps({ preview }) {
   const postsTable = await getBlogIndex()
@@ -165,6 +166,14 @@ export default ({ posts = [], preview }) => {
           </div>
         </div>
       )}
+
+      <div className={sharedStyles.layout}>
+        <h1>Peinan's Chronicle</h1>
+        <h2>
+          Tales about my daily life, development, science, and miscellaneous
+          stuffs.
+        </h2>
+      </div>
 
       <div className="container mx-auto">
         <div className={blogStyles.inner}>

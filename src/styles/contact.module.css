@@ -20,7 +20,12 @@
 .avatar {
   display: block;
   text-align: center;
-  margin: 1rem 0;
+  margin: 3.5rem 0 1rem;
+}
+@media screen and (max-width: 599px) {
+  .avatar {
+    margin: 1rem 0;
+  }
 }
 
 .avatar img {
@@ -30,6 +35,11 @@
 
 .name {
   text-align: center;
+}
+@media screen and (max-width: 599px) {
+  .name {
+    font-size: var(--text-lg);
+  }
 }
 
 .name a {

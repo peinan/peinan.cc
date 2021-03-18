@@ -11,9 +11,16 @@
 }
 
 .layout h1 {
+  margin: var(--gap-double) 0 calc(0.5 * var(--gap)) 0;
   font-family: var(--font-logo-main);
+}
+@media screen and (max-width: 599px) {
+  .layout h1 {
+    margin: calc(0.5 * var(--gap)) 0;
+  }
 }
 
 .layout h2 {
   font-family: var(--font-logo-lead);
+  margin-bottom: 3rem;
 }
