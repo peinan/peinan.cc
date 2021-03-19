@@ -1,6 +1,6 @@
 .links {
   display: block;
-  margin: 1rem auto;
+  margin: 1rem auto 2.5rem;
   max-width: 500px;
   text-align: center;
 }
@@ -44,4 +44,12 @@
 
 .name a {
   color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.1rem;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  transition: color 0.3s;
+}
+.name a:hover {
+  color: var(--text-gray-400);
 }

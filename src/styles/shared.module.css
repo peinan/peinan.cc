@@ -24,3 +24,145 @@
   font-family: var(--font-logo-lead);
   margin-bottom: 3rem;
 }
+
+.introOuterBlock {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 0 2%;
+}
+
+.postLine {
+  border-top: 0.4rem solid var(--text-gray-800);
+  display: block;
+  margin: 0 auto 3rem;
+  width: 4rem;
+}
+
+.introLayoutSection {
+  margin-bottom: 3rem;
+}
+.listLayoutSection {
+  max-width: calc(720px + 10%);
+  margin: 0 auto 3rem;
+  padding: 0 0.5rem 0.8rem;
+}
+.introLayout {
+  text-align: center;
+}
+.introLayout h2 {
+  font-family: var(--font-logo-main);
+  font-size: var(--text-5xl);
+  color: var(--text-gray-800);
+  margin-bottom: 0.3rem;
+}
+.introLayout h3 {
+  font-family: var(--font-sans-header);
+  font-size: var(--text-xl);
+  color: var(--text-gray-800);
+}
+
+.introLayout .introLayout__inner {
+  width: 100%;
+  height: 440px;
+  padding: 10px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.postCard {
+  display: inline-block;
+  width: 250px;
+  height: 400px;
+  margin: 0 0.5rem;
+  padding: 1rem;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-md);
+  transition: all 0.3s;
+  background-color: var(--bg);
+  border-radius: 1.1rem;
+}
+.postListCard {
+  width: 100%;
+  margin: 0 0 1rem;
+  padding: 1rem;
+  overflow: hidden;
+  box-shadow: var(--box-shadow-md);
+  transition: all 0.3s;
+  background-color: var(--bg);
+  border-radius: 1.1rem;
+}
+.postListCard:hover,
+.postCard:hover {
+  box-shadow: var(--box-shadow-xl);
+}
+
+.postCard h3 {
+  margin: 1rem 0 0.5rem;
+}
+.postCard h3 a {
+  transition: color 0.3s;
+}
+.postCard h3 a:hover {
+  color: var(--text-gray-400);
+}
+.postCard .lead {
+  font-size: var(--text-tiny);
+  color: var(--text-gray-600);
+}
+.postCard .desc {
+  text-align: left;
+  overflow-x: visible;
+  white-space: normal;
+  font-size: var(--text-tiny);
+  color: var(--text-gray-700);
+  margin-top: 1rem;
+  line-height: 1.2rem;
+}
+.postCard .desc a {
+  color: var(--text-gray-700);
+  text-decoration: underline;
+  text-underline-offset: 0.07rem;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  transition: color 0.2s;
+}
+.postCard .desc a:hover {
+  color: var(--text-gray-400);
+}
+
+.postListCard h3 {
+  font-weight: 700;
+  line-height: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.postListCard h3 a {
+  transition: color 0.3s;
+}
+.postListCard h3 a:hover {
+  color: var(--text-gray-400);
+}
+.postListCard .author {
+  font-weight: 500;
+  font-size: var(--text-base);
+}
+.postListCard .conference {
+  font-weight: 500;
+  font-size: var(--text-base);
+}
+
+@media screen and (max-width: 599px) {
+  .introLayout .postListCard {
+    margin-bottom: 0.5rem;
+  }
+  .introLayout h2 {
+    font-size: var(--text-3xl);
+  }
+  .introLayout h3 {
+    font-size: var(--text-base);
+  }
+  .postListCard .author,
+  .postListCard .conference {
+    font-size: var(--text-sm);
+  }
+}
