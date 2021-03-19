@@ -165,4 +165,7 @@
   .postListCard .conference {
     font-size: var(--text-sm);
   }
+  .postCard .desc {
+    font-size: var(--text-sm);
+  }
 }
