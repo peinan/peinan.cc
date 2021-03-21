@@ -28,7 +28,7 @@
   }
 }
 
-.avatar img {
+.avatar .icon {
   height: 120px;
   border-radius: 45px 6px 45px 6px;
 }

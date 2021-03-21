@@ -39,7 +39,12 @@ export default () => (
 
     <div className={sharedStyles.layout}>
       <div className={contactStyles.avatar}>
-        <img src="/myicon.jpeg" alt="peinan" height={60} />
+        <img
+          className={contactStyles.icon}
+          src="/myicon.jpeg"
+          alt="peinan"
+          height={60}
+        />
       </div>
 
       <h1 style={{ marginTop: 0 }}>Peinan Zhang</h1>
