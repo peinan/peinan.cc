@@ -62,14 +62,15 @@
 }
 
 .introLayout .introLayout__inner {
-  width: 100%;
-  height: calc(400px + 40px);
+  /*width: 100%;*/
+  /*height: calc(400px + 40px);*/
   padding: 10px 0;
-  overflow-x: scroll;
-  white-space: nowrap;
+  /*overflow-x: scroll;*/
+  /*white-space: nowrap;*/
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: row;
+  overflow: scroll;
 }
 
 .introLayout__inner::before,
@@ -80,15 +81,18 @@
 
 .introLayout .postCard__outer {
   flex-shrink: 0;
+  height: 400px;
+  width: 100%;
 }
 
 .postCard {
-  display: inline-block;
+  /*display: inline-block;*/
   width: 250px;
+  min-width: 250px;
   height: 400px;
   margin: 0 0.5rem;
   padding: 1rem;
-  overflow: hidden;
+  /*overflow: hidden;*/
   box-shadow: var(--box-shadow-md);
   transition: all 0.3s;
   background-color: var(--bg);

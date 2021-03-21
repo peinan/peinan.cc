@@ -65,76 +65,74 @@ export default () => (
         <div className={sharedStyles.introLayoutSection}>
           <h2>Interests</h2>
           <div className={sharedStyles.introLayout__inner}>
-            <div className={sharedStyles.postCard__outer}>
-              <div className={sharedStyles.postCard}>
-                <h3>NLP/ML</h3>
-              </div>
-              <div className={sharedStyles.postCard}>
-                <h3>Camera</h3>
-              </div>
-              <div className={sharedStyles.postCard}>
-                <h3>Design</h3>
-              </div>
-              <div className={sharedStyles.postCard}>
-                <h3>Football</h3>
-              </div>
-              <div className={sharedStyles.postCard}>
-                <h3>Game</h3>
-              </div>
+            {/*<div className={sharedStyles.postCard__outer}>*/}
+            <div className={sharedStyles.postCard}>
+              <h3>NLP/ML</h3>
             </div>
+            <div className={sharedStyles.postCard}>
+              <h3>Camera</h3>
+            </div>
+            <div className={sharedStyles.postCard}>
+              <h3>Design</h3>
+            </div>
+            <div className={sharedStyles.postCard}>
+              <h3>Football</h3>
+            </div>
+            <div className={sharedStyles.postCard}>
+              <h3>Game</h3>
+            </div>
+            {/*</div>*/}
           </div>
         </div>
 
         <div className={sharedStyles.introLayoutSection}>
           <h2>Experience</h2>
           <div className={sharedStyles.introLayout__inner}>
-            <div className={sharedStyles.postCard__outer}>
-              <div className={sharedStyles.postCard} style={{ width: '300px' }}>
-                <h3>
-                  <a href={'https://www.cyberagent.co.jp/'}>CyberAgent, Inc.</a>
-                </h3>
-                <div className={sharedStyles.lead}>Research Scientist</div>
-                <div className={sharedStyles.lead}>2018-06 ~ present</div>
-                <p className={sharedStyles.desc}>
-                  I'm a Research Scientist at CyberAgent's{' '}
-                  <a href={'https://cyberagent.ai/ailab/'}>AI Lab</a>, working
-                  on ad generation and predicting ad effects. I use a wide range
-                  of NLP/ML technologies, especially language generation
-                  including machine translation and summarization,
-                  few-/zero-shot learning, and pre-trained language model.
-                </p>
-              </div>
-
-              <div className={sharedStyles.postCard} style={{ width: '300px' }}>
-                <h3>
-                  <a href={'https://about.yahoo.co.jp/'}>Yahoo! Japan, Inc.</a>
-                </h3>
-                <div className={sharedStyles.lead}>ML Engineer</div>
-                <div className={sharedStyles.lead}>2016-04 ~ 2018-04</div>
-                <p className={sharedStyles.desc}>
-                  I joined Yahoo! Japan as an ML engineer after graduating. In
-                  the push notification team, I implemented a personalization
-                  feature using NLP/ML and Hadoop for over ten millions of
-                  users, and deployed it as an in-house application.
-                </p>
-              </div>
-
-              <div className={sharedStyles.postCard} style={{ width: '300px' }}>
-                <h3>
-                  <a href={'https://www.jp.honda-ri.com/index.html'}>
-                    HRI Japan
-                  </a>
-                </h3>
-                <div className={sharedStyles.lead}>Internship</div>
-                <div className={sharedStyles.lead}>2014-08 ~ 2014-09</div>
-                <p className={sharedStyles.desc}>
-                  I interned at Honda Research Institute (HRI) Japan for about
-                  two months during my M1 year. There were two themes: (1)
-                  classification of speech acts and (2) creation of a spoken
-                  language model using Nested Pitman-Yor Language Model (NPYLM).
-                </p>
-              </div>
+            {/*<div className={sharedStyles.postCard__outer}>*/}
+            <div className={sharedStyles.postCard} style={{ width: '300px' }}>
+              <h3>
+                <a href={'https://www.cyberagent.co.jp/'}>CyberAgent, Inc.</a>
+              </h3>
+              <div className={sharedStyles.lead}>Research Scientist</div>
+              <div className={sharedStyles.lead}>2018-06 ~ present</div>
+              <p className={sharedStyles.desc}>
+                I'm a Research Scientist at CyberAgent's{' '}
+                <a href={'https://cyberagent.ai/ailab/'}>AI Lab</a>, working on
+                ad generation and predicting ad effects. I use a wide range of
+                NLP/ML technologies, especially language generation including
+                machine translation and summarization, few-/zero-shot learning,
+                and pre-trained language model.
+              </p>
             </div>
+
+            <div className={sharedStyles.postCard} style={{ width: '300px' }}>
+              <h3>
+                <a href={'https://about.yahoo.co.jp/'}>Yahoo! Japan, Inc.</a>
+              </h3>
+              <div className={sharedStyles.lead}>ML Engineer</div>
+              <div className={sharedStyles.lead}>2016-04 ~ 2018-04</div>
+              <p className={sharedStyles.desc}>
+                I joined Yahoo! Japan as an ML engineer after graduating. In the
+                push notification team, I implemented a personalization feature
+                using NLP/ML and Hadoop for over ten millions of users, and
+                deployed it as an in-house application.
+              </p>
+            </div>
+
+            <div className={sharedStyles.postCard} style={{ width: '300px' }}>
+              <h3>
+                <a href={'https://www.jp.honda-ri.com/index.html'}>HRI Japan</a>
+              </h3>
+              <div className={sharedStyles.lead}>Internship</div>
+              <div className={sharedStyles.lead}>2014-08 ~ 2014-09</div>
+              <p className={sharedStyles.desc}>
+                I interned at Honda Research Institute (HRI) Japan for about two
+                months during my M1 year. There were two themes: (1)
+                classification of speech acts and (2) creation of a spoken
+                language model using Nested Pitman-Yor Language Model (NPYLM).
+              </p>
+            </div>
+            {/*</div>*/}
           </div>
         </div>
 
