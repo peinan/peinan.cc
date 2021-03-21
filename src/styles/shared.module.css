@@ -63,12 +63,23 @@
 
 .introLayout .introLayout__inner {
   width: 100%;
-  height: 440px;
+  height: calc(400px + 40px);
   padding: 10px 0;
   overflow-x: scroll;
-  overflow-y: visible;
   white-space: nowrap;
   -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: row;
+}
+
+.introLayout__inner::before,
+.introLayout__inner::after {
+  content: '';
+  flex: 1;
+}
+
+.introLayout .postCard__outer {
+  flex-shrink: 0;
 }
 
 .postCard {
