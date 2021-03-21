@@ -65,31 +65,43 @@ export default () => (
         <div className={sharedStyles.introLayoutSection}>
           <h2>Interests</h2>
           <div className={sharedStyles.introLayout__inner}>
-            {/*<div className={sharedStyles.postCard__outer}>*/}
-            <div className={sharedStyles.postCard}>
+            <div
+              className={sharedStyles.postCard}
+              style={{ minWidth: '250px', width: '250px' }}
+            >
               <h3>NLP/ML</h3>
             </div>
-            <div className={sharedStyles.postCard}>
+            <div
+              className={sharedStyles.postCard}
+              style={{ minWidth: '250px', width: '250px' }}
+            >
               <h3>Camera</h3>
             </div>
-            <div className={sharedStyles.postCard}>
+            <div
+              className={sharedStyles.postCard}
+              style={{ minWidth: '250px', width: '250px' }}
+            >
               <h3>Design</h3>
             </div>
-            <div className={sharedStyles.postCard}>
+            <div
+              className={sharedStyles.postCard}
+              style={{ minWidth: '250px', width: '250px' }}
+            >
               <h3>Football</h3>
             </div>
-            <div className={sharedStyles.postCard}>
+            <div
+              className={sharedStyles.postCard}
+              style={{ minWidth: '250px', width: '250px' }}
+            >
               <h3>Game</h3>
             </div>
-            {/*</div>*/}
           </div>
         </div>
 
         <div className={sharedStyles.introLayoutSection}>
           <h2>Experience</h2>
           <div className={sharedStyles.introLayout__inner}>
-            {/*<div className={sharedStyles.postCard__outer}>*/}
-            <div className={sharedStyles.postCard} style={{ width: '300px' }}>
+            <div className={sharedStyles.postCard}>
               <h3>
                 <a href={'https://www.cyberagent.co.jp/'}>CyberAgent, Inc.</a>
               </h3>
@@ -132,7 +144,6 @@ export default () => (
                 language model using Nested Pitman-Yor Language Model (NPYLM).
               </p>
             </div>
-            {/*</div>*/}
           </div>
         </div>
 
