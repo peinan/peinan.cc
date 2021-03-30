@@ -97,7 +97,7 @@
 
 .postListCard {
   width: 100%;
-  margin: 0 0 1rem;
+  margin: 0 0 1.05rem;
   padding: 1rem;
   overflow: hidden;
   box-shadow: var(--box-shadow-md);
@@ -170,7 +170,7 @@
 
 @media screen and (max-width: 599px) {
   .introLayout .postListCard {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
   .introLayout h2 {
     font-size: var(--text-3xl);
