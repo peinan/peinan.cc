@@ -61,20 +61,6 @@
   color: var(--text-gray-800);
 }
 
-.introLayout .introLayout__inner {
-  padding: 10px 0;
-  -webkit-overflow-scrolling: touch;
-  display: flex;
-  flex-direction: row;
-  overflow: scroll;
-}
-
-.introLayout__inner::before,
-.introLayout__inner::after {
-  content: '';
-  flex: 1;
-}
-
 .postCard {
   width: 300px;
   min-width: 300px;
@@ -85,6 +71,20 @@
   transition: all 0.3s;
   background-color: var(--bg);
   border-radius: 1.1rem;
+}
+
+.introLayout .postCard__outer {
+  padding: 10px 0;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: row;
+  overflow: scroll;
+}
+
+.postCard__outer::before,
+.postCard__outer::after {
+  content: '';
+  flex: 1;
 }
 
 .postListCard {
@@ -100,6 +100,10 @@
 .postListCard:hover,
 .postCard:hover {
   box-shadow: var(--box-shadow-xl);
+}
+
+.introLayout .postListCard__outer {
+  padding: 10px 0;
 }
 
 .postCard h3 {

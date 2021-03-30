@@ -32,6 +32,322 @@ const contacts = [
     link: 'mailto:zhang_peinan@cyberagent.co.jp',
   },
 ]
+const publications = [
+  {
+    title:
+      'An Empirical Study of Generating Texts for Search-Engine Advertising',
+    link: null,
+    authors: (
+      <div>
+        Hidetaka Kamigaito*,{' '}
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+        *, Hiroya Takamura, Manabu Okumura
+      </div>
+    ),
+    conf: 'NAACL 2021 Industry Track',
+  },
+  {
+    title:
+      'Japanese Sentiment Classification with Stacked Denoising Auto-Encoder using Distributed Word Representation',
+    link: 'https://www.aclweb.org/anthology/Y15-1018',
+    authors: (
+      <div>
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+        , Mamoru Komachi
+      </div>
+    ),
+    conf: 'PACLIC 2015',
+  },
+  {
+    title: 'インターネット広告におけるキーワードに基づく広告文の自動生成',
+    link:
+      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2020/0/JSAI2020_4Rin170/_article/-char/ja',
+    authors: (
+      <div>
+        脇本 宏平、川本 峻頌、
+        <u>
+          <b>張 培楠</b>
+        </u>
+      </div>
+    ),
+    conf: '人工知能学会 2020',
+  },
+  {
+    title: '自動生成された広告文の人手評価における評価指標と支援ツールの提案',
+    link:
+      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2020/0/JSAI2020_3Rin480/_article/-char/ja',
+    authors: (
+      <div>
+        澤井 悠、
+        <u>
+          <b>張 培楠</b>
+        </u>
+        、吉本 暁文
+      </div>
+    ),
+    conf: '人工知能学会 2020',
+  },
+  {
+    title: 'スタイル制御を考慮した多様な広告文生成',
+    link:
+      'https://www.anlp.jp/proceedings/annual_meeting/2020/pdf_dir/P6-14.pdf',
+    authors: (
+      <div>
+        川本 峻頌、
+        <u>
+          <b>張 培楠</b>
+        </u>
+      </div>
+    ),
+    conf: '言語処理学会 2020',
+  },
+  {
+    title: '広告効果を報酬とした強化学習に基づく広告文の自動生成',
+    link: 'https://ci.nii.ac.jp/naid/170000150667/',
+    authors: (
+      <div>
+        上垣外 英剛*、
+        <u>
+          <b>張 培楠</b>
+        </u>
+        *、高村 大也、奥村 学
+      </div>
+    ),
+    conf: 'WebDB Forum 2019',
+  },
+  {
+    title: 'ECサイトにおける商品タイトルからの商品名抽出',
+    link:
+      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_4Rin123/_article/-char/ja',
+    authors: (
+      <div>
+        <u>
+          <b>張 培楠</b>
+        </u>
+      </div>
+    ),
+    conf: '人工知能学会 2019',
+  },
+  {
+    title:
+      'Japanese Sentiment Classification with Stacked Denoising Auto-Encoder using Distributed Word Representation',
+    link: null,
+    authors: (
+      <div>
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+      </div>
+    ),
+    conf: 'Master Thesis 2016',
+  },
+  {
+    title: 'Sentiment Classification with Higher Order Dependency Structure',
+    link: null,
+    authors: (
+      <div>
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+      </div>
+    ),
+    conf: 'Bachelor Thesis 2014',
+  },
+]
+
+function build_publications(data) {
+  var publications_array: any[] = []
+  for (var i = 0; i < data.length; i++) {
+    var d = data[i]
+    publications_array.push(
+      <div className={sharedStyles.postListCard}>
+        {d.link === null ? (
+          <h3>{d.title}</h3>
+        ) : (
+          <h3>
+            <a href={d.link}>{d.title}</a>
+          </h3>
+        )}
+        <div className={sharedStyles.author}>{d.authors}</div>
+        <div className={sharedStyles.conference}>{d.conf}</div>
+      </div>
+    )
+  }
+
+  return publications_array
+}
+
+const articles = [
+  {
+    title:
+      '効果を出す「AIの共同研究」 東京工業大学 奥村・高村研究室と創る自然言語処理の未来',
+    link: 'https://www.cyberagent.co.jp/way/features/list/detail/id=25604',
+    desc: (
+      <div>
+        <u>
+          <b>An article</b>
+        </u>{' '}
+        about an interview on joint research with the Tokyo Institute of
+        Technology.
+      </div>
+    ),
+    media: 'CyberAgent Blog',
+    date: '2020-12-23',
+  },
+  {
+    title:
+      '「効果を出すAI - サイバーエージェントのAI研究とビジネス実装力」-CyberAgent IRチャンネル 第23弾',
+    link: 'https://www.youtube.com/watch?v=XuxNcucXSMU',
+    desc: (
+      <div>
+        <u>
+          <b>A video</b>
+        </u>{' '}
+        describing AI products developed in CyberAgent.
+      </div>
+    ),
+    media: 'YouTube',
+    date: '2020-12-03',
+  },
+  {
+    title: 'ウェブサービス事業者における研究開発インターン',
+    link:
+      'https://www.ieice.org/~nlc/wiki/wiki.cgi?page=%C2%E815%B2%F3%A5%C6%A5%AD%A5%B9%A5%C8%A5%A2%A5%CA%A5%EA%A5%C6%A5%A3%A5%AF%A5%B9%A1%A6%A5%B7%A5%F3%A5%DD%A5%B8%A5%A6%A5%E0%A1%A7%BB%B2%B2%C3%CA%E7%BD%B8',
+    desc: (
+      <div>
+        <u>
+          <b>A talk event</b>
+        </u>{' '}
+        about research internships at web companies.
+      </div>
+    ),
+    media: 'テキストアナリティクス・シンポジウム',
+    date: '2019-09-27',
+  },
+  {
+    title: '人工知能学会 2019 参加報告',
+    link: 'https://cyberagent.ai/blog/research/2219',
+    desc: (
+      <div>
+        <u>
+          <b>An article</b>
+        </u>{' '}
+        reporting attendance of JSAI 2019.
+      </div>
+    ),
+    media: 'CyberAgent Blog',
+    date: '2019-06-25',
+  },
+  {
+    title: 'A Deep Reinforced Model for Abstractive Summarization',
+    link:
+      'https://speakerdeck.com/peinan/a-deep-reinforced-model-for-abstractive-summarization',
+    desc: (
+      <div>
+        <u>
+          <b>Presentation slides</b>
+        </u>{' '}
+        describing the research on summarization.
+      </div>
+    ),
+    media: 'Paper Friday',
+    date: '2019-03-29',
+  },
+  {
+    title: '木星を継ぐもの 〜JupyterLab よこんにちは〜',
+    link: 'https://cyberagent.ai/blog/research/10260',
+    desc: (
+      <div>
+        <u>
+          <b>An article</b>
+        </u>{' '}
+        introducing useful features about JupyterLab.
+      </div>
+    ),
+    media: 'CyberAgent Blog',
+    date: '2019-03-20',
+  },
+  {
+    title: 'Tweet ベースマッチングシステムを支える技術',
+    link: 'https://cyberagent.ai/blog/research/10257',
+    desc: (
+      <div>
+        <u>
+          <b>An article</b>
+        </u>{' '}
+        describing a matching system based on tweets, which used in Design
+        Scramble 2018.
+      </div>
+    ),
+    media: 'CyberAgent Blog',
+    date: '2019-02-05',
+  },
+  {
+    title: 'ACL 参加報告',
+    link: 'https://speakerdeck.com/peinan/acl-can-jia-bao-gao',
+    desc: (
+      <div>
+        <u>
+          <b>Presentation slides</b>
+        </u>{' '}
+        reporting attendance of ACL 2018.
+      </div>
+    ),
+    media: 'テキストアナリティクス・シンポジウム',
+    date: '2018-09-07',
+  },
+  {
+    title: 'ACL 2018 参加報告',
+    link: 'https://cyberagent.ai/blog/research/511',
+    desc: (
+      <div>
+        <u>
+          <b>An article</b>
+        </u>{' '}
+        reporting attendance of ACL 2018.
+      </div>
+    ),
+    media: 'CyberAgent Blog',
+    date: '2018-08-13',
+  },
+  {
+    title: '人工知能学会 2018 参加報告',
+    link: 'https://cyberagent.ai/blog/research/86',
+    desc: (
+      <div>
+        <u>
+          <b>An article</b>
+        </u>{' '}
+        reporting attendance of JSAI 2018.
+      </div>
+    ),
+    media: 'CyberAgent Blog',
+    date: '2018-06-18',
+  },
+]
+function build_articles(data) {
+  return data.map(d => (
+    <div className={sharedStyles.postListCard}>
+      {d.link === null ? (
+        <h3>{d.title}</h3>
+      ) : (
+        <h3>
+          <a href={d.link}>{d.title}</a>
+        </h3>
+      )}
+      <div className={sharedStyles.author}>{d.desc}</div>
+      <div className={sharedStyles.conference}>
+        {d.media}
+        {', '}
+        {d.date}
+      </div>
+    </div>
+  ))
+}
 
 export default () => (
   <>
@@ -69,7 +385,7 @@ export default () => (
       <div className={sharedStyles.introLayout}>
         <div className={sharedStyles.introLayoutSection}>
           <h2>Interests</h2>
-          <div className={sharedStyles.introLayout__inner}>
+          <div className={sharedStyles.postCard__outer}>
             <div
               className={sharedStyles.postCard}
               style={{ minWidth: '250px', width: '250px' }}
@@ -105,7 +421,7 @@ export default () => (
 
         <div className={sharedStyles.introLayoutSection}>
           <h2>Experience</h2>
-          <div className={sharedStyles.introLayout__inner}>
+          <div className={sharedStyles.postCard__outer}>
             <div className={sharedStyles.postCard}>
               <h3>
                 <a href={'https://www.cyberagent.co.jp/'}>CyberAgent, Inc.</a>
@@ -154,7 +470,7 @@ export default () => (
 
         <div className={sharedStyles.introLayoutSection}>
           <h2>Education</h2>
-          <div className={sharedStyles.introLayout__inner}>
+          <div className={sharedStyles.postCard__outer}>
             <div className={sharedStyles.postCard} style={{ width: '300px' }}>
               <h3>
                 <a href={'https://cs.sd.tmu.ac.jp/'}>
@@ -202,360 +518,15 @@ export default () => (
 
         <div className={sharedStyles.listLayoutSection}>
           <h2>Publications</h2>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              An Empirical Study of Generating Texts for Search-Engine
-              Advertising
-            </h3>
-            <div className={sharedStyles.author}>
-              Hidetaka Kamigaito,{' '}
-              <u>
-                <b>Peinan Zhang</b>
-              </u>
-              , Hiroya Takamura, Manabu Okumura
-            </div>
-            <div className={sharedStyles.conference}>
-              NAACL 2021 Industry Track
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://www.aclweb.org/anthology/Y15-1018/'}>
-                Japanese Sentiment Classification with Stacked Denoising
-                Auto-Encoder using Distributed Word Representation
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>Peinan Zhang</b>
-              </u>
-              , Mamoru Komachi
-            </div>
-            <div className={sharedStyles.conference}>PACLIC 2015</div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a
-                href={
-                  'https://www.jstage.jst.go.jp/article/pjsai/JSAI2020/0/JSAI2020_4Rin170/_article/-char/ja/'
-                }
-              >
-                インターネット広告におけるキーワードに基づく広告文の自動生成
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              脇本 宏平、川本 峻頌、
-              <u>
-                <b>張 培楠</b>
-              </u>
-            </div>
-            <div className={sharedStyles.conference}>人工知能学会 2020</div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a
-                href={
-                  'https://www.jstage.jst.go.jp/article/pjsai/JSAI2020/0/JSAI2020_3Rin480/_article/-char/ja/'
-                }
-              >
-                自動生成された広告文の人手評価における評価指標と支援ツールの提案
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              澤井 悠、
-              <u>
-                <b>張 培楠</b>
-              </u>
-              、吉本 暁文
-            </div>
-            <div className={sharedStyles.conference}>人工知能学会 2020</div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a
-                href={
-                  'https://www.anlp.jp/proceedings/annual_meeting/2020/pdf_dir/P6-14.pdf'
-                }
-              >
-                スタイル制御を考慮した多様な広告文生成
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              川本 峻頌、
-              <u>
-                <b>張 培楠</b>
-              </u>
-            </div>
-            <div className={sharedStyles.conference}>言語処理学会 2020</div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://ci.nii.ac.jp/naid/170000150667/'}>
-                広告効果を報酬とした強化学習に基づく広告文の自動生成
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              上垣外 英剛、
-              <u>
-                <b>張 培楠</b>
-              </u>
-              、高村 大也、奥村 学
-            </div>
-            <div className={sharedStyles.conference}>WebDB Forum 2019</div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a
-                href={
-                  'https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_4Rin123/_article/-char/ja/'
-                }
-              >
-                ECサイトにおける商品タイトルからの商品名抽出
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>張 培楠</b>
-              </u>
-            </div>
-            <div className={sharedStyles.conference}>人工知能学会 2019</div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              Japanese Sentiment Classification with Stacked Denoising
-              Auto-Encoder using Distributed Word Representation
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>Peinan Zhang</b>
-              </u>
-            </div>
-            <div className={sharedStyles.conference}>Master Thesis 2016</div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              Sentiment Classification with Higher Order Dependency Structure
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>Peinan Zhang</b>
-              </u>
-            </div>
-            <div className={sharedStyles.conference}>Bachelor Thesis 2014</div>
+          <div className={sharedStyles.postListCard__outer}>
+            {build_publications(publications)}
           </div>
         </div>
 
         <div className={sharedStyles.listLayoutSection}>
           <h2>Articles & Talks</h2>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a
-                href={
-                  'https://www.cyberagent.co.jp/way/features/list/detail/id=25604'
-                }
-              >
-                効果を出す「AIの共同研究」 東京工業大学
-                奥村・高村研究室と創る自然言語処理の未来
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>An article</b>
-              </u>{' '}
-              about an interview on joint research with the Tokyo Institute of
-              Technology.
-            </div>
-            <div className={sharedStyles.conference}>
-              CyberAgent Blog, 2020-12-23
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://www.youtube.com/watch?v=XuxNcucXSMU'}>
-                「効果を出すAI - サイバーエージェントのAI研究とビジネス実装力」
-                -CyberAgent IRチャンネル 第23弾
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>A video</b>
-              </u>{' '}
-              describing AI products developed in CyberAgent.
-            </div>
-            <div className={sharedStyles.conference}>YouTube, 2020-12-03</div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://cyberagent.ai/nlp2020-pos-vae-report'}>
-                「スタイル制御を考慮した多様な広告文生成」発表報告@オンライン言語処理学会
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>An article</b>
-              </u>{' '}
-              reporting attendance of NLP 2020.
-            </div>
-            <div className={sharedStyles.conference}>
-              CyberAgent Blog, 2020-03-24
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a
-                href={
-                  'https://www.ieice.org/~nlc/wiki/wiki.cgi?page=%C2%E815%B2%F3%A5%C6%A5%AD%A5%B9%A5%C8%A5%A2%A5%CA%A5%EA%A5%C6%A5%A3%A5%AF%A5%B9%A1%A6%A5%B7%A5%F3%A5%DD%A5%B8%A5%A6%A5%E0%A1%A7%BB%B2%B2%C3%CA%E7%BD%B8'
-                }
-              >
-                ウェブサービス事業者における研究開発インターン
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>A talk event</b>
-              </u>{' '}
-              about research internships at web companies.
-            </div>
-            <div className={sharedStyles.conference}>
-              テキストアナリティクス・シンポジウム, 2019-09-27
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://cyberagent.ai/blog/research/2219/'}>
-                人工知能学会 2019 参加報告
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>An article</b>
-              </u>{' '}
-              reporting attendance of JSAI 2019.
-            </div>
-            <div className={sharedStyles.conference}>
-              CyberAgent Blog, 2019-06-25
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a
-                href={
-                  'https://speakerdeck.com/peinan/a-deep-reinforced-model-for-abstractive-summarization'
-                }
-              >
-                A Deep Reinforced Model for Abstractive Summarization
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>Presentation slides</b>
-              </u>{' '}
-              describing the research on summarization.
-            </div>
-            <div className={sharedStyles.conference}>
-              Paper Friday, 2019-03-29
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://cyberagent.ai/blog/research/10260/'}>
-                木星を継ぐもの 〜JupyterLab よこんにちは〜
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>An article</b>
-              </u>{' '}
-              introducing useful features about JupyterLab.
-            </div>
-            <div className={sharedStyles.conference}>
-              CyberAgent Blog, 2019-03-20
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://cyberagent.ai/blog/research/10257/'}>
-                Tweet ベースマッチングシステムを支える技術
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>An article</b>
-              </u>{' '}
-              describing a matching system based on tweets, which used in Design
-              Scramble 2018.
-            </div>
-            <div className={sharedStyles.conference}>
-              CyberAgent Blog, 2019-02-05
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://speakerdeck.com/peinan/acl-can-jia-bao-gao'}>
-                ACL 参加報告
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>Presentation slides</b>
-              </u>{' '}
-              reporting attendance of ACL 2018.
-            </div>
-            <div className={sharedStyles.conference}>
-              テキストアナリティクス・シンポジウム, 2018-09-07
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://cyberagent.ai/blog/research/511/'}>
-                ACL 2018 参加報告
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>An article</b>
-              </u>{' '}
-              reporting attendance of ACL 2018.
-            </div>
-            <div className={sharedStyles.conference}>
-              CyberAgent Blog, 2018-08-13
-            </div>
-          </div>
-
-          <div className={sharedStyles.postListCard}>
-            <h3>
-              <a href={'https://cyberagent.ai/blog/research/86/'}>
-                人工知能学会 2018 参加報告
-              </a>
-            </h3>
-            <div className={sharedStyles.author}>
-              <u>
-                <b>An article</b>
-              </u>{' '}
-              reporting attendance of JSAI 2018.
-            </div>
-            <div className={sharedStyles.conference}>
-              CyberAgent Blog, 2018-06-18
-            </div>
+          <div className={sharedStyles.postListCard__outer}>
+            {build_articles(articles)}
           </div>
         </div>
       </div>
