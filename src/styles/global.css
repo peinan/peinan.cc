@@ -129,7 +129,7 @@
   --font-feature-settings: 'ss01', 'cv05', 'cv07', 'cv08', 'case', 'calt',
     'tnum';
 
-  --text-xs: 0.65rem;
+  --text-xs: 0.6rem;
   --text-sm: 0.7rem;
   --text-tiny: 0.75rem;
   --text-base: 0.8rem;
@@ -374,6 +374,30 @@ code {
 footer {
   padding: 2em 0;
   text-align: center;
+}
+footer h3 {
+  font-family: var(--font-logo-main);
+}
+footer .links {
+  display: block;
+  margin: 1rem auto 2.5rem;
+  max-width: 500px;
+  text-align: center;
+}
+footer .links a {
+  width: 24px;
+  height: 24px;
+  margin: 0 6px;
+  display: inline-block;
+  transition: opacity 200ms ease;
+}
+footer .links a:hover {
+  opacity: 0.6;
+}
+footer .copyright {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--text-gray-400);
 }
 
 footer img {

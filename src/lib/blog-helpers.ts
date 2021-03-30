@@ -1,3 +1,8 @@
+import Twitter from '../components/svgs/twitter'
+import GitHub from '../components/svgs/github'
+import LinkedIn from '../components/svgs/linkedin'
+import Envelope from '../components/svgs/envelope'
+
 export const getBlogLink = (slug: string) => {
   return `/blog/${slug}`
 }
@@ -44,3 +49,26 @@ export const getCoverUrl = (post: any) => {
       )}&blockId=${post.cover.blockId}`
     : fallbackUrl
 }
+
+export const contacts = [
+  {
+    Comp: Twitter,
+    alt: 'twitter icon',
+    link: 'https://twitter.com/so1owingpixy',
+  },
+  {
+    Comp: GitHub,
+    alt: 'github icon',
+    link: 'https://github.com/peinan',
+  },
+  {
+    Comp: LinkedIn,
+    alt: 'linkedin icon',
+    link: 'https://www.linkedin.com/in/peinan-zhang-b5991994/',
+  },
+  {
+    Comp: Envelope,
+    alt: 'envelope icon',
+    link: 'mailto:zhang_peinan@cyberagent.co.jp',
+  },
+]

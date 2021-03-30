@@ -2,36 +2,10 @@ import Header from '../components/header'
 import sharedStyles from '../styles/shared.module.css'
 
 import ExtLink from '../components/ext-link'
+import { contacts } from '../lib/blog-helpers'
 
 import contactStyles from '../styles/contact.module.css'
 
-import GitHub from '../components/svgs/github'
-import Twitter from '../components/svgs/twitter'
-import Envelope from '../components/svgs/envelope'
-import LinkedIn from '../components/svgs/linkedin'
-
-const contacts = [
-  {
-    Comp: Twitter,
-    alt: 'twitter icon',
-    link: 'https://twitter.com/so1owingpixy',
-  },
-  {
-    Comp: GitHub,
-    alt: 'github icon',
-    link: 'https://github.com/peinan',
-  },
-  {
-    Comp: LinkedIn,
-    alt: 'linkedin icon',
-    link: 'https://www.linkedin.com/in/peinan-zhang-b5991994/',
-  },
-  {
-    Comp: Envelope,
-    alt: 'envelope icon',
-    link: 'mailto:zhang_peinan@cyberagent.co.jp',
-  },
-]
 const publications = [
   {
     title:
@@ -396,13 +370,13 @@ export default () => (
               className={sharedStyles.postCard}
               style={{ minWidth: '250px', width: '250px' }}
             >
-              <h3>Camera</h3>
+              <h3>Design</h3>
             </div>
             <div
               className={sharedStyles.postCard}
               style={{ minWidth: '250px', width: '250px' }}
             >
-              <h3>Design</h3>
+              <h3>Camera</h3>
             </div>
             <div
               className={sharedStyles.postCard}
