@@ -480,10 +480,12 @@ export default () => (
               <div className={sharedStyles.lead}>Master's Course</div>
               <div className={sharedStyles.lead}>2014-04 ~ 2016-04</div>
               <p className={sharedStyles.desc}>
-                When I was in B3, I met Prof. Komachi, who would have a great
-                influence on my later life. As one of the first students, I was
-                assigned to <a href={'http://cl.sd.tmu.ac.jp/'}>Komachi lab</a>{' '}
-                and was fascinated by NLP and other AI technologies.
+                When I was in B3, I met{' '}
+                <a href={'http://cl.sd.tmu.ac.jp/~komachi/'}>Prof. Komachi</a>,
+                who would have a great influence on my later life. As one of the
+                first students, I was assigned to{' '}
+                <a href={'http://cl.sd.tmu.ac.jp/'}>Komachi lab</a> and was
+                fascinated by NLP and other AI technologies.
               </p>
             </div>
             <div className={sharedStyles.postCard} style={{ width: '300px' }}>
