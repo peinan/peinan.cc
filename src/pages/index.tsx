@@ -158,18 +158,34 @@ function build_publications(data) {
 const articles = [
   {
     title:
+      'AI Lab、自然言語処理分野のトップカンファレンス「NAACL-HLT 2021」にて共著論文採択　− 広告効果を考慮した広告文生成手法を提案 −',
+    link: 'https://www.cyberagent.co.jp/news/detail/id=26075',
+    desc: (
+      <div>
+        <u>
+          <b>A press release</b>
+        </u>{' '}
+        announcing the acceptance of the paper on generating effective ad-text
+        to NAACL-HLT 2021's industry track
+      </div>
+    ),
+    media: 'CyberAgent Press Releases',
+    date: '2021-04-14',
+  },
+  {
+    title:
       '効果を出す「AIの共同研究」 東京工業大学 奥村・高村研究室と創る自然言語処理の未来',
     link: 'https://www.cyberagent.co.jp/way/features/list/detail/id=25604',
     desc: (
       <div>
         <u>
-          <b>An article</b>
+          <b>A press release</b>
         </u>{' '}
         about an interview on joint research with the Tokyo Institute of
-        Technology.
+        Technology
       </div>
     ),
-    media: 'CyberAgent Blog',
+    media: 'CyberAgent Press Releases',
     date: '2020-12-23',
   },
   {
@@ -181,11 +197,43 @@ const articles = [
         <u>
           <b>A video</b>
         </u>{' '}
-        describing AI products developed in CyberAgent.
+        describing AI products developed in CyberAgent
       </div>
     ),
     media: 'YouTube',
     date: '2020-12-03',
+  },
+  {
+    title:
+      'AI事業本部「極予測AIチーム」のデータサイエンティストによる論文が人工知能学会全国大会(JSAI2020)において優秀賞を受賞',
+    link: 'https://www.cyberagent.co.jp/techinfo/news/detail/id=25008',
+    desc: (
+      <div>
+        <u>
+          <b>A press release</b>
+        </u>{' '}
+        announcing that our paper on keyword-based ad-text generation received
+        the JSAI Annual Conference Award
+      </div>
+    ),
+    media: 'CyberAgent Press Releases',
+    date: '2020-08-05',
+  },
+  {
+    title:
+      'AIで数億キーワードの品質スコアを自動で改善　効果の出せる広告テキストを自動生成「極予測TD」の提供を開始',
+    link: 'https://www.cyberagent.co.jp/news/detail/id=24670',
+    desc: (
+      <div>
+        <u>
+          <b>A press release</b>
+        </u>{' '}
+        about the product "KiwamiTD" I'm working on that uses NLP and AI
+        technologies to generate ad-texts
+      </div>
+    ),
+    media: 'CyberAgent Press Releases',
+    date: '2020-05-22',
   },
   {
     title: 'ウェブサービス事業者における研究開発インターン',
@@ -196,7 +244,7 @@ const articles = [
         <u>
           <b>A talk event</b>
         </u>{' '}
-        about research internships at web companies.
+        about research internships at web companies
       </div>
     ),
     media: 'テキストアナリティクス・シンポジウム',
@@ -210,7 +258,7 @@ const articles = [
         <u>
           <b>An article</b>
         </u>{' '}
-        reporting attendance of JSAI 2019.
+        reporting JSAI 2019
       </div>
     ),
     media: 'CyberAgent Blog',
@@ -225,7 +273,7 @@ const articles = [
         <u>
           <b>Presentation slides</b>
         </u>{' '}
-        describing the research on summarization.
+        describing the research on summarization
       </div>
     ),
     media: 'Paper Friday',
@@ -239,7 +287,7 @@ const articles = [
         <u>
           <b>An article</b>
         </u>{' '}
-        introducing useful features about JupyterLab.
+        introducing useful features about JupyterLab
       </div>
     ),
     media: 'CyberAgent Blog',
@@ -254,7 +302,7 @@ const articles = [
           <b>An article</b>
         </u>{' '}
         describing a matching system based on tweets, which used in Design
-        Scramble 2018.
+        Scramble 2018
       </div>
     ),
     media: 'CyberAgent Blog',
@@ -268,7 +316,7 @@ const articles = [
         <u>
           <b>Presentation slides</b>
         </u>{' '}
-        reporting attendance of ACL 2018.
+        reporting ACL 2018
       </div>
     ),
     media: 'テキストアナリティクス・シンポジウム',
@@ -282,7 +330,7 @@ const articles = [
         <u>
           <b>An article</b>
         </u>{' '}
-        reporting attendance of ACL 2018.
+        reporting ACL 2018
       </div>
     ),
     media: 'CyberAgent Blog',
@@ -296,7 +344,7 @@ const articles = [
         <u>
           <b>An article</b>
         </u>{' '}
-        reporting attendance of JSAI 2018.
+        reporting JSAI 2018
       </div>
     ),
     media: 'CyberAgent Blog',
