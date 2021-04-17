@@ -52,7 +52,9 @@ export async function getStaticProps({ params: { slug }, preview }) {
           `https://api.twitter.com/1/statuses/oembed.json?id=${tweetId}`
         )
         const json = await res.json()
-        properties.html = json.html.split('<script')[0]
+        properties.html = json.html
+          .split('<script')[0]
+          .replace('twitter-tweet', 'twitter-tweet tw-align-center')
         post.hasTweet = true
       } catch (_) {
         console.log(`Failed to get tweet embed for ${src}`)
@@ -419,6 +421,7 @@ const RenderPost = ({ post, redirect, preview }) => {
               if (properties.html) {
                 toRender.push(
                   <div
+                    className={'tweet'}
                     dangerouslySetInnerHTML={{ __html: properties.html }}
                     key={id}
                   />

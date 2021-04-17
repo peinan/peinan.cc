@@ -201,7 +201,7 @@ a.metaTitle:hover {
 }
 
 .post :global(h2) {
-  margin: 1.5rem 0 0.5rem;
+  margin: 2rem 0 1rem;
   padding-left: 0.6rem;
   font-weight: 700;
   font-size: var(--text-4xl);
@@ -215,7 +215,7 @@ a.metaTitle:hover {
 }
 
 .post :global(h3) {
-  margin: 0.9rem 0 0.5rem;
+  margin: 1.2rem 0 0.5rem;
   font-weight: 700;
   font-size: var(--text-3xl);
 }
@@ -373,4 +373,9 @@ a.metaTitle:hover {
 .post :global(.tweet) {
   margin: 2rem auto;
   text-align: center;
+}
+@media screen and (max-width: 599px) {
+  .post :global(.tweet) {
+    margin: 1.2rem auto;
+  }
 }
