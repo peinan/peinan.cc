@@ -372,7 +372,7 @@ code {
 }
 
 footer {
-  padding: 2em 0;
+  padding: 2em 0 0.5em;
   text-align: center;
 }
 footer h3 {
@@ -380,7 +380,7 @@ footer h3 {
 }
 footer .links {
   display: block;
-  margin: 1rem auto 2.5rem;
+  margin: 1rem auto 1.5rem;
   max-width: 500px;
   text-align: center;
 }
