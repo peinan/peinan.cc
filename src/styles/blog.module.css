@@ -1,4 +1,8 @@
 /* Meta Elements (title, date, tags) */
+.container {
+  margin: 0 auto 3rem;
+}
+
 .metaTitle {
   font-family: var(--font-sans-header);
   font-weight: 700;

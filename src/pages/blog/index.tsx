@@ -175,7 +175,7 @@ export default ({ posts = [], preview }) => {
         </h2>
       </div>
 
-      <div className="container mx-auto">
+      <div className={`container ${blogStyles.container}`}>
         <div className={blogStyles.inner}>
           <Masonry
             items={postCardItems}
