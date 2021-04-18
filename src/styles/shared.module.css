@@ -46,6 +46,18 @@
   margin: 0 auto 3rem;
   padding: 0 0.5rem 0.8rem;
 }
+
+.introLayoutSection .summary {
+  font-family: var(--font-sans-body);
+  font-size: var(--text-base);
+  color: var(--text-gray-600);
+  font-weight: 400;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  max-width: calc(720px + 10%);
+  text-align: justify;
+}
+
 .introLayout {
   text-align: center;
 }
@@ -169,6 +181,9 @@
 }
 
 @media screen and (max-width: 599px) {
+  .introLayoutSection .summary {
+    font-size: var(--text-base);
+  }
   .introLayout .postListCard {
     margin-bottom: 0.75rem;
   }

@@ -6,6 +6,129 @@ import { contacts } from '../lib/blog-helpers'
 
 import contactStyles from '../styles/contact.module.css'
 
+const summary =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare massa eget egestas purus viverra. Interdum varius sit amet mattis vulputate enim nulla aliquet. In nulla posuere sollicitudin aliquam ultrices sagittis orci a. Maecenas volutpat blandit aliquam etiam. Nisl pretium fusce id velit. Ultrices vitae auctor eu augue ut lectus arcu. Dictum sit amet justo donec. Rhoncus aenean vel elit scelerisque mauris pellentesque. Risus feugiat in ante metus. Nullam vehicula ipsum a arcu cursus vitae congue mauris rhoncus. Rhoncus urna neque viverra justo. Nullam ac tortor vitae purus. Cras adipiscing enim eu turpis egestas pretium aenean pharetra magna. At imperdiet dui accumsan sit amet nulla. A pellentesque sit amet porttitor eget. Convallis a cras semper auctor neque vitae tempus. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat.'
+const interests = [
+  {
+    title: 'Design',
+    body: '',
+  },
+  {
+    title: 'Photography',
+    body: '',
+  },
+  {
+    title: 'Football',
+    body: '',
+  },
+  {
+    title: 'Game',
+    body: '',
+  },
+  {
+    title: 'Music',
+    body: '',
+  },
+]
+const experience = [
+  {
+    title: 'CyberAgent, Inc.',
+    url: 'https://www.cyberagent.co.jp/',
+    subtitle: 'Research Scientist',
+    period_from: '2018-06',
+    period_to: 'present',
+    body: (
+      <>
+        I'm a Research Scientist at CyberAgent's{' '}
+        <a href={'https://cyberagent.ai/ailab/'}>AI Lab</a>, working on ad
+        generation and predicting ad effects. I use a wide range of NLP/ML
+        technologies, especially language generation including machine
+        translation and summarization, few-/zero-shot learning, and pre-trained
+        language model.
+      </>
+    ),
+  },
+  {
+    title: 'Yahoo! Japan, Inc.',
+    url: 'https://about.yahoo.co.jp/',
+    subtitle: 'ML Engineer',
+    period_from: '2016-04',
+    period_to: '2018-04',
+    body: (
+      <>
+        I joined Yahoo! Japan as an ML engineer after graduating. In the push
+        notification team, I implemented a personalization feature using NLP/ML
+        and Hadoop for over ten millions of users, and deployed it as an
+        in-house application.
+      </>
+    ),
+  },
+  {
+    title: 'HRI Japan',
+    url: 'https://www.jp.honda-ri.com/index.html',
+    subtitle: 'Internship',
+    period_from: '2014-08',
+    period_to: '2014-09',
+    body: (
+      <>
+        I interned at Honda Research Institute (HRI) Japan for about two months
+        during my M1 year. There were two themes: (1) classification of speech
+        acts and (2) creation of a spoken language model using Nested Pitman-Yor
+        Language Model (NPYLM).
+      </>
+    ),
+  },
+]
+const education = [
+  {
+    title: 'Tokyo Metropolitan Univ.',
+    url: 'https://cs.sd.tmu.ac.jp/',
+    subtitle: "Master's Course",
+    period_from: '2014-04',
+    period_to: '2016-03',
+    body: (
+      <>
+        When I was in B3, I met{' '}
+        <a href={'http://cl.sd.tmu.ac.jp/~komachi/'}>Prof. Komachi</a>, who
+        would have a great influence on my later life. As one of the first
+        students, I was assigned to{' '}
+        <a href={'http://cl.sd.tmu.ac.jp/'}>Komachi lab</a> and was fascinated
+        by NLP and other AI technologies.
+      </>
+    ),
+  },
+  {
+    title: 'Tokyo Metropolitan Univ.',
+    url: 'https://www.tmu.ac.jp/',
+    subtitle: 'Undergraduate Course',
+    period_from: '2010-04',
+    period_to: '2014-03',
+    body: (
+      <>
+        Since my high school was a private school and the tuition was very
+        expensive, I could only go to a national or public school due to my
+        financial situation. However, I failed my first choice national
+        university in the first exam and somehow succeeded in passing TMU in the
+        second exam.
+      </>
+    ),
+  },
+  {
+    title: 'Kaijo High School',
+    url: 'https://www.kaijo.ed.jp/',
+    subtitle: 'General Course',
+    period_from: '2007-04',
+    period_to: '2010-03',
+    body: (
+      <>
+        I moved to Tokyo from Hiroshima when I entered high school. Kaijo High
+        School is one of the best private preparatory schools in Tokyo, but I
+        was so burnt out from the entrance examinations that I did not study
+        very hard.
+      </>
+    ),
+  },
+]
 const publications = [
   {
     title:
@@ -20,7 +143,7 @@ const publications = [
         *, Hiroya Takamura, Manabu Okumura
       </div>
     ),
-    conf: 'NAACL 2021 Industry Track',
+    conf: 'NAACL-HLT 2021 Industry Track',
   },
   {
     title:
@@ -132,30 +255,7 @@ const publications = [
     conf: 'Bachelor Thesis 2014',
   },
 ]
-
-function build_publications(data) {
-  var publications_array: any[] = []
-  for (var i = 0; i < data.length; i++) {
-    var d = data[i]
-    publications_array.push(
-      <div className={sharedStyles.postListCard}>
-        {d.link === null ? (
-          <h3>{d.title}</h3>
-        ) : (
-          <h3>
-            <a href={d.link}>{d.title}</a>
-          </h3>
-        )}
-        <div className={sharedStyles.author}>{d.authors}</div>
-        <div className={sharedStyles.conference}>{d.conf}</div>
-      </div>
-    )
-  }
-
-  return publications_array
-}
-
-const articles = [
+const related_materials = [
   {
     title:
       'AI Lab、自然言語処理分野のトップカンファレンス「NAACL-HLT 2021」にて共著論文採択　− 広告効果を考慮した広告文生成手法を提案 −',
@@ -165,7 +265,7 @@ const articles = [
         <u>
           <b>A press release</b>
         </u>{' '}
-        announcing the acceptance of the paper on generating effective ad-text
+        announcing the acceptance of our paper on generating effective ad-text
         to NAACL-HLT 2021's industry track
       </div>
     ),
@@ -179,10 +279,10 @@ const articles = [
     desc: (
       <div>
         <u>
-          <b>A press release</b>
+          <b>An interview</b>
         </u>{' '}
-        about an interview on joint research with the Tokyo Institute of
-        Technology
+        about the joint research with the Tokyo Institute of Technology, in
+        which I am participating
       </div>
     ),
     media: 'CyberAgent Press Releases',
@@ -197,7 +297,8 @@ const articles = [
         <u>
           <b>A video</b>
         </u>{' '}
-        describing AI products developed in CyberAgent
+        introducing the AI products developed by CyberAgent, Inc. that I am
+        engaged in
       </div>
     ),
     media: 'YouTube',
@@ -228,8 +329,8 @@ const articles = [
         <u>
           <b>A press release</b>
         </u>{' '}
-        about the product "KiwamiTD" I'm working on that uses NLP and AI
-        technologies to generate ad-texts
+        on "KiwamiTD", a product I am engaged in which generates ad-texts using
+        NLP technologies
       </div>
     ),
     media: 'CyberAgent Press Releases',
@@ -258,7 +359,7 @@ const articles = [
         <u>
           <b>An article</b>
         </u>{' '}
-        reporting JSAI 2019
+        I wrote that reports JSAI 2019
       </div>
     ),
     media: 'CyberAgent Blog',
@@ -273,7 +374,7 @@ const articles = [
         <u>
           <b>Presentation slides</b>
         </u>{' '}
-        describing the research on summarization
+        I created that explains a study on summarization
       </div>
     ),
     media: 'Paper Friday',
@@ -287,7 +388,7 @@ const articles = [
         <u>
           <b>An article</b>
         </u>{' '}
-        introducing useful features about JupyterLab
+        I wrote that introduces useful features of JupyterLab
       </div>
     ),
     media: 'CyberAgent Blog',
@@ -301,8 +402,8 @@ const articles = [
         <u>
           <b>An article</b>
         </u>{' '}
-        describing a matching system based on tweets, which used in Design
-        Scramble 2018
+        I co-wrote that describing a matching system based on tweets, which used
+        in Design Scramble 2018
       </div>
     ),
     media: 'CyberAgent Blog',
@@ -316,7 +417,7 @@ const articles = [
         <u>
           <b>Presentation slides</b>
         </u>{' '}
-        reporting ACL 2018
+        I created that reports ACL 2018
       </div>
     ),
     media: 'テキストアナリティクス・シンポジウム',
@@ -330,7 +431,7 @@ const articles = [
         <u>
           <b>An article</b>
         </u>{' '}
-        reporting ACL 2018
+        I wrote that reports ACL 2018
       </div>
     ),
     media: 'CyberAgent Blog',
@@ -344,14 +445,58 @@ const articles = [
         <u>
           <b>An article</b>
         </u>{' '}
-        reporting JSAI 2018
+        I wrote that reports JSAI 2018
       </div>
     ),
     media: 'CyberAgent Blog',
     date: '2018-06-18',
   },
 ]
-function build_articles(data) {
+
+function build_interests(data) {
+  return data.map(d => (
+    <div
+      className={sharedStyles.postCard}
+      style={{ minWidth: '250px', width: '250px' }}
+    >
+      <h3>{d.title}</h3>
+      <div className={sharedStyles.desc}>{d.body}</div>
+    </div>
+  ))
+}
+
+function build_history_card(data) {
+  return data.map(d => (
+    <div className={sharedStyles.postCard}>
+      <h3>
+        <a href={d.url}>{d.title}</a>
+      </h3>
+      <div className={sharedStyles.lead}>{d.subtitle}</div>
+      <div className={sharedStyles.lead}>
+        {d.period_from} ~ {d.period_to}
+      </div>
+      <p className={sharedStyles.desc}>{d.body}</p>
+    </div>
+  ))
+}
+
+function build_publications(data) {
+  return data.map(d => (
+    <div className={sharedStyles.postListCard}>
+      {d.link === null ? (
+        <h3>{d.title}</h3>
+      ) : (
+        <h3>
+          <a href={d.link}>{d.title}</a>
+        </h3>
+      )}
+      <div className={sharedStyles.author}>{d.authors}</div>
+      <div className={sharedStyles.conference}>{d.conf}</div>
+    </div>
+  ))
+}
+
+function build_related_materials(data) {
   return data.map(d => (
     <div className={sharedStyles.postListCard}>
       {d.link === null ? (
@@ -403,140 +548,32 @@ export default () => (
         })}
       </div>
     </div>
+
     <div className={sharedStyles.introOuterBlock}>
       <div className={sharedStyles.introLayout}>
         <div className={sharedStyles.introLayoutSection}>
+          <h2>Summary</h2>
+          <div className={sharedStyles.summary}>{summary}</div>
+        </div>
+
+        <div className={sharedStyles.introLayoutSection}>
           <h2>Interests</h2>
           <div className={sharedStyles.postCard__outer}>
-            <div
-              className={sharedStyles.postCard}
-              style={{ minWidth: '250px', width: '250px' }}
-            >
-              <h3>NLP/ML</h3>
-            </div>
-            <div
-              className={sharedStyles.postCard}
-              style={{ minWidth: '250px', width: '250px' }}
-            >
-              <h3>Design</h3>
-            </div>
-            <div
-              className={sharedStyles.postCard}
-              style={{ minWidth: '250px', width: '250px' }}
-            >
-              <h3>Camera</h3>
-            </div>
-            <div
-              className={sharedStyles.postCard}
-              style={{ minWidth: '250px', width: '250px' }}
-            >
-              <h3>Football</h3>
-            </div>
-            <div
-              className={sharedStyles.postCard}
-              style={{ minWidth: '250px', width: '250px' }}
-            >
-              <h3>Game</h3>
-            </div>
+            {build_interests(interests)}
           </div>
         </div>
 
         <div className={sharedStyles.introLayoutSection}>
           <h2>Experience</h2>
           <div className={sharedStyles.postCard__outer}>
-            <div className={sharedStyles.postCard}>
-              <h3>
-                <a href={'https://www.cyberagent.co.jp/'}>CyberAgent, Inc.</a>
-              </h3>
-              <div className={sharedStyles.lead}>Research Scientist</div>
-              <div className={sharedStyles.lead}>2018-06 ~ present</div>
-              <p className={sharedStyles.desc}>
-                I'm a Research Scientist at CyberAgent's{' '}
-                <a href={'https://cyberagent.ai/ailab/'}>AI Lab</a>, working on
-                ad generation and predicting ad effects. I use a wide range of
-                NLP/ML technologies, especially language generation including
-                machine translation and summarization, few-/zero-shot learning,
-                and pre-trained language model.
-              </p>
-            </div>
-
-            <div className={sharedStyles.postCard} style={{ width: '300px' }}>
-              <h3>
-                <a href={'https://about.yahoo.co.jp/'}>Yahoo! Japan, Inc.</a>
-              </h3>
-              <div className={sharedStyles.lead}>ML Engineer</div>
-              <div className={sharedStyles.lead}>2016-04 ~ 2018-04</div>
-              <p className={sharedStyles.desc}>
-                I joined Yahoo! Japan as an ML engineer after graduating. In the
-                push notification team, I implemented a personalization feature
-                using NLP/ML and Hadoop for over ten millions of users, and
-                deployed it as an in-house application.
-              </p>
-            </div>
-
-            <div className={sharedStyles.postCard} style={{ width: '300px' }}>
-              <h3>
-                <a href={'https://www.jp.honda-ri.com/index.html'}>HRI Japan</a>
-              </h3>
-              <div className={sharedStyles.lead}>Internship</div>
-              <div className={sharedStyles.lead}>2014-08 ~ 2014-09</div>
-              <p className={sharedStyles.desc}>
-                I interned at Honda Research Institute (HRI) Japan for about two
-                months during my M1 year. There were two themes: (1)
-                classification of speech acts and (2) creation of a spoken
-                language model using Nested Pitman-Yor Language Model (NPYLM).
-              </p>
-            </div>
+            {build_history_card(experience)}
           </div>
         </div>
 
         <div className={sharedStyles.introLayoutSection}>
           <h2>Education</h2>
           <div className={sharedStyles.postCard__outer}>
-            <div className={sharedStyles.postCard} style={{ width: '300px' }}>
-              <h3>
-                <a href={'https://cs.sd.tmu.ac.jp/'}>
-                  Tokyo Metropolitan Univ.
-                </a>
-              </h3>
-              <div className={sharedStyles.lead}>Master's Course</div>
-              <div className={sharedStyles.lead}>2014-04 ~ 2016-04</div>
-              <p className={sharedStyles.desc}>
-                When I was in B3, I met{' '}
-                <a href={'http://cl.sd.tmu.ac.jp/~komachi/'}>Prof. Komachi</a>,
-                who would have a great influence on my later life. As one of the
-                first students, I was assigned to{' '}
-                <a href={'http://cl.sd.tmu.ac.jp/'}>Komachi lab</a> and was
-                fascinated by NLP and other AI technologies.
-              </p>
-            </div>
-            <div className={sharedStyles.postCard} style={{ width: '300px' }}>
-              <h3>
-                <a href={'https://www.tmu.ac.jp/'}>Tokyo Metropolitan Univ.</a>
-              </h3>
-              <div className={sharedStyles.lead}>Undergraduate Course</div>
-              <div className={sharedStyles.lead}>2010-04 ~ 2014-03</div>
-              <p className={sharedStyles.desc}>
-                Since my high school was a private school and the tuition was
-                very expensive, I could only go to a national or public school
-                due to my financial situation. However, I failed my first choice
-                national university in the first exam and somehow succeeded in
-                passing TMU in the second exam.
-              </p>
-            </div>
-            <div className={sharedStyles.postCard} style={{ width: '300px' }}>
-              <h3>
-                <a href={'https://www.kaijo.ed.jp/'}>Kaijo High School</a>
-              </h3>
-              <div className={sharedStyles.lead}>General Course</div>
-              <div className={sharedStyles.lead}>2007-04 ~ 2010-03</div>
-              <p className={sharedStyles.desc}>
-                I moved to Tokyo from Hiroshima when I entered high school.
-                Kaijo High School is one of the best private preparatory schools
-                in Tokyo, but I was so burnt out from the entrance examinations
-                that I did not study very hard.
-              </p>
-            </div>
+            {build_history_card(education)}
           </div>
         </div>
 
@@ -548,9 +585,9 @@ export default () => (
         </div>
 
         <div className={sharedStyles.listLayoutSection}>
-          <h2>Articles & Talks</h2>
+          <h2>Related Materials</h2>
           <div className={sharedStyles.postListCard__outer}>
-            {build_articles(articles)}
+            {build_related_materials(related_materials)}
           </div>
         </div>
       </div>
