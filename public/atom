@@ -4,18 +4,18 @@
     <subtitle>Blog</subtitle>
     <link href="/atom" rel="self" type="application/rss+xml"/>
     <link href="/" />
-    <updated>2021-02-07T14:32:44.210Z</updated>
+    <updated>2021-05-01T15:59:13.768Z</updated>
     <id>My Notion Blog</id>
     <entry>
-      <id>/blog/2020-09-21-My-First-Post</id>
-      <title>My First Post</title>
-      <link href="/blog/2020-09-21-My-First-Post"/>
+      <id>/blog/2020-01-01-tesutesu</id>
+      <title>テステステステステステステステステステステステステステスト</title>
+      <link href="/blog/2020-01-01-tesutesu"/>
       <updated>null</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
-          <p>This is the first post for testing the displaying of Notion API and Notion Blog.</p>
+          <p>ロレム・イプサムの嘆き、トマト大好き学部のエリット、しかし時と活力、そのような労働と悲しみ、ブラインド行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であれば、そのような刺激の取り組み、彼女のうち、運動の利点を分注を邪魔されたする人が来ます。クピダタットのつるの痛みになりたい宿題に、批判されてきたら痛み、マグナ逃亡しても結果の喜びを生成しません。先例クピダタットブラックは先例していない、つまり、彼らはあなたの悩みに責任がある人の、一般的な義務を捨て、魂を癒しています。</p>
           <p class="more">
-            <a href="/blog/2020-09-21-My-First-Post">Read more</a>
+            <a href="/blog/2020-01-01-tesutesu">Read more</a>
           </p>
         </div>
       </content>
@@ -37,15 +37,15 @@
       
     </entry>
     <entry>
-      <id>/blog/2020-01-01-tesutesu</id>
-      <title>テステステステステステステステステステステステステステスト</title>
-      <link href="/blog/2020-01-01-tesutesu"/>
+      <id>/blog/2020-09-21-My-First-Post</id>
+      <title>フォーマットまとめ</title>
+      <link href="/blog/2020-09-21-My-First-Post"/>
       <updated>null</updated>
       <content type="xhtml">
         <div xmlns="http://www.w3.org/1999/xhtml">
-          <p>ロレム・イプサムの嘆き、トマト大好き学部のエリット、しかし時と活力、そのような労働と悲しみ、ブラインド行うにはいくつかの重要な事柄に座ります。長年にわたり、私は学区と長寿であれば、そのような刺激の取り組み、彼女のうち、運動の利点を分注を邪魔されたする人が来ます。クピダタットのつるの痛みになりたい宿題に、批判されてきたら痛み、マグナ逃亡しても結果の喜びを生成しません。先例クピダタットブラックは先例していない、つまり、彼らはあなたの悩みに責任がある人の、一般的な義務を捨て、魂を癒しています。</p>
+          <p>各 Notion ブロックのスタイルとブログのスタイルの比較用</p>
           <p class="more">
-            <a href="/blog/2020-01-01-tesutesu">Read more</a>
+            <a href="/blog/2020-09-21-My-First-Post">Read more</a>
           </p>
         </div>
       </content>

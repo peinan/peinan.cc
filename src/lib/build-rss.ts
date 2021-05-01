@@ -6,6 +6,8 @@ import { textBlock } from './notion/renderers'
 import getBlogIndex from './notion/getBlogIndex'
 import getNotionUsers from './notion/getNotionUsers'
 import { postIsPublished, getBlogLink } from './blog-helpers'
+import { loadEnvConfig } from '@next/env'
+import serverConstants from './notion/server-constants'
 
 // must use weird syntax to bypass auto replacing of NODE_ENV
 process.env['NODE' + '_ENV'] = 'production'
@@ -71,6 +73,11 @@ function createRSS(blogPosts = []) {
 }
 
 async function main() {
+  await loadEnvConfig(process.cwd())
+  serverConstants.NOTION_TOKEN = process.env.NOTION_TOKEN
+  serverConstants.BLOG_INDEX_ID = serverConstants.normalizeId(
+    process.env.BLOG_INDEX_ID
+  )
   const postsTable = await getBlogIndex(true)
   const neededAuthors = new Set<string>()
 
