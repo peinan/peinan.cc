@@ -42,7 +42,7 @@ export const getTagLink = (tag: string) => {
 
 export const getCoverUrl = (post: any) => {
   const fallbackUrl =
-    'https://raw.githubusercontent.com/peinan/notion-blog/develop/public/og-image.png'
+    'https://raw.githubusercontent.com/peinan/peinan.cc/develop/public/og-image.png'
   return post.cover
     ? `/api/asset?assetUrl=${encodeURIComponent(
         post.cover.url as any
