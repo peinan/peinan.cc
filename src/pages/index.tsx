@@ -533,15 +533,14 @@ const Index = () => (
       <h1 style={{ marginTop: 0 }}>Peinan Zhang</h1>
       <div className={contactStyles.name}>
         NLP Research Scientist @{' '}
-        <ExtLink href="https://cyberagent.ai/ailab/">
-          AI Lab of CyberAgent, Inc.
-        </ExtLink>
+        <a href="https://cyberagent.ai/ailab/">AI Lab of CyberAgent, Inc.</a>
       </div>
 
+      {/* Warning: Each child in a list should have a unique "key" prop. */}
       <div className={contactStyles.links}>
         {contacts.map(({ Comp, link, alt }) => {
           return (
-            <ExtLink href={link} aria-label={alt}>
+            <ExtLink key={link} href={link} aria-label={alt}>
               <Comp height={32} />
             </ExtLink>
           )

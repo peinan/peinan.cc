@@ -1,23 +1,32 @@
 import rpc, { values } from './rpc'
 
 export default async function getPageData(pageId: string) {
+  // a reasonable size limit for the largest blog post (1MB),
+  // as one chunk is about 10KB
+  const maximumChunkNumber = 100
   try {
-    const data = await loadPageChunk({ pageId })
-    const blocks = values(data.recordMap.block)
+    var chunkNumber = 0
+    var data = await loadPageChunk({ pageId, chunkNumber })
+    var blocks = data.recordMap.block
     let cover = {
       url: null,
       position: null,
       blockId: null,
     }
 
-    if (blocks[0] && blocks[0].value.content) {
-      // get cover
-      cover = getCover(blocks[0].value)
-      // remove table blocks
-      blocks.splice(0, 3)
+    while (data.cursor.stack.length !== 0 && chunkNumber < maximumChunkNumber) {
+      chunkNumber = chunkNumber + 1
+      data = await loadPageChunk({ pageId, chunkNumber, cursor: data.cursor })
+      blocks = Object.assign(blocks, data.recordMap.block)
     }
-
-    return { cover, blocks }
+    const blockArray = values(blocks)
+    if (blockArray[0] && blockArray[0].value.content) {
+      // get cover
+      cover = getCover(blockArray[0].value)
+      // remove table blocks
+      blockArray.splice(0, 3)
+    }
+    return { cover: cover, blocks: blockArray }
   } catch (err) {
     console.error(`Failed to load pageData for ${pageId}`, err)
     return { blocks: [] }
@@ -26,7 +35,7 @@ export default async function getPageData(pageId: string) {
 
 export function loadPageChunk({
   pageId,
-  limit = 100,
+  limit = 30,
   cursor = { stack: [] },
   chunkNumber = 0,
   verticalColumns = false,
