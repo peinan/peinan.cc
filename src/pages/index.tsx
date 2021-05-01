@@ -541,7 +541,7 @@ const Index = () => (
       <div className={contactStyles.links}>
         {contacts.map(({ Comp, link, alt }) => {
           return (
-            <ExtLink key={link} href={link} aria-label={alt}>
+            <ExtLink href={link} aria-label={alt}>
               <Comp height={32} />
             </ExtLink>
           )
