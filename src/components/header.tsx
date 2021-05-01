@@ -9,7 +9,7 @@ const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'Blog', page: '/blog' },
 ]
 
-export default ({ titlePre = '', coverUrl = undefined }) => {
+const Header = ({ titlePre = '', coverUrl = undefined }) => {
   const { pathname } = useRouter()
   const ogImageUrl = coverUrl
 
@@ -48,3 +48,5 @@ export default ({ titlePre = '', coverUrl = undefined }) => {
     </header>
   )
 }
+
+export default Header

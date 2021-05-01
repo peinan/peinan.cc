@@ -2,7 +2,7 @@ import ExtLink from './ext-link'
 import { contacts } from '../lib/blog-helpers'
 import sharedStyles from '../styles/shared.module.css'
 
-export default () => (
+const Footer = () => (
   <>
     <footer>
       <div className={sharedStyles.postLine}></div>
@@ -22,3 +22,5 @@ export default () => (
     </footer>
   </>
 )
+
+export default Footer

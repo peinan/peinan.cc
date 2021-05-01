@@ -21,7 +21,7 @@ export async function getStaticProps({ preview }) {
 
   const authorsToGet: Set<string> = new Set()
   const posts: any[] = Object.keys(postsTable)
-    .map(slug => {
+    .map((slug) => {
       const post = postsTable[slug]
       // remove draft posts in production
       if (!preview && !postIsPublished(post)) {
@@ -37,8 +37,8 @@ export async function getStaticProps({ preview }) {
 
   const { users } = await getNotionUsers([...authorsToGet])
 
-  posts.map(post => {
-    post.Authors = post.Authors.map(id => users[id].full_name)
+  posts.map((post) => {
+    post.Authors = post.Authors.map((id) => users[id].full_name)
   })
 
   return {
@@ -46,7 +46,7 @@ export async function getStaticProps({ preview }) {
       preview: preview || false,
       posts,
     },
-    unstable_revalidate: 10,
+    revalidate: 10,
   }
 }
 
@@ -142,14 +142,14 @@ const getPostCards = ({
       </p>
     </div>
     <div className="px-6 pb-3">
-      {tags.map(tag => {
+      {tags.map((tag) => {
         return <span className={`${blogStyles.metaTag}`}>{tag}</span>
       })}
     </div>
   </div>
 )
 
-export default ({ posts = [], preview }) => {
+const Index = ({ posts = [], preview }) => {
   const [postCardItems] = React.useState(() => getPostCardItems(posts))
 
   return (
@@ -189,3 +189,5 @@ export default ({ posts = [], preview }) => {
     </>
   )
 }
+
+export default Index

@@ -454,7 +454,7 @@ const related_materials = [
 ]
 
 function build_interests(data) {
-  return data.map(d => (
+  return data.map((d) => (
     <div
       className={sharedStyles.postCard}
       style={{ minWidth: '250px', width: '250px' }}
@@ -466,7 +466,7 @@ function build_interests(data) {
 }
 
 function build_history_card(data) {
-  return data.map(d => (
+  return data.map((d) => (
     <div className={sharedStyles.postCard}>
       <h3>
         <a href={d.url}>{d.title}</a>
@@ -481,7 +481,7 @@ function build_history_card(data) {
 }
 
 function build_publications(data) {
-  return data.map(d => (
+  return data.map((d) => (
     <div className={sharedStyles.postListCard}>
       {d.link === null ? (
         <h3>{d.title}</h3>
@@ -497,7 +497,7 @@ function build_publications(data) {
 }
 
 function build_related_materials(data) {
-  return data.map(d => (
+  return data.map((d) => (
     <div className={sharedStyles.postListCard}>
       {d.link === null ? (
         <h3>{d.title}</h3>
@@ -516,7 +516,7 @@ function build_related_materials(data) {
   ))
 }
 
-export default () => (
+const Index = () => (
   <>
     <Header titlePre="Home" />
 
@@ -594,3 +594,5 @@ export default () => (
     </div>
   </>
 )
+
+export default Index
