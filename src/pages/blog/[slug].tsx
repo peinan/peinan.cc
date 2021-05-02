@@ -12,9 +12,10 @@ import getBlogIndex from '../../lib/notion/getBlogIndex'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import {
   getBlogLink,
-  getDateTimeStr,
   getCoverUrl,
+  getDateTimeStr,
 } from '../../lib/blog-helpers'
+import ExtLink from '../../components/ext-link'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -268,11 +269,11 @@ const RenderPost = ({ post, redirect, preview }) => {
               <div className={blogStyles.bookmark}>
                 <div>
                   <div style={{ display: 'flex' }}>
-                    <a
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <ExtLink
                       className={blogStyles.bookmarkContentsWrapper}
-                      href={link}
+                      href={link[0][0]}
+                      ga-category={'Post'}
+                      ga-label={title[0][0]}
                     >
                       <div
                         role="button"
@@ -306,7 +307,7 @@ const RenderPost = ({ post, redirect, preview }) => {
                           </div>
                         </div>
                       </div>
-                    </a>
+                    </ExtLink>
                   </div>
                 </div>
               </div>

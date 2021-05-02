@@ -40,9 +40,14 @@ const experience = [
     body: (
       <>
         I'm a Research Scientist at CyberAgent's{' '}
-        <a href={'https://cyberagent.ai/ailab/'}>AI Lab</a>, working on ad
-        generation and predicting ad effects. I use a wide range of NLP/ML
-        technologies, especially language generation including machine
+        <ExtLink
+          href={'https://cyberagent.ai/ailab/'}
+          ga-category={'Experience'}
+        >
+          AI Lab
+        </ExtLink>
+        , working on ad generation and predicting ad effects. I use a wide range
+        of NLP/ML technologies, especially language generation including machine
         translation and summarization, few-/zero-shot learning, and pre-trained
         language model.
       </>
@@ -86,16 +91,7 @@ const education = [
     subtitle: "Master's Course",
     period_from: '2014-04',
     period_to: '2016-03',
-    body: (
-      <>
-        When I was in B3, I met{' '}
-        <a href={'http://cl.sd.tmu.ac.jp/~komachi/'}>Prof. Komachi</a>, who
-        would have a great influence on my later life. As one of the first
-        students, I was assigned to{' '}
-        <a href={'http://cl.sd.tmu.ac.jp/'}>Komachi lab</a> and was fascinated
-        by NLP and other AI technologies.
-      </>
-    ),
+    body: <></>,
   },
   {
     title: 'Tokyo Metropolitan Univ.',
@@ -105,11 +101,19 @@ const education = [
     period_to: '2014-03',
     body: (
       <>
-        Since my high school was a private school and the tuition was very
-        expensive, I could only go to a national or public school due to my
-        financial situation. However, I failed my first choice national
-        university in the first exam and somehow succeeded in passing TMU in the
-        second exam.
+        When I in my junior year of university, I met{' '}
+        <ExtLink
+          href={'http://cl.sd.tmu.ac.jp/~komachi/'}
+          ga-category={'Education'}
+        >
+          Prof. Komachi
+        </ExtLink>
+        , who would have a great influence on my later life. I was assigned to{' '}
+        <ExtLink href={'http://cl.sd.tmu.ac.jp/'} ga-category={'Education'}>
+          Komachi lab
+        </ExtLink>{' '}
+        as the first generation student and was fascinated by NLP and other AI
+        technologies.
       </>
     ),
   },
@@ -121,10 +125,9 @@ const education = [
     period_to: '2010-03',
     body: (
       <>
-        I moved to Tokyo from Hiroshima when I entered high school. Kaijo High
-        School is one of the best private preparatory schools in Tokyo, but I
-        was so burnt out from the entrance examinations that I did not study
-        very hard.
+        I moved from Hiroshima Pref. to Tokyo after graduating from junior high
+        school, and entered Kaijo High School, one of the best private schools
+        in Tokyo.
       </>
     ),
   },
@@ -465,11 +468,13 @@ function build_interests(data) {
   ))
 }
 
-function build_history_card(data) {
+function build_history_card(data, ga_category) {
   return data.map((d) => (
     <div className={sharedStyles.postCard}>
       <h3>
-        <a href={d.url}>{d.title}</a>
+        <ExtLink href={d.url} ga-category={ga_category}>
+          {d.title}
+        </ExtLink>
       </h3>
       <div className={sharedStyles.lead}>{d.subtitle}</div>
       <div className={sharedStyles.lead}>
@@ -487,7 +492,9 @@ function build_publications(data) {
         <h3>{d.title}</h3>
       ) : (
         <h3>
-          <a href={d.link}>{d.title}</a>
+          <ExtLink href={d.link} ga-category={'Publications'}>
+            {d.title}
+          </ExtLink>
         </h3>
       )}
       <div className={sharedStyles.author}>{d.authors}</div>
@@ -503,7 +510,9 @@ function build_related_materials(data) {
         <h3>{d.title}</h3>
       ) : (
         <h3>
-          <a href={d.link}>{d.title}</a>
+          <ExtLink href={d.link} ga-category={'R. Materials'}>
+            {d.title}
+          </ExtLink>
         </h3>
       )}
       <div className={sharedStyles.author}>{d.desc}</div>
@@ -516,82 +525,91 @@ function build_related_materials(data) {
   ))
 }
 
-const Index = () => (
-  <>
-    <Header titlePre="Home" />
+const Index = () => {
+  return (
+    <>
+      <Header titlePre="Home" />
 
-    <div className={sharedStyles.layout}>
-      <div className={contactStyles.avatar}>
-        <img
-          className={contactStyles.icon}
-          src="/myicon.jpeg"
-          alt="peinan"
-          height={60}
-        />
-      </div>
-
-      <h1 style={{ marginTop: 0 }}>Peinan Zhang</h1>
-      <div className={contactStyles.name}>
-        NLP Research Scientist @{' '}
-        <a href="https://cyberagent.ai/ailab/">AI Lab of CyberAgent, Inc.</a>
-      </div>
-
-      {/* Warning: Each child in a list should have a unique "key" prop. */}
-      <div className={contactStyles.links}>
-        {contacts.map(({ Comp, link, alt }) => {
-          return (
-            <ExtLink key={link} href={link} aria-label={alt}>
-              <Comp height={32} />
-            </ExtLink>
-          )
-        })}
-      </div>
-    </div>
-
-    <div className={sharedStyles.introOuterBlock}>
-      <div className={sharedStyles.introLayout}>
-        <div className={sharedStyles.introLayoutSection}>
-          <h2>Summary</h2>
-          <div className={sharedStyles.summary}>{summary}</div>
+      <div className={sharedStyles.layout}>
+        <div className={contactStyles.avatar}>
+          <img
+            className={contactStyles.icon}
+            src="/myicon.jpeg"
+            alt="peinan"
+            height={60}
+          />
         </div>
 
-        <div className={sharedStyles.introLayoutSection}>
-          <h2>Interests</h2>
-          <div className={sharedStyles.postCard__outer}>
-            {build_interests(interests)}
-          </div>
+        <h1 style={{ marginTop: 0 }}>Peinan Zhang</h1>
+        <div className={contactStyles.name}>
+          NLP Research Scientist @{' '}
+          <ExtLink href="https://cyberagent.ai/ailab/" ga-category={'Profile'}>
+            AI Lab of CyberAgent, Inc.
+          </ExtLink>
         </div>
 
-        <div className={sharedStyles.introLayoutSection}>
-          <h2>Experience</h2>
-          <div className={sharedStyles.postCard__outer}>
-            {build_history_card(experience)}
-          </div>
-        </div>
-
-        <div className={sharedStyles.introLayoutSection}>
-          <h2>Education</h2>
-          <div className={sharedStyles.postCard__outer}>
-            {build_history_card(education)}
-          </div>
-        </div>
-
-        <div className={sharedStyles.listLayoutSection}>
-          <h2>Publications</h2>
-          <div className={sharedStyles.postListCard__outer}>
-            {build_publications(publications)}
-          </div>
-        </div>
-
-        <div className={sharedStyles.listLayoutSection}>
-          <h2>Related Materials</h2>
-          <div className={sharedStyles.postListCard__outer}>
-            {build_related_materials(related_materials)}
-          </div>
+        {/* Warning: Each child in a list should have a unique "key" prop. */}
+        <div className={contactStyles.links}>
+          {contacts.map(({ Comp, link, alt }) => {
+            return (
+              <ExtLink
+                key={link}
+                href={link}
+                aria-label={alt}
+                ga-category={'Profile'}
+              >
+                <Comp height={32} />
+              </ExtLink>
+            )
+          })}
         </div>
       </div>
-    </div>
-  </>
-)
+
+      <div className={sharedStyles.introOuterBlock}>
+        <div className={sharedStyles.introLayout}>
+          <div className={sharedStyles.introLayoutSection}>
+            <h2>Summary</h2>
+            <div className={sharedStyles.summary}>{summary}</div>
+          </div>
+
+          <div className={sharedStyles.introLayoutSection}>
+            <h2>Interests</h2>
+            <div className={sharedStyles.postCard__outer}>
+              {build_interests(interests)}
+            </div>
+          </div>
+
+          <div className={sharedStyles.introLayoutSection}>
+            <h2>Experience</h2>
+            <div className={sharedStyles.postCard__outer}>
+              {build_history_card(experience, 'Experience')}
+            </div>
+          </div>
+
+          <div className={sharedStyles.introLayoutSection}>
+            <h2>Education</h2>
+            <div className={sharedStyles.postCard__outer}>
+              {build_history_card(education, 'Education')}
+            </div>
+          </div>
+
+          <div className={sharedStyles.listLayoutSection}>
+            <h2>Publications</h2>
+            <div className={sharedStyles.postListCard__outer}>
+              {build_publications(publications)}
+            </div>
+          </div>
+
+          <div className={sharedStyles.listLayoutSection}>
+            <h2>Related Materials</h2>
+            <div className={sharedStyles.postListCard__outer}>
+              {build_related_materials(related_materials)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
 
 export default Index

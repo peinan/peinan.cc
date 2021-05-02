@@ -6,9 +6,9 @@ import blogStyles from '../../styles/blog.module.css'
 
 import {
   getBlogLink,
+  getCoverUrl,
   getDateTimeStr,
   postIsPublished,
-  getCoverUrl,
 } from '../../lib/blog-helpers'
 import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'

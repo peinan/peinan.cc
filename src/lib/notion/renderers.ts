@@ -16,6 +16,7 @@ function applyTags(tags = [], children, noPTag = false, key) {
     }
     if (tagName === 'a') {
       props.href = tag[1]
+      props['ga-category'] = 'Post'
     }
     if (tagName === 'e') {
       tagName = components.Equation

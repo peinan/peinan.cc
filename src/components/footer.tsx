@@ -10,7 +10,12 @@ const Footer = () => (
       <div className={'links'}>
         {contacts.map(({ Comp, link, alt }) => {
           return (
-            <ExtLink key={link} href={link} aria-label={alt}>
+            <ExtLink
+              key={link}
+              href={link}
+              aria-label={alt}
+              ga-category={'Footer'}
+            >
               <Comp height={24} />
             </ExtLink>
           )
