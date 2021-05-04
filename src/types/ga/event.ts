@@ -1,7 +1,7 @@
-type ClickEvent = {
-  action: 'click'
+type ExtLinkEvent = {
+  action: 'extlink'
   category: string
   label: string
 }
 
-export type Event = ClickEvent
+export type Event = ExtLinkEvent

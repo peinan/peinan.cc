@@ -16,8 +16,8 @@ const ExtLink = (props) => {
     }
 
     gtag.event({
-      action: 'click',
-      category: `ExtLink - ${gaCategory}`,
+      action: 'extlink',
+      category: gaCategory,
       label: gaLabel,
     })
   }
