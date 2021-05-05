@@ -9,11 +9,6 @@
   line-height: 1.55rem;
   transition: all 0.3s;
 }
-@media screen and (max-width: 599px) {
-  .metaTitle {
-    line-height: 1.55rem;
-  }
-}
 a.metaTitle {
   font-size: var(--text-2xl);
 }
@@ -25,21 +20,9 @@ a.metaTitle:hover {
   margin-top: calc(3rem + 20px);
   margin-bottom: 3rem;
 }
-@media screen and (max-width: 599px) {
-  .post .metaTitle {
-    font-size: var(--text-3xl);
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-  }
-}
 
 .metaDate_outer {
   margin-bottom: 0.1rem;
-}
-@media screen and (max-width: 599px) {
-  .metaDate_outer {
-    margin-bottom: 0;
-  }
 }
 .metaDate {
   font-family: var(--font-sans-body);
@@ -88,12 +71,6 @@ a.metaTitle:hover {
   margin-left: 1.15rem;
   margin-right: 1.15rem;
 }
-@media screen and (max-width: 599px) {
-  .inner {
-    margin-left: 0.9rem;
-    margin-right: 0.9rem;
-  }
-}
 
 .postCard {
   overflow: hidden;
@@ -108,11 +85,6 @@ a.metaTitle:hover {
 
 .postCard_inner {
   padding: 1rem 1.5rem;
-}
-@media screen and (max-width: 599px) {
-  .postCard_inner {
-    padding: 1rem 1.2rem;
-  }
 }
 
 .postCardImg {
@@ -211,35 +183,17 @@ a.metaTitle:hover {
   font-size: var(--text-4xl);
   border-left: solid 5px var(--text-base-color);
 }
-@media screen and (max-width: 599px) {
-  .post :global(h2) {
-    margin: 1.2rem 0 0.4rem;
-    font-size: var(--text-2xl);
-  }
-}
 
 .post :global(h3) {
   margin: 1.2rem 0 0.5rem;
   font-weight: 700;
   font-size: var(--text-3xl);
 }
-@media screen and (max-width: 599px) {
-  .post :global(h3) {
-    margin: 0.75rem 0 0.4rem;
-    font-size: var(--text-xl);
-  }
-}
 
 .post :global(h4) {
   margin: 0.7rem 0 0.4rem;
   font-weight: 700;
   font-size: var(--text-xl);
-}
-@media screen and (max-width: 599px) {
-  .post :global(h4) {
-    margin: 0.5rem 0 0.3rem;
-    font-size: var(--text-lg);
-  }
 }
 
 .post .headingIcon {
@@ -302,12 +256,6 @@ a.metaTitle:hover {
   font-size: var(--text-lg);
   font-weight: 300;
 }
-@media screen and (max-width: 599px) {
-  .post ul,
-  .post ol {
-    font-size: var(--text-base);
-  }
-}
 .post ul li {
   padding-left: 0.1rem;
   position: relative;
@@ -337,11 +285,6 @@ a.metaTitle:hover {
   font-size: var(--text-lg);
   font-weight: 300;
 }
-@media screen and (max-width: 599px) {
-  .post :global(.callout) {
-    font-size: var(--text-base);
-  }
-}
 .post :global(.callout .text) {
   margin-left: 8px;
 }
@@ -359,11 +302,6 @@ a.metaTitle:hover {
   font-size: var(--text-lg);
   font-weight: 300;
 }
-@media screen and (max-width: 599px) {
-  .post blockquote div {
-    font-size: var(--text-base);
-  }
-}
 
 .post :global(video),
 .post :global(img),
@@ -377,11 +315,6 @@ a.metaTitle:hover {
 .post :global(.tweet) {
   margin: 2rem auto;
   text-align: center;
-}
-@media screen and (max-width: 599px) {
-  .post :global(.tweet) {
-    margin: 1.2rem auto;
-  }
 }
 
 .bookmark {
@@ -495,4 +428,50 @@ a.metaTitle:hover {
   border-radius: 1px;
   width: 100%;
   height: 100%;
+}
+
+@media screen and (max-width: 700px) {
+  .metaTitle {
+    line-height: 1.55rem;
+  }
+  .post .metaTitle {
+    font-size: var(--text-3xl);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .metaDate_outer {
+    margin-bottom: 0;
+  }
+  .inner {
+    margin-left: 0.9rem;
+    margin-right: 0.9rem;
+  }
+  .postCard_inner {
+    padding: 1rem 1.2rem;
+  }
+  .post :global(h2) {
+    margin: 1.2rem 0 0.4rem;
+    font-size: var(--text-2xl);
+  }
+  .post :global(h3) {
+    margin: 0.75rem 0 0.4rem;
+    font-size: var(--text-xl);
+  }
+  .post :global(h4) {
+    margin: 0.5rem 0 0.3rem;
+    font-size: var(--text-lg);
+  }
+  .post ul,
+  .post ol {
+    font-size: var(--text-base);
+  }
+  .post :global(.callout) {
+    font-size: var(--text-base);
+  }
+  .post blockquote div {
+    font-size: var(--text-base);
+  }
+  .post :global(.tweet) {
+    margin: 1.2rem auto;
+  }
 }

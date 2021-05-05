@@ -129,7 +129,9 @@ const Index = () => {
     }[sectionRef]
   }
 
-  console.log('active section', activeSection)
+  if (process.env.NODE_ENV !== 'production') {
+    console.log('active section', activeSection)
+  }
 
   return (
     <>

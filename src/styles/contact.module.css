@@ -22,11 +22,6 @@
   text-align: center;
   margin: 3.5rem 0 1rem;
 }
-@media screen and (max-width: 599px) {
-  .avatar {
-    margin: 1rem 0;
-  }
-}
 
 .avatar .icon {
   height: 120px;
@@ -35,11 +30,6 @@
 
 .name {
   text-align: center;
-}
-@media screen and (max-width: 599px) {
-  .name {
-    font-size: var(--text-lg);
-  }
 }
 
 .name a {
@@ -52,4 +42,13 @@
 }
 .name a:hover {
   color: var(--text-gray-400);
+}
+
+@media screen and (max-width: 700px) {
+  .avatar {
+    margin: 2.25rem 0 1rem;
+  }
+  .name {
+    font-size: var(--text-lg);
+  }
 }

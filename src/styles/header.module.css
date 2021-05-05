@@ -1,23 +1,22 @@
 .header {
-  display: block;
   min-height: 64px;
-  padding: 1.1em 0 1.1em;
+  padding: 1.1em 6% 1.1em;
   text-align: center;
   letter-spacing: -0.02em;
   position: sticky;
   z-index: 200;
   overflow: hidden;
   top: 14px;
-  left: 20px;
-  right: 20px;
-  /*background-color: var(--text-gray-400);*/
-  /*box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);*/
   background: hsla(0, 0%, 100%, 0.8);
   backdrop-filter: saturate(180%) blur(16px);
   width: 80%;
   margin: 0 auto;
   border-radius: 32px;
   transition: all 0.3s;
+
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
 }
 
 .headerScroll {
@@ -26,7 +25,7 @@
 
 .header .headerContainer {
   margin: 0 auto;
-  max-width: calc(720px + 30%);
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -71,19 +70,23 @@
   align-content: stretch;
 }
 
-.header .menu {
-  font-family: var(--font-logo-main);
-  color: var(--text-gray-700);
+.header .menuIcon {
+  display: none;
 }
 
-.header ul {
+.header .navLinks {
   list-style: none;
-  padding: 0;
+  padding: 0 0 0.2rem;
 }
 
-.header ul li {
+.header li {
   display: inline-block;
   padding: 0 10px;
+}
+
+.header .navLink {
+  font-family: var(--font-logo-main);
+  color: var(--text-gray-700);
 }
 
 .header :global(a) {
@@ -97,8 +100,54 @@
   font-weight: 600;
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: 920px) {
   .header {
-    padding: 0.5em 0 0;
+    padding: 0.5em 1.75rem 0.5em;
+    width: 90%;
+  }
+  .header .logo {
+    font-size: var(--text-2xl);
+  }
+  .header .path {
+    font-size: var(--text-base);
+  }
+  .header .menu {
+    font-size: var(--text-base);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header .menuIcon {
+    display: flex;
+  }
+  .dropdownBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    margin: 0;
+  }
+  .dropdownLinks {
+    z-index: 200;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    border-radius: 16px;
+    width: 30%;
+    top: calc(3.8rem + 14px);
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: saturate(180%) blur(16px);
+    margin: 0 5% 0 0;
+    padding: 0.75rem 1.6rem 0.75rem 0;
+    font-family: var(--font-logo-main);
+    font-size: var(--text-xl);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  }
+  .dropdownLink {
+    margin: 0.1rem 0;
   }
 }
