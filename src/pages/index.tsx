@@ -7,6 +7,8 @@ import { contacts } from '../lib/blog-helpers'
 import contactStyles from '../styles/contact.module.css'
 
 import * as profile from '../components/profile-data'
+import { useRef } from 'react'
+import useScrollSpy from 'react-use-scrollspy'
 
 const LANG = 'en'
 
@@ -100,12 +102,41 @@ function build_related_materials(data) {
 }
 
 const Index = () => {
+  const sectionRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ]
+
+  const activeSection = useScrollSpy({
+    sectionElementRefs: sectionRefs,
+    offsetPx: -80,
+  })
+
+  const sectionRef2Title = (sectionRef) => {
+    return {
+      0: '',
+      1: 'Summary',
+      2: 'Experience',
+      3: 'Education',
+      4: 'Publications',
+      5: 'Related Materials',
+      6: 'Interests',
+    }[sectionRef]
+  }
+
+  console.log('active section', activeSection)
+
   return (
     <>
-      <Header titlePre="Home" />
+      <Header titlePre="About" subTitle={sectionRef2Title(activeSection)} />
 
       <div className={sharedStyles.layout}>
-        <div className={contactStyles.avatar}>
+        <div className={contactStyles.avatar} ref={sectionRefs[0]}>
           <img
             className={contactStyles.icon}
             src="/myicon.jpeg"
@@ -141,43 +172,55 @@ const Index = () => {
 
       <div className={sharedStyles.introOuterBlock}>
         <div className={sharedStyles.introLayout}>
-          <div className={sharedStyles.introLayoutSection}>
-            <h2>Summary</h2>
+          <div className={sharedStyles.introLayoutSection} ref={sectionRefs[1]}>
+            <h2>
+              <a id={'summary'}>Summary</a>
+            </h2>
             <p className={sharedStyles.summary}>
               {use_profile_data(profile.summary, LANG)}
             </p>
           </div>
 
-          <div className={sharedStyles.introLayoutSection}>
-            <h2>Experience</h2>
+          <div className={sharedStyles.introLayoutSection} ref={sectionRefs[2]}>
+            <h2>
+              <a id={'experience'}>Experience</a>
+            </h2>
             <div className={sharedStyles.postCard__outer}>
               {build_history_card(profile.experience, 'Experience')}
             </div>
           </div>
 
-          <div className={sharedStyles.introLayoutSection}>
-            <h2>Education</h2>
+          <div className={sharedStyles.introLayoutSection} ref={sectionRefs[3]}>
+            <h2>
+              <a id={'education'}>Education</a>
+            </h2>
             <div className={sharedStyles.postCard__outer}>
               {build_history_card(profile.education, 'Education')}
             </div>
           </div>
 
-          <div className={sharedStyles.listLayoutSection}>
-            <h2>Publications</h2>
+          <div className={sharedStyles.listLayoutSection} ref={sectionRefs[4]}>
+            <h2>
+              <a id={'publications'}>Publications</a>
+            </h2>
             <div className={sharedStyles.postListCard__outer}>
               {build_publications(profile.publications)}
             </div>
           </div>
 
-          <div className={sharedStyles.listLayoutSection}>
-            <h2>Related Materials</h2>
+          <div className={sharedStyles.listLayoutSection} ref={sectionRefs[5]}>
+            <h2>
+              <a id={'related-materials'}>Related Materials</a>
+            </h2>
             <div className={sharedStyles.postListCard__outer}>
               {build_related_materials(profile.related_materials)}
             </div>
           </div>
 
-          <div className={sharedStyles.introLayoutSection}>
-            <h2>Interests</h2>
+          <div className={sharedStyles.introLayoutSection} ref={sectionRefs[6]}>
+            <h2>
+              <a id={'interests'}>Interests</a>
+            </h2>
             <div className={sharedStyles.postCard__outer}>
               {build_interests(profile.interests)}
             </div>

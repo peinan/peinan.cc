@@ -1,17 +1,36 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import ExtLink from './ext-link'
 import { useRouter } from 'next/router'
 import styles from '../styles/header.module.css'
+import { FiChevronRight } from 'react-icons/fi'
+import { useEffect } from 'react'
 
 const navItems: { label: string; page?: string; link?: string }[] = [
   { label: 'About', page: '/' },
   { label: 'Blog', page: '/blog' },
 ]
 
-const Header = ({ titlePre = '', coverUrl = undefined }) => {
-  const { pathname } = useRouter()
+const Header = ({ titlePre = '', subTitle = '', coverUrl = undefined }) => {
+  const router = useRouter()
   const ogImageUrl = coverUrl
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  })
+
+  const handleScroll = () => {
+    console.log('scroll', window.scrollY)
+    if (window.scrollY > 40) {
+      document.querySelector(
+        'header'
+      ).className = `${styles.header} ${styles.headerScroll}`
+    } else {
+      document.querySelector('header').className = `${styles.header}`
+    }
+  }
+
+  let crumbs = router.asPath.split('/')
 
   return (
     <header className={styles.header}>
@@ -30,21 +49,43 @@ const Header = ({ titlePre = '', coverUrl = undefined }) => {
         <meta name="twitter:image" content={ogImageUrl} />
       </Head>
 
-      <ul>
-        {navItems.map(({ label, page, link }) => (
-          <li key={label}>
-            {page ? (
-              <Link href={page}>
-                <a className={pathname === page ? 'active' : undefined}>
-                  {label}
-                </a>
-              </Link>
+      <div className={styles.headerContainer}>
+        <div className={styles.headerBlock}>
+          <div className={styles.logo}>
+            <Link href={'/'}>
+              <a>Peinan's Chronicle</a>
+            </Link>
+          </div>
+
+          <div className={styles.breadcrumb}>
+            <div className={styles.path}>
+              {navItems.filter((n) => n.page === '/' + crumbs[1])[0].label}
+            </div>
+            {subTitle !== '' ? (
+              <>
+                <div className={styles.caret}>
+                  <FiChevronRight size={16} strokeWidth={3} />
+                </div>
+                <div className={styles.path}>{subTitle}</div>
+              </>
             ) : (
-              <ExtLink href={link}>{label}</ExtLink>
+              ''
             )}
-          </li>
-        ))}
-      </ul>
+          </div>
+        </div>
+
+        <div className={styles.headerBlock}>
+          <ul>
+            {navItems.map(({ label, page, link }) => (
+              <li key={label}>
+                <Link href={page}>
+                  <a className={styles.menu}>{label}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </header>
   )
 }

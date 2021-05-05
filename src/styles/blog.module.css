@@ -22,7 +22,7 @@ a.metaTitle:hover {
 }
 .post .metaTitle {
   font-size: var(--text-5xl);
-  margin-top: 3rem;
+  margin-top: calc(3rem + 20px);
   margin-bottom: 3rem;
 }
 @media screen and (max-width: 599px) {

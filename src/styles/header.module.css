@@ -1,9 +1,79 @@
 .header {
   display: block;
   min-height: 64px;
-  padding: 2em 0 0;
+  padding: 1.1em 0 1.1em;
   text-align: center;
   letter-spacing: -0.02em;
+  position: sticky;
+  z-index: 200;
+  overflow: hidden;
+  top: 14px;
+  left: 20px;
+  right: 20px;
+  /*background-color: var(--text-gray-400);*/
+  /*box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);*/
+  background: hsla(0, 0%, 100%, 0.8);
+  backdrop-filter: saturate(180%) blur(16px);
+  width: 80%;
+  margin: 0 auto;
+  border-radius: 32px;
+  transition: all 0.3s;
+}
+
+.headerScroll {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+}
+
+.header .headerContainer {
+  margin: 0 auto;
+  max-width: calc(720px + 30%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+}
+
+.header .headerBlock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .logo {
+  font-family: var(--font-logo-main);
+  font-size: var(--text-3xl);
+  margin-right: 1.5rem;
+}
+
+.header .breadcrumb {
+  font-family: var(--font-sans-header);
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--text-gray-500);
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.breadcrumb .path {
+}
+
+.breadcrumb .caret {
+  margin: 0 0.75rem;
+  color: var(--text-gray-350);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.header .menu {
+  font-family: var(--font-logo-main);
+  color: var(--text-gray-700);
 }
 
 .header ul {
@@ -17,8 +87,8 @@
 }
 
 .header :global(a) {
-  color: var(--text-light-color);
-  font-family: 'Lobster';
+  color: var(--text-gray-700);
+  font-family: var(--font-logo-main);
   font-weight: 400;
 }
 
