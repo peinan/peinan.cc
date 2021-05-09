@@ -5,7 +5,8 @@ import styles from '../styles/header.module.css'
 import { FiChevronRight, FiMenu, FiX } from 'react-icons/fi'
 import { useEffect, useState } from 'react'
 import navItems from './nav-items'
-import HeaderDropdown from './header-dropdown'
+
+const minimumBP = 500
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -67,13 +68,7 @@ const Header = ({ titlePre = '', subTitle = '', coverUrl = undefined }) => {
 
   return (
     <>
-      <header
-        className={
-          windowSize.width < 500 && open
-            ? `${styles.header} ${styles.headerScroll}`
-            : styles.header
-        }
-      >
+      <header className={styles.header}>
         <Head>
           <title>{titlePre ? `${titlePre} |` : ''} Peinan's Chronicle</title>
 
@@ -134,7 +129,7 @@ const Header = ({ titlePre = '', subTitle = '', coverUrl = undefined }) => {
             </div>
 
             {/* Menu Links */}
-            {windowSize.width > 500 && (
+            {windowSize.width > minimumBP && (
               <ul className={styles.navLinks}>
                 {navItems.map(({ label, page, link }) => (
                   <li key={label}>
@@ -148,9 +143,27 @@ const Header = ({ titlePre = '', subTitle = '', coverUrl = undefined }) => {
           </div>
         </div>
       </header>
-      <header>
-        {windowSize.width <= 500 && open && HeaderDropdown(setOpen)}
-      </header>
+
+      {/* Dropdown Menu */}
+      <div
+        className={
+          windowSize.width < minimumBP && open
+            ? `${styles.headerDropdown} ${styles.headerScroll} ${styles.visible}`
+            : styles.headerDropdown
+        }
+      >
+        <ul className={styles.dropdownLinks}>
+          {navItems.map(({ label, page, link }) => (
+            <li key={label} className={styles.dropdownLink}>
+              <Link href={page}>
+                <a className={styles.navLink} onClick={() => setOpen(false)}>
+                  {label}
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
   )
 }
