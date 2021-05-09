@@ -41,7 +41,8 @@ export const getTagLink = (tag: string) => {
 }
 
 export const getCoverUrl = (post: any = '') => {
-  const fallbackUrl = '/og-images/1576x825.png'
+  const fallbackUrl =
+    'https://raw.githubusercontent.com/peinan/peinan.cc/develop/public/og-images/1576x825.png'
   return post.cover
     ? `/api/asset?assetUrl=${encodeURIComponent(
         post.cover.url as any
