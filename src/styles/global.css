@@ -110,7 +110,7 @@
   --geist-foreground: var(--pure-black);
 
   --special-block-bg: rgba(235, 236, 237, 0.6);
-  --special-block-radius: 0rem;
+  --special-block-radius: 12px;
 
   /* Font definition */
   --font-logo-main: 'Lobster', -apple-system, BlinkMacSystemFont, 'Segoe UI',

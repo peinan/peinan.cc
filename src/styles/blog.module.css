@@ -21,15 +21,39 @@ a.metaTitle:hover {
   margin-bottom: 3rem;
 }
 
-.metaDate_outer {
+.post .metaDate_outer {
   margin-bottom: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+}
+.postCard .metaDate_outer {
+  margin-bottom: 0.75rem;
+  margin-top: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
 }
 .metaDate {
   font-family: var(--font-sans-body);
   font-feature-settings: 'ss01', 'cv05', 'cv07', 'cv08', 'case', 'calt';
   font-weight: 300;
   color: var(--text-light-color);
-  padding-right: 0.5rem;
+  margin-right: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.metaDataIcon {
+  margin-top: 0.05rem;
+}
+.metaDateValue {
+  margin-left: 0.25rem;
 }
 .postCard .metaDate {
   font-size: var(--text-sm);
@@ -178,10 +202,14 @@ a.metaTitle:hover {
 
 .post :global(h2) {
   margin: 2rem 0 1rem;
-  padding-left: 0.6rem;
   font-weight: 700;
   font-size: var(--text-4xl);
-  border-left: solid 5px var(--text-base-color);
+}
+.post .h2Bar {
+  background-color: var(--text-gray-700);
+  width: 6px;
+  margin-right: 0.9rem;
+  border-radius: 5px;
 }
 
 .post :global(h3) {
@@ -272,6 +300,9 @@ a.metaTitle:hover {
   font-weight: 700;
 }
 
+.post .specialBlockIcon {
+  margin-top: 0.175rem;
+}
 .post :global(.callout) {
   padding: 16px 16px 16px 12px;
   margin: 0.4rem 0;
@@ -284,6 +315,7 @@ a.metaTitle:hover {
   background: var(--special-block-bg);
   font-size: var(--text-lg);
   font-weight: 300;
+  white-space: pre-wrap;
 }
 .post :global(.callout .text) {
   margin-left: 8px;
@@ -294,13 +326,15 @@ a.metaTitle:hover {
   margin: 0.4rem 0;
   display: flex;
   width: 100%;
-  border-radius: 0 var(--special-block-radius) var(--special-block-radius) 0;
+  border-radius: var(--special-block-radius);
   background: var(--special-block-bg);
-  border-left: 4px solid var(--text-base-color);
+  /*border-left: 4px solid var(--text-base-color);*/
+  white-space: pre-wrap;
 }
-.post blockquote div {
+.post :global(blockquote .text) {
   font-size: var(--text-lg);
   font-weight: 300;
+  margin-left: 8px;
 }
 
 .post :global(video),
@@ -310,6 +344,9 @@ a.metaTitle:hover {
   /*box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);*/
   max-width: 100%;
   display: block;
+}
+.post :global(img) {
+  border-radius: var(--special-block-radius);
 }
 
 .post :global(.tweet) {
@@ -349,7 +386,7 @@ a.metaTitle:hover {
   text-align: left;
   overflow: hidden;
   border: 1px solid #cacaca;
-  border-radius: 3px;
+  border-radius: var(--special-block-radius);
   position: relative;
   color: inherit;
   fill: inherit;

@@ -2,6 +2,8 @@ import Link from 'next/link'
 import React from 'react'
 import Header from '../../components/header'
 
+import { FiEdit3, FiRotateCw } from 'react-icons/fi'
+
 import blogStyles from '../../styles/blog.module.css'
 
 import {
@@ -129,13 +131,19 @@ const getPostCards = ({
           <a className={`${blogStyles.metaTitle}`}>{title}</a>
         </Link>
       </h3>
-      <div className="mb-3">
-        <span className={`${blogStyles.metaDate}`}>
-          <i className="lar la-clock"></i> {created_time}
-        </span>
-        <span className={`${blogStyles.metaDate}`}>
-          <i className="las la-sync"></i> {last_edited_time}
-        </span>
+      <div className={blogStyles.metaDate_outer}>
+        <div className={`${blogStyles.metaDate}`}>
+          <div className={blogStyles.metaDataIcon}>
+            <FiEdit3 size={13.5} strokeWidth={1} />
+          </div>
+          <div className={blogStyles.metaDateValue}>{created_time}</div>
+        </div>
+        <div className={`${blogStyles.metaDate}`}>
+          <div className={blogStyles.metaDataIcon}>
+            <FiRotateCw size={13.5} strokeWidth={1} />
+          </div>
+          <div className={blogStyles.metaDateValue}>{last_edited_time}</div>
+        </div>
       </div>
       <p className={`${blogStyles.plainText}`}>
         {imgSizeStr} {previewText}

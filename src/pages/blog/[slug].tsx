@@ -16,6 +16,8 @@ import {
   getDateTimeStr,
 } from '../../lib/blog-helpers'
 import ExtLink from '../../components/ext-link'
+import { FiEdit3, FiInfo, FiLink, FiRotateCw } from 'react-icons/fi'
+import { ImQuotesLeft } from 'react-icons/im'
 
 // Get the data for each blog post
 export async function getStaticProps({ params: { slug }, preview }) {
@@ -89,6 +91,13 @@ export async function getStaticPaths() {
 }
 
 const listTypes = new Set(['bulleted_list', 'numbered_list'])
+
+const useBlogIcon = (notionIcon) => {
+  let iconDict = {
+    ℹ️: <FiInfo />,
+  }
+  return notionIcon in iconDict ? iconDict[notionIcon] : notionIcon
+}
 
 const RenderPost = ({ post, redirect, preview }) => {
   const router = useRouter()
@@ -164,14 +173,23 @@ const RenderPost = ({ post, redirect, preview }) => {
       <div className={blogStyles.post}>
         <h1 className={`${blogStyles.metaTitle}`}>{post.Page || ''}</h1>
 
-        <div className={`${blogStyles.metaDate_outer}`}>
-          <span className={`${blogStyles.metaDate}`}>
-            <i className="lar la-clock"></i> {getDateTimeStr(post.created_time)}
-          </span>
-          <span className={`${blogStyles.metaDate}`}>
-            <i className="las la-sync"></i>{' '}
-            {getDateTimeStr(post.last_edited_time)}
-          </span>
+        <div className={blogStyles.metaDate_outer}>
+          <div className={`${blogStyles.metaDate}`}>
+            <div className={blogStyles.metaDataIcon}>
+              <FiEdit3 size={14} strokeWidth={1} />
+            </div>
+            <div className={blogStyles.metaDateValue}>
+              {getDateTimeStr(post.created_time)}
+            </div>
+          </div>
+          <div className={`${blogStyles.metaDate}`}>
+            <div className={blogStyles.metaDataIcon}>
+              <FiRotateCw size={14} strokeWidth={1} />
+            </div>
+            <div className={blogStyles.metaDateValue}>
+              {getDateTimeStr(post.last_edited_time)}
+            </div>
+          </div>
         </div>
 
         <div>
@@ -252,6 +270,7 @@ const RenderPost = ({ post, redirect, preview }) => {
 
             toRender.push(
               <Type key={id}>
+                {Type === 'h2' ? <div className={blogStyles.h2Bar} /> : <></>}
                 {textBlock(properties.title, true, id)}
                 <a
                   className={blogStyles.headingIcon}
@@ -259,9 +278,9 @@ const RenderPost = ({ post, redirect, preview }) => {
                   id={headingId}
                   style={{ color: 'inherit' }}
                 >
-                  <span>
-                    <i className="las la-link"></i>
-                  </span>
+                  <div>
+                    <FiLink size={14} strokeWidth={2} />
+                  </div>
                 </a>
               </Type>
             )
@@ -460,6 +479,9 @@ const RenderPost = ({ post, redirect, preview }) => {
             case 'quote': {
               toRender.push(
                 <blockquote key={id}>
+                  <div className={blogStyles.specialBlockIcon}>
+                    <ImQuotesLeft size={18} />
+                  </div>
                   <div className="text">
                     {textBlock(properties.title, true, id)}
                   </div>
@@ -471,7 +493,9 @@ const RenderPost = ({ post, redirect, preview }) => {
               toRender.push(
                 <div className="callout" key={id}>
                   {value.format?.page_icon && (
-                    <div>{value.format?.page_icon}</div>
+                    <div className={blogStyles.specialBlockIcon}>
+                      {useBlogIcon(value.format?.page_icon)}
+                    </div>
                   )}
                   <div className="text">
                     {textBlock(properties.title, true, id)}
