@@ -40,7 +40,7 @@ export const getTagLink = (tag: string) => {
   return `/blog/tag/${tag}`
 }
 
-export const getCoverUrl = (post: any) => {
+export const getCoverUrl = (post: any = '') => {
   const fallbackUrl =
     'https://raw.githubusercontent.com/peinan/peinan.cc/develop/public/og-image.png'
   return post.cover

@@ -162,7 +162,7 @@ const Index = ({ posts = [], preview }) => {
 
   return (
     <>
-      <Header titlePre="Blog" />
+      <Header titlePre="Blog" coverUrl={getCoverUrl()} />
       {preview && (
         <div className={blogStyles.previewAlertContainer}>
           <div className={blogStyles.previewAlert}>

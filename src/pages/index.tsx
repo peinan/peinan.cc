@@ -2,7 +2,7 @@ import Header from '../components/header'
 import sharedStyles from '../styles/shared.module.css'
 
 import ExtLink from '../components/ext-link'
-import { contacts } from '../lib/blog-helpers'
+import { contacts, getCoverUrl } from '../lib/blog-helpers'
 
 import contactStyles from '../styles/contact.module.css'
 
@@ -135,7 +135,11 @@ const Index = () => {
 
   return (
     <>
-      <Header titlePre="About" subTitle={sectionRef2Title(activeSection)} />
+      <Header
+        titlePre="About"
+        subTitle={sectionRef2Title(activeSection)}
+        coverUrl={getCoverUrl()}
+      />
 
       <div className={sharedStyles.layout}>
         <div className={contactStyles.avatar} ref={sectionRefs[0]}>
