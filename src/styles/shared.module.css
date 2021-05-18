@@ -55,6 +55,9 @@
   max-width: calc(720px + 10%);
   text-align: justify;
   white-space: pre-wrap;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 
 .introLayout {
@@ -147,6 +150,9 @@
   color: var(--text-gray-700);
   margin-top: 1rem;
   line-height: 1.2rem;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
 }
 .postCard .desc a {
   color: var(--text-gray-700);
