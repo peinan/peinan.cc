@@ -157,6 +157,7 @@ const RenderPost = ({ post, redirect, preview }) => {
       <Header
         titlePre={post.Page}
         subTitle={post.Page}
+        desc={post.preview}
         coverUrl={`https://${
           process.env.NODE_ENV === 'production' ? 'www' : 'stg'
         }.peinan.cc${getCoverUrl(post)}`}

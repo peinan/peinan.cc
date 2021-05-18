@@ -32,7 +32,12 @@ const useWindowSize = () => {
   return windowSize
 }
 
-const Header = ({ titlePre = '', subTitle = '', coverUrl = undefined }) => {
+const Header = ({
+  titlePre = '',
+  subTitle = '',
+  desc = '',
+  coverUrl = undefined,
+}) => {
   const router = useRouter()
   const ogImageUrl = coverUrl
   const windowSize = useWindowSize()
@@ -65,19 +70,25 @@ const Header = ({ titlePre = '', subTitle = '', coverUrl = undefined }) => {
   }
 
   let crumbs = router.asPath.split('/')
+  const title = `${titlePre ? `${titlePre} | ` : ''}Peinan's Chronicle`
+  console.log('env: ' + process.env.ENV_NAME)
 
   return (
     <>
       <header className={styles.header}>
         <Head>
-          <title>{titlePre ? `${titlePre} |` : ''} Peinan's Chronicle</title>
+          <title>{title}</title>
 
-          <meta name="title" content="Peinan's Chronicle" />
+          <meta name="title" content={title} />
           <meta
             name="description"
-            content="Tales about Peinan's daily life, development, science, and miscellaneous stuffs."
+            content={
+              desc
+                ? desc
+                : "Tales about Peinan's daily life, development, science, and miscellaneous stuffs."
+            }
           />
-          <meta property="og:title" content="Peinan's Chronicle" />
+          <meta property="og:title" content={title} />
           <meta property="og:image" content={ogImageUrl} />
           <meta name="twitter:site" content="@so1owingpixy" />
           <meta name="twitter:card" content="summary_large_image" />
