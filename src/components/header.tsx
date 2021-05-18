@@ -43,7 +43,7 @@ const Header = ({
   const windowSize = useWindowSize()
   const [open, setOpen] = useState(false)
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.ENV_NAME !== 'production') {
     console.log(windowSize)
     console.log('open', open)
   }
@@ -56,7 +56,7 @@ const Header = ({
   }, [])
 
   const handleScroll = () => {
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.ENV_NAME !== 'production') {
       console.log('scroll', window.scrollY)
     }
 

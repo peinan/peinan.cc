@@ -102,7 +102,7 @@ function getPostCardItems(posts) {
 
   if (
     numCardsPerLoad > postCardItems.length &&
-    process.env.NODE_ENV !== 'production'
+    process.env.ENV_NAME !== 'production'
   ) {
     postCardItems = postCardItems.concat(
       getDummyCardItems(numCardsPerLoad - postCardItems.length)

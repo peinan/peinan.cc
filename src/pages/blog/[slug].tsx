@@ -159,7 +159,7 @@ const RenderPost = ({ post, redirect, preview }) => {
         subTitle={post.Page}
         desc={post.preview}
         coverUrl={`https://${
-          process.env.NODE_ENV === 'production' ? 'www' : 'stg'
+          process.env.ENV_NAME === 'production' ? 'www' : 'stg'
         }.peinan.cc${getCoverUrl(post)}`}
       />
       {preview && (
@@ -532,7 +532,7 @@ const RenderPost = ({ post, redirect, preview }) => {
             }
             default:
               if (
-                process.env.NODE_ENV !== 'production' &&
+                process.env.ENV_NAME !== 'production' &&
                 !listTypes.has(type)
               ) {
                 console.log('unknown type', type)

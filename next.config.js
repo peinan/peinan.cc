@@ -17,7 +17,7 @@ try {
 }
 
 const warnOrError =
-  process.env.NODE_ENV !== 'production'
+  process.env.ENV_NAME !== 'production'
     ? console.warn
     : (msg) => {
         throw new Error(msg)
@@ -59,5 +59,8 @@ module.exports = {
       return entries
     }
     return cfg
+  },
+  env: {
+    ENV_NAME: process.env.ENV_NAME,
   },
 }

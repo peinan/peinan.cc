@@ -7,7 +7,7 @@ const ExtLink = (props) => {
       props['ga-label'] || props['aria-label'] || e.target.innerText
     let url: string = props.href
 
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.ENV_NAME !== 'production') {
       console.log({
         category: gaCategory,
         label: gaLabel,

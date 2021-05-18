@@ -8,7 +8,7 @@ function render(expression: string, displayMode: boolean): string {
     if (e instanceof ParseError) {
       result = e.message
     }
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.ENV_NAME !== 'production') {
       console.error(e)
     }
   }
