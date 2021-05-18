@@ -93,7 +93,7 @@
   color: var(--text-gray-700);
 }
 
-.header :global(a) {
+.header .menuList {
   color: var(--text-gray-700);
   font-family: var(--font-logo-main);
   font-weight: 400;

@@ -110,10 +110,17 @@ const Header = ({
               windowSize.width > 600 ? (
                 <div className={styles.breadcrumb}>
                   <div className={styles.path}>
-                    {
-                      navItems.filter((n) => n.page === '/' + crumbs[1])[0]
-                        .label
-                    }
+                    <Link
+                      href={
+                        navItems.filter((n) => n.page === '/' + crumbs[1])[0]
+                          .page
+                      }
+                    >
+                      {
+                        navItems.filter((n) => n.page === '/' + crumbs[1])[0]
+                          .label
+                      }
+                    </Link>
                   </div>
                   {subTitle !== '' && windowSize.width > 700 ? (
                     <>
@@ -143,7 +150,7 @@ const Header = ({
             {windowSize.width > minimumBP && (
               <ul className={styles.navLinks}>
                 {navItems.map(({ label, page, link }) => (
-                  <li key={label}>
+                  <li key={label} className={styles.menuList}>
                     <Link href={page}>
                       <a className={styles.navLink}>{label}</a>
                     </Link>
