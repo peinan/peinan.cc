@@ -1,6 +1,6 @@
 .links {
   display: block;
-  margin: 1rem auto;
+  margin: 1rem auto 2.5rem;
   max-width: 500px;
   text-align: center;
 }
@@ -20,11 +20,12 @@
 .avatar {
   display: block;
   text-align: center;
-  margin: 1rem 0;
+  margin: 3.5rem 0 1rem;
 }
 
-.avatar img {
+.avatar .icon {
   height: 120px;
+  border-radius: 45px 6px 45px 6px;
 }
 
 .name {
@@ -33,4 +34,21 @@
 
 .name a {
   color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.1rem;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  transition: color 0.3s;
+}
+.name a:hover {
+  color: var(--text-gray-400);
+}
+
+@media screen and (max-width: 700px) {
+  .avatar {
+    margin: 2.25rem 0 1rem;
+  }
+  .name {
+    font-size: var(--text-lg);
+  }
 }

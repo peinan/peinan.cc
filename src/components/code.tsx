@@ -25,10 +25,11 @@ const Code = ({ children, language = 'javascript' }) => {
           overflow: auto;
           display: block;
           padding: 0.8rem;
+          margin: 0.4rem 0;
           line-height: 1.5;
-          background: #f5f5f5;
-          font-size: 0.75rem;
-          border-radius: var(--radius);
+          background: var(--special-block-bg);
+          font-size: var(--text-tiny);
+          border-radius: var(--special-block-radius);
         }
       `}</style>
     </>

@@ -29,7 +29,7 @@ export default async function loadTable(collectionBlock: any, isPosts = false) {
       row.id = entry.value.id
     }
 
-    schemaKeys.forEach(key => {
+    schemaKeys.forEach((key) => {
       // might be undefined
       let val = props[key] && props[key][0][0]
 
@@ -89,6 +89,13 @@ export default async function loadTable(collectionBlock: any, isPosts = false) {
 
     // auto-generate slug from title
     row.Slug = normalizeSlug(row.Slug || slugger.slug(row.Page || ''))
+
+    // auto-insert created_time and last_edited_time
+    row.created_time = entry.value.created_time
+    row.last_edited_time = entry.value.last_edited_time
+
+    // get Tags
+    row.Tags = row.Tags ? row.Tags.split(',') : []
 
     const key = row.Slug
     if (isPosts && !key) continue

@@ -17,9 +17,9 @@ try {
 }
 
 const warnOrError =
-  process.env.NODE_ENV !== 'production'
+  process.env.ENV_NAME !== 'production'
     ? console.warn
-    : msg => {
+    : (msg) => {
         throw new Error(msg)
       }
 
@@ -42,8 +42,9 @@ if (!BLOG_INDEX_ID) {
 }
 
 module.exports = {
-  target: 'experimental-serverless-trace',
-
+  future: {
+    webpack5: true,
+  },
   webpack(cfg, { dev, isServer }) {
     // only compile build-rss in production server build
     if (dev || !isServer) return cfg
@@ -54,9 +55,12 @@ module.exports = {
     const originalEntry = cfg.entry
     cfg.entry = async () => {
       const entries = { ...(await originalEntry()) }
-      entries['./scripts/build-rss.js'] = './src/lib/build-rss.ts'
+      entries['build-rss.js'] = './src/lib/build-rss.ts'
       return entries
     }
     return cfg
+  },
+  env: {
+    ENV_NAME: process.env.ENV_NAME,
   },
 }

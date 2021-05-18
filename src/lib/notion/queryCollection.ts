@@ -26,7 +26,13 @@ export default function queryCollection({
     ],
     filter = [],
     filter_operator = 'and',
-    sort = [],
+    sort = [
+      // TDOO: workaround to get posts sorted by "Created At" property
+      {
+        property: 'piCV',
+        direction: 'descending',
+      },
+    ],
   } = query
 
   return rpc('queryCollection', {

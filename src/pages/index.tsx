@@ -1,67 +1,240 @@
-import Link from 'next/link'
 import Header from '../components/header'
-import ExtLink from '../components/ext-link'
-import Features from '../components/features'
-import GitHub from '../components/svgs/github'
 import sharedStyles from '../styles/shared.module.css'
 
-export default () => (
-  <>
-    <Header titlePre="Home" />
-    <div className={sharedStyles.layout}>
-      <img
-        src="/vercel-and-notion.png"
-        height="85"
-        width="250"
-        alt="Vercel + Notion"
-      />
-      <h1>My Notion Blog</h1>
-      <h2>
-        Blazing Fast Notion Blog with Next.js'{' '}
-        <ExtLink
-          href="https://github.com/vercel/next.js/issues/9524"
-          className="dotted"
-          style={{ color: 'inherit' }}
-        >
-          SSG
+import ExtLink from '../components/ext-link'
+import { contacts, getCoverUrl } from '../lib/blog-helpers'
+
+import contactStyles from '../styles/contact.module.css'
+
+import * as profile from '../components/profile-data'
+import { useRef } from 'react'
+import useScrollSpy from 'react-use-scrollspy'
+
+const LANG = 'en'
+
+function use_profile_data(data: profile.Profile, lang = 'en') {
+  return profile.isMultiLang(data) ? data[lang] : data
+}
+
+function build_interests(data) {
+  return data.map((d) => (
+    <div
+      className={sharedStyles.postCard}
+      style={{ minWidth: '320px', width: '320px' }}
+    >
+      <h3>{use_profile_data(d.title, LANG)}</h3>
+      <p className={sharedStyles.desc}>{use_profile_data(d.body, LANG)}</p>
+    </div>
+  ))
+}
+
+function build_history_card(data, ga_category) {
+  return data.map((d) => (
+    <div
+      className={sharedStyles.postCard}
+      style={{ minWidth: '320px', width: '320px' }}
+    >
+      <h3>
+        <ExtLink href={d.url} ga-category={ga_category}>
+          {use_profile_data(d.title, LANG)}
         </ExtLink>
-      </h2>
+      </h3>
+      <div className={sharedStyles.lead}>
+        {use_profile_data(d.subtitle, LANG)}
+      </div>
+      <div className={sharedStyles.lead}>
+        {d.period_from} ~ {use_profile_data(d.period_to, LANG)}
+      </div>
+      <p className={sharedStyles.desc}>{use_profile_data(d.body, LANG)}</p>
+    </div>
+  ))
+}
 
-      <Features />
-
-      <div className="explanation">
-        <p>
-          This is a statically generated{' '}
-          <ExtLink href="https://nextjs.org">Next.js</ExtLink> site with a{' '}
-          <ExtLink href="https://notion.so">Notion</ExtLink> powered blog that
-          is deployed with <ExtLink href="https://vercel.com">Vercel</ExtLink>.
-          It leverages some upcoming features in Next.js like{' '}
-          <ExtLink href="https://github.com/vercel/next.js/issues/9524">
-            SSG support
-          </ExtLink>{' '}
-          and{' '}
-          <ExtLink href="https://github.com/vercel/next.js/issues/8626">
-            built-in CSS support
-          </ExtLink>{' '}
-          which allow us to achieve all of the benefits listed above including
-          blazing fast speeds, great local editing experience, and always being
-          available!
-        </p>
-
-        <p>
-          Get started by creating a new page in Notion and clicking the deploy
-          button below. After you supply your token and the blog index id (the
-          page's id in Notion) we will automatically create the table for you!
-          See{' '}
-          <ExtLink href="https://github.com/ijjk/notion-blog#getting-blog-index-and-token">
-            here in the readme
-          </ExtLink>{' '}
-          for finding the new page's id. To get your token from Notion, login
-          and look for a cookie under www.notion.so with the name `token_v2`.
-          After finding your token and your blog's page id you should be good to
-          go!
-        </p>
+function build_publications(data) {
+  return data.map((d) => (
+    <div className={sharedStyles.postListCard}>
+      {d.link === null ? (
+        <h3>{use_profile_data(d.title, LANG)}</h3>
+      ) : (
+        <h3>
+          <ExtLink href={d.link} ga-category={'Publications'}>
+            {use_profile_data(d.title, LANG)}
+          </ExtLink>
+        </h3>
+      )}
+      <div className={sharedStyles.author}>
+        {use_profile_data(d.authors, LANG)}
+      </div>
+      <div className={sharedStyles.conference}>
+        {use_profile_data(d.conf, LANG)}
+      </div>
+      <div className={sharedStyles.tag__outer}>
+        {use_profile_data(d.tags, LANG).map((tag) => (
+          <span className={sharedStyles.tag}>{tag}</span>
+        ))}
       </div>
     </div>
-  </>
-)
+  ))
+}
+
+function build_related_materials(data) {
+  return data.map((d) => (
+    <div className={sharedStyles.postListCard}>
+      {d.link === null ? (
+        <h3>{use_profile_data(d.title, LANG)}</h3>
+      ) : (
+        <h3>
+          <ExtLink href={d.link} ga-category={'R. Materials'}>
+            {use_profile_data(d.title, LANG)}
+          </ExtLink>
+        </h3>
+      )}
+      <div className={sharedStyles.author}>
+        {use_profile_data(d.desc, LANG)}
+      </div>
+      <div className={sharedStyles.conference}>
+        {use_profile_data(d.media, LANG)}
+        {', '}
+        {d.date}
+      </div>
+    </div>
+  ))
+}
+
+const Index = () => {
+  const sectionRefs = [
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+    useRef(null),
+  ]
+
+  const activeSection = useScrollSpy({
+    sectionElementRefs: sectionRefs,
+    offsetPx: -80,
+  })
+
+  const sectionRef2Title = (sectionRef) => {
+    return {
+      0: '',
+      1: 'Summary',
+      2: 'Experience',
+      3: 'Education',
+      4: 'Publications',
+      5: 'Related Materials',
+      6: 'Interests',
+    }[sectionRef]
+  }
+
+  if (process.env.ENV_NAME !== 'production') {
+    console.log('active section', activeSection)
+  }
+
+  return (
+    <>
+      <Header
+        titlePre="About"
+        subTitle={sectionRef2Title(activeSection)}
+        coverUrl={getCoverUrl()}
+      />
+
+      <div className={sharedStyles.layout}>
+        <div className={contactStyles.avatar} ref={sectionRefs[0]}>
+          <img
+            className={contactStyles.icon}
+            src="/myicon.jpeg"
+            alt="peinan"
+            height={60}
+          />
+        </div>
+
+        <h1 style={{ marginTop: 0 }}>Peinan Zhang</h1>
+        <div className={contactStyles.name}>
+          NLP Research Scientist @{' '}
+          <ExtLink href="https://cyberagent.ai/ailab/" ga-category={'Profile'}>
+            AI Lab of CyberAgent, Inc.
+          </ExtLink>
+        </div>
+
+        {/* Warning: Each child in a list should have a unique "key" prop. */}
+        <div className={contactStyles.links}>
+          {contacts.map(({ Comp, link, alt }) => {
+            return (
+              <ExtLink
+                key={link}
+                href={link}
+                aria-label={alt}
+                ga-category={'Profile'}
+              >
+                <Comp height={32} />
+              </ExtLink>
+            )
+          })}
+        </div>
+      </div>
+
+      <div className={sharedStyles.introOuterBlock}>
+        <div className={sharedStyles.introLayout}>
+          <div className={sharedStyles.introLayoutSection} ref={sectionRefs[1]}>
+            <h2>
+              <a id={'summary'}>Summary</a>
+            </h2>
+            <p className={sharedStyles.summary}>
+              {use_profile_data(profile.summary, LANG)}
+            </p>
+          </div>
+
+          <div className={sharedStyles.introLayoutSection} ref={sectionRefs[2]}>
+            <h2>
+              <a id={'experience'}>Experience</a>
+            </h2>
+            <div className={sharedStyles.postCard__outer}>
+              {build_history_card(profile.experience, 'Experience')}
+            </div>
+          </div>
+
+          <div className={sharedStyles.introLayoutSection} ref={sectionRefs[3]}>
+            <h2>
+              <a id={'education'}>Education</a>
+            </h2>
+            <div className={sharedStyles.postCard__outer}>
+              {build_history_card(profile.education, 'Education')}
+            </div>
+          </div>
+
+          <div className={sharedStyles.listLayoutSection} ref={sectionRefs[4]}>
+            <h2>
+              <a id={'publications'}>Publications</a>
+            </h2>
+            <div className={sharedStyles.postListCard__outer}>
+              {build_publications(profile.publications)}
+            </div>
+          </div>
+
+          <div className={sharedStyles.listLayoutSection} ref={sectionRefs[5]}>
+            <h2>
+              <a id={'related-materials'}>Related Materials</a>
+            </h2>
+            <div className={sharedStyles.postListCard__outer}>
+              {build_related_materials(profile.related_materials)}
+            </div>
+          </div>
+
+          <div className={sharedStyles.introLayoutSection} ref={sectionRefs[6]}>
+            <h2>
+              <a id={'interests'}>Interests</a>
+            </h2>
+            <div className={sharedStyles.postCard__outer}>
+              {build_interests(profile.interests)}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default Index
