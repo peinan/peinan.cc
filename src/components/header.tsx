@@ -77,7 +77,7 @@ const Header = ({ titlePre = '', subTitle = '', coverUrl = undefined }) => {
             name="description"
             content="Tales about Peinan's daily life, development, science, and miscellaneous stuffs."
           />
-          <meta name="og:title" content="Peinan's Chronicle" />
+          <meta property="og:title" content="Peinan's Chronicle" />
           <meta property="og:image" content={ogImageUrl} />
           <meta name="twitter:site" content="@so1owingpixy" />
           <meta name="twitter:card" content="summary_large_image" />

@@ -3,6 +3,7 @@ import React from 'react'
 import Header from '../../components/header'
 
 import { FiEdit3, FiRotateCw } from 'react-icons/fi'
+import { BsNewspaper } from 'react-icons/bs'
 
 import blogStyles from '../../styles/blog.module.css'
 
@@ -62,45 +63,50 @@ function getRandomImageUrl(imgSizeIndex = undefined): string {
   return imgUrl
 }
 
-function getPostCardItems(posts) {
-  const numCards = 10
-  var postCardItems: any[] = []
-
-  for (var i = 0; i < numCards; i++) {
-    let post = i < posts.length ? posts[i] : undefined
-
-    let imgUrl = post ? getCoverUrl(post) : getRandomImageUrl()
-    let imgSizeStr = post ? '' : imgUrl.split('/')[4]
-    let title = post ? post.Page : `The Coldest Sunset No. ${i}`
-    let linkHref = post ? '/blog/[slug]' : '/blog/foo'
-    let linkAs = post ? getBlogLink(post.Slug) : '/#'
-    let previewText = post
-      ? `${post.preview}`
-      : `Lorem ipsum dolor sit amet, consectetur ` +
-        `adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis ` +
-        `eaque, exercitationem praesentium nihil nihil nihil nihil nihil ` +
-        `nihil nihil nihil.`
-    let created_time = post
-      ? getDateTimeStr(post.created_time)
-      : '2021-01-01 00:00'
-    let last_edited_time = post
-      ? getDateTimeStr(post.last_edited_time)
-      : '2021-01-01 10:33'
-    let tags = post
-      ? post.Tags
-      : ['photography', 'travel', 'winter', 'camera', 'fun']
-
+function getDummyCardItems(numCards = 10): object {
+  let postCardItems: object[] = []
+  for (let i = 0; i < numCards; i++) {
+    const imgUrl = getRandomImageUrl()
     postCardItems.push({
       imgUrl: imgUrl,
-      imgSizeStr: imgSizeStr,
-      title: title,
-      linkHref: linkHref,
-      linkAs: linkAs,
-      previewText: previewText,
-      created_time: created_time,
-      last_edited_time: last_edited_time,
-      tags: tags,
+      imgSizeStr: imgUrl.split('/')[4],
+      title: `The Coldest Sunset No. ${i}`,
+      linkHref: '/blog/#',
+      linkAs: '/#',
+      previewText:
+        `Lorem ipsum dolor sit amet, consectetur ` +
+        `adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis ` +
+        `eaque, exercitationem praesentium nihil nihil nihil nihil nihil ` +
+        `nihil nihil nihil.`,
+      created_time: '2021-01-01 00:00',
+      last_edited_time: '2021-01-01 10:33',
+      tags: ['photography', 'travel', 'winter', 'camera', 'fun'],
     })
+  }
+  return postCardItems
+}
+
+function getPostCardItems(posts) {
+  const numCardsPerLoad = 10
+  let postCardItems: any[] = posts.map((post) => ({
+    imgUrl: getCoverUrl(post),
+    imgSizeStr: '',
+    title: post.Page,
+    linkHref: '/blog/[slug',
+    linkAs: getBlogLink(post.Slug),
+    previewText: post.preview,
+    created_time: getDateTimeStr(post.created_time),
+    last_edited_time: getDateTimeStr(post.last_edited_time),
+    tags: post.Tags,
+  }))
+
+  if (
+    numCardsPerLoad > postCardItems.length &&
+    process.env.NODE_ENV !== 'production'
+  ) {
+    postCardItems = postCardItems.concat(
+      getDummyCardItems(numCardsPerLoad - postCardItems.length)
+    )
   }
 
   return postCardItems
@@ -183,15 +189,24 @@ const Index = ({ posts = [], preview }) => {
         </h2>
       </div>
 
-      <div className={`container ${blogStyles.container}`}>
+      <div className={blogStyles.container}>
         <div className={blogStyles.inner}>
-          <Masonry
-            items={postCardItems}
-            columnGutter={24}
-            columnWidth={320}
-            overscanBy={5}
-            render={getPostCards}
-          />
+          {postCardItems.length > 1 ? (
+            <Masonry
+              items={postCardItems}
+              columnGutter={24}
+              columnWidth={320}
+              overscanBy={5}
+              render={getPostCards}
+            />
+          ) : (
+            <div className={blogStyles.noPosts}>
+              <div className={blogStyles.emptyIcon}>
+                <BsNewspaper size={64} strokeWidth={0.1} />
+              </div>
+              <p>No Posts Yet</p>
+            </div>
+          )}
         </div>
       </div>
     </>

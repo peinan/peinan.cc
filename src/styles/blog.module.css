@@ -181,7 +181,21 @@ a.metaTitle:hover {
 }
 
 .noPosts {
+  font-family: var(--font-sans-header);
+  font-weight: 700;
+  color: var(--text-gray-400);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.noPosts .emptyIcon {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.noPosts :global(p) {
+  color: inherit;
 }
 
 /* Styles only in Blog Post page */
@@ -449,7 +463,7 @@ a.metaTitle:hover {
   right: 0px;
   bottom: 0px;
   padding: 0;
-  background-color: #ff0000;
+  background-color: var(--bg);
 }
 
 .bookmarkCoverWrapper3 {
