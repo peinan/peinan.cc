@@ -109,7 +109,7 @@ const Header = ({
               /* Breadcrumb */
               windowSize.width > 600 ? (
                 <div className={styles.breadcrumb}>
-                  <div className={styles.path}>
+                  <div className={styles.title}>
                     <Link
                       href={
                         navItems.filter((n) => n.page === '/' + crumbs[1])[0]
@@ -122,12 +122,12 @@ const Header = ({
                       }
                     </Link>
                   </div>
-                  {subTitle !== '' && windowSize.width > 700 ? (
+                  {subTitle !== '' && windowSize.width > 764 ? (
                     <>
                       <div className={styles.caret}>
                         <FiChevronRight size={16} strokeWidth={3} />
                       </div>
-                      <div className={styles.path}>{subTitle}</div>
+                      <div className={styles.subTitle}>{subTitle}</div>
                     </>
                   ) : (
                     ''
