@@ -191,7 +191,7 @@ const Index = ({ posts = [], preview }) => {
 
       <div className={blogStyles.container}>
         <div className={blogStyles.inner}>
-          {postCardItems.length > 1 ? (
+          {postCardItems.length >= 1 ? (
             <Masonry
               items={postCardItems}
               columnGutter={24}
