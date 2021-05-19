@@ -42,12 +42,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  min-width: 120px;
 }
 
 .header .logo {
   font-family: var(--font-logo-main);
   font-size: var(--text-3xl);
   margin-right: 1.5rem;
+  min-width: 180px;
 }
 
 .header .breadcrumb {
@@ -60,7 +62,16 @@
   flex-wrap: nowrap;
 }
 
-.breadcrumb .path {
+.breadcrumb .title {
+}
+
+.breadcrumb .subTitle {
+  text-align: left;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 25vw;
 }
 
 .breadcrumb .caret {
@@ -99,9 +110,22 @@
   font-weight: 400;
 }
 
-.header :global(a.active) {
-  color: #0070f3;
-  font-weight: 600;
+@media screen and (min-width: 1601px) {
+  .header .subTitle {
+    max-width: 40vw;
+  }
+}
+
+@media screen and (min-width: 1381px) and (max-width: 1600px) {
+  .header .subTitle {
+    max-width: 36vw;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1380px) {
+  .header .subTitle {
+    max-width: 30vw;
+  }
 }
 
 @media screen and (max-width: 920px) {
@@ -121,8 +145,12 @@
 }
 
 @media screen and (max-width: 500px) {
-  .header {
-    /*flex-direction: column;*/
+  .header .logo {
+    min-width: auto;
+  }
+  .header .headerBlock {
+    justify-content: flex-end;
+    min-width: 20px;
   }
   .header .menuIcon {
     display: flex;

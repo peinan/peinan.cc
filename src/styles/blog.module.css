@@ -6,7 +6,7 @@
 .metaTitle {
   font-family: var(--font-sans-header);
   font-weight: 700;
-  line-height: 1.55rem;
+  line-height: 1.25rem;
   transition: all 0.3s;
 }
 a.metaTitle {
@@ -17,8 +17,9 @@ a.metaTitle:hover {
 }
 .post .metaTitle {
   font-size: var(--text-5xl);
-  margin-top: calc(3rem + 20px);
-  margin-bottom: 3rem;
+  margin-top: calc(2.5rem + 10px);
+  margin-bottom: 2.5rem;
+  line-height: 2rem;
 }
 
 .post .metaDate_outer {
@@ -54,6 +55,7 @@ a.metaTitle:hover {
 }
 .metaDateValue {
   margin-left: 0.25rem;
+  white-space: nowrap;
 }
 .postCard .metaDate {
   font-size: var(--text-sm);
