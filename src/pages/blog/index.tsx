@@ -13,16 +13,15 @@ import {
   getDateTimeStr,
   postIsPublished,
 } from '../../lib/blog-helpers'
-import getNotionUsers from '../../lib/notion/getNotionUsers'
 import getBlogIndex from '../../lib/notion/getBlogIndex'
 
 import { Masonry } from 'masonic'
 import sharedStyles from '../../styles/shared.module.css'
 
-export async function getStaticProps({ preview }) {
+export async function getStaticProps() {
   const postsTable = await getBlogIndex()
+  const preview = process.env.ENV_NAME !== 'production'
 
-  const authorsToGet: Set<string> = new Set()
   const posts: any[] = Object.keys(postsTable)
     .map((slug) => {
       const post = postsTable[slug]
@@ -30,19 +29,9 @@ export async function getStaticProps({ preview }) {
       if (!preview && !postIsPublished(post)) {
         return null
       }
-      post.Authors = post.Authors || []
-      for (const author of post.Authors) {
-        authorsToGet.add(author)
-      }
       return post
     })
     .filter(Boolean)
-
-  const { users } = await getNotionUsers([...authorsToGet])
-
-  posts.map((post) => {
-    post.Authors = post.Authors.map((id) => users[id].full_name)
-  })
 
   return {
     props: {
@@ -81,6 +70,7 @@ function getDummyCardItems(numCards = 10): object {
       created_time: '2021-01-01 00:00',
       last_edited_time: '2021-01-01 10:33',
       tags: ['photography', 'travel', 'winter', 'camera', 'fun'],
+      isPublished: false,
     })
   }
   return postCardItems
@@ -98,6 +88,7 @@ function getPostCardItems(posts) {
     created_time: getDateTimeStr(post.created_time),
     last_edited_time: getDateTimeStr(post.last_edited_time),
     tags: post.Tags,
+    isPublished: postIsPublished(post),
   }))
 
   if (
@@ -123,45 +114,60 @@ const getPostCards = ({
     created_time: created_time,
     last_edited_time: last_edited_time,
     tags: tags,
+    isPublished: isPublished,
   },
-}) => (
-  <div className={`${blogStyles.postCard}`}>
-    <Link href={linkHref} as={linkAs}>
-      <a>
-        <img className={`${blogStyles.postCardImg}`} src={imgUrl} alt={title} />
-      </a>
-    </Link>
-    <div className={`${blogStyles.postCard_inner}`}>
-      <h3>
+}) => {
+  const isDraftMode = process.env.ENV_NAME !== 'production'
+  return (
+    <div className={`${blogStyles.postCard}`}>
+      <div style={{ position: 'relative' }}>
         <Link href={linkHref} as={linkAs}>
-          <a className={`${blogStyles.metaTitle}`}>{title}</a>
+          <a>
+            <img
+              className={`${blogStyles.postCardImg}`}
+              src={imgUrl}
+              alt={title}
+            />
+          </a>
         </Link>
-      </h3>
-      <div className={blogStyles.metaDate_outer}>
-        <div className={`${blogStyles.metaDate}`}>
-          <div className={blogStyles.metaDataIcon}>
-            <FiEdit3 size={13.5} strokeWidth={1} />
-          </div>
-          <div className={blogStyles.metaDateValue}>{created_time}</div>
-        </div>
-        <div className={`${blogStyles.metaDate}`}>
-          <div className={blogStyles.metaDataIcon}>
-            <FiRotateCw size={13.5} strokeWidth={1} />
-          </div>
-          <div className={blogStyles.metaDateValue}>{last_edited_time}</div>
-        </div>
+        {isDraftMode && !isPublished ? (
+          <p className={blogStyles.draftBadge}>draft</p>
+        ) : (
+          <></>
+        )}
       </div>
-      <p className={`${blogStyles.plainText}`}>
-        {imgSizeStr} {previewText}
-      </p>
+      <div className={`${blogStyles.postCard_inner}`}>
+        <h3>
+          <Link href={linkHref} as={linkAs}>
+            <a className={`${blogStyles.metaTitle}`}>{title}</a>
+          </Link>
+        </h3>
+        <div className={blogStyles.metaDate_outer}>
+          <div className={`${blogStyles.metaDate}`}>
+            <div className={blogStyles.metaDataIcon}>
+              <FiEdit3 size={13.5} strokeWidth={1} />
+            </div>
+            <div className={blogStyles.metaDateValue}>{created_time}</div>
+          </div>
+          <div className={`${blogStyles.metaDate}`}>
+            <div className={blogStyles.metaDataIcon}>
+              <FiRotateCw size={13.5} strokeWidth={1} />
+            </div>
+            <div className={blogStyles.metaDateValue}>{last_edited_time}</div>
+          </div>
+        </div>
+        <p className={`${blogStyles.plainText}`}>
+          {imgSizeStr} {previewText}
+        </p>
+      </div>
+      <div className="px-6 pb-3">
+        {tags.map((tag) => {
+          return <span className={`${blogStyles.metaTag}`}>{tag}</span>
+        })}
+      </div>
     </div>
-    <div className="px-6 pb-3">
-      {tags.map((tag) => {
-        return <span className={`${blogStyles.metaTag}`}>{tag}</span>
-      })}
-    </div>
-  </div>
-)
+  )
+}
 
 const Index = ({ posts = [], preview }) => {
   const [postCardItems] = React.useState(() => getPostCardItems(posts))
@@ -169,17 +175,6 @@ const Index = ({ posts = [], preview }) => {
   return (
     <>
       <Header titlePre="Blog" coverUrl={getCoverUrl()} />
-      {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
-            <b>Note:</b>
-            {` `}Viewing in preview mode{' '}
-            <Link href={`/api/clear-preview`}>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
-            </Link>
-          </div>
-        </div>
-      )}
 
       <div className={sharedStyles.layout}>
         <h1>Peinan's Chronicle</h1>
@@ -191,7 +186,7 @@ const Index = ({ posts = [], preview }) => {
 
       <div className={blogStyles.container}>
         <div className={blogStyles.inner}>
-          {postCardItems.length > 1 ? (
+          {postCardItems.length >= 1 ? (
             <Masonry
               items={postCardItems}
               columnGutter={24}

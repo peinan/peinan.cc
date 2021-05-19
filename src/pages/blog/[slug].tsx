@@ -20,10 +20,11 @@ import { FiEdit3, FiInfo, FiLink, FiRotateCw } from 'react-icons/fi'
 import { ImQuotesLeft } from 'react-icons/im'
 
 // Get the data for each blog post
-export async function getStaticProps({ params: { slug }, preview }) {
+export async function getStaticProps({ params: { slug } }) {
   // load the postsTable so that we can get the page's ID
   const postsTable = await getBlogIndex()
   const post = postsTable[slug]
+  const preview = process.env.ENV_NAME !== 'production'
 
   // if we can't find the post or if it is unpublished and
   // viewed without preview mode then we just redirect to /blog
@@ -162,17 +163,6 @@ const RenderPost = ({ post, redirect, preview }) => {
           process.env.ENV_NAME === 'production' ? 'www' : 'stg'
         }.peinan.cc${getCoverUrl(post)}`}
       />
-      {preview && (
-        <div className={blogStyles.previewAlertContainer}>
-          <div className={blogStyles.previewAlert}>
-            <b>Note:</b>
-            {` `}Viewing in preview mode{' '}
-            <Link href={`/api/clear-preview?slug=${post.Slug}`}>
-              <button className={blogStyles.escapePreview}>Exit Preview</button>
-            </Link>
-          </div>
-        </div>
-      )}
       <div className={blogStyles.post}>
         <h1 className={`${blogStyles.metaTitle}`}>{post.Page || ''}</h1>
 
