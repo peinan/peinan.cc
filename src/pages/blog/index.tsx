@@ -1,6 +1,8 @@
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../../components/header'
+
+import Skeleton from 'react-loading-skeleton'
 
 import { FiEdit3, FiRotateCw } from 'react-icons/fi'
 import { BsNewspaper } from 'react-icons/bs'
@@ -103,6 +105,40 @@ function getPostCardItems(posts) {
   return postCardItems
 }
 
+const LoadableImage = (props) => {
+  const [loaded, setLoaded] = useState(false)
+  const [error, setError] = useState(null)
+  const loadingImgStyle = {
+    display: loaded ? 'none' : undefined,
+  }
+  const displayImgStyle = {
+    display: loaded ? undefined : 'none',
+  }
+
+  return (
+    <>
+      <div style={loadingImgStyle}>
+        <Skeleton
+          className={blogStyles.postCardImg}
+          height={'10rem'}
+          width={'100%'}
+        />
+      </div>
+      <div style={displayImgStyle}>
+        <img
+          src={props.src}
+          alt={props.alt}
+          onLoad={() => setLoaded(true)}
+          onError={(e) => {
+            setError(e)
+            console.error(e)
+          }}
+        />
+      </div>
+    </>
+  )
+}
+
 const getPostCards = ({
   data: {
     imgUrl: imgUrl,
@@ -118,16 +154,13 @@ const getPostCards = ({
   },
 }) => {
   const isDraftMode = process.env.ENV_NAME !== 'production'
+
   return (
     <div className={`${blogStyles.postCard}`}>
-      <div style={{ position: 'relative' }}>
+      <div style={{ position: 'relative', lineHeight: '0' }}>
         <Link href={linkHref} as={linkAs}>
           <a>
-            <img
-              className={`${blogStyles.postCardImg}`}
-              src={imgUrl}
-              alt={title}
-            />
+            <LoadableImage src={imgUrl} alt={title} />
           </a>
         </Link>
         {isDraftMode && !isPublished ? (
@@ -169,7 +202,7 @@ const getPostCards = ({
   )
 }
 
-const Index = ({ posts = [], preview }) => {
+const Index = ({ posts = [] }) => {
   const [postCardItems] = React.useState(() => getPostCardItems(posts))
 
   return (
