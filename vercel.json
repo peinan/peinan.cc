@@ -1,5 +1,5 @@
 {
-  "regions": ["hnd1", "icn1", "hkg1", "sin1"],
+  "regions": ["hnd1"],
   "github": {
     "silent": true
   }
