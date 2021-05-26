@@ -221,6 +221,11 @@ a.metaTitle:hover {
   opacity: 0.6;
 }
 
+.post :global(p) {
+  line-height: 1.5rem;
+  margin: 0.75rem 0;
+}
+
 .post b {
   color: var(--text-base-color);
   font-weight: 700;
@@ -258,7 +263,7 @@ a.metaTitle:hover {
 .post ul,
 .post ol {
   padding: 0 0 0 1.3em;
-  line-height: 1.2rem;
+  line-height: 1.25rem;
   font-size: var(--text-lg);
   font-weight: 300;
 }
@@ -267,12 +272,14 @@ a.metaTitle:hover {
   position: relative;
   list-style-type: disc;
   color: var(--text-base-color);
+  margin: 0.4rem 0;
 }
 .post ol li {
   padding-left: 0.2rem;
   position: relative;
   list-style-type: decimal;
   color: var(--text-base-color);
+  margin: 0.4rem 0;
 }
 .post ol li::marker {
   font-weight: 700;
@@ -318,13 +325,18 @@ a.metaTitle:hover {
 .post :global(video),
 .post :global(img),
 .post :global(.asset-wrapper) {
-  margin: 0.2rem auto 0.8rem;
+  /*margin: 0.2rem auto 0.8rem;*/
+  margin: 1.25rem 0 1.5rem;
   /*box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);*/
   max-width: 100%;
   display: block;
 }
+/*.post .asset-wrapper {*/
+/*  margin: 1.25rem 0 1.75rem;*/
+/*}*/
 .post :global(img) {
   border-radius: var(--special-block-radius);
+  margin: 0;
 }
 
 .post :global(.tweet) {
