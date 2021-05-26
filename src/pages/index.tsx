@@ -7,7 +7,7 @@ import { contacts, getCoverUrl } from '../lib/blog-helpers'
 import contactStyles from '../styles/contact.module.css'
 
 import * as profile from '../components/profile-data'
-import { useRef } from 'react'
+import React, { useRef } from 'react'
 import useScrollSpy from 'react-use-scrollspy'
 
 const LANG = 'en'
@@ -138,7 +138,9 @@ const Index = () => {
       <Header
         titlePre="About"
         subTitle={sectionRef2Title(activeSection)}
-        coverUrl={getCoverUrl()}
+        coverUrl={`https://${
+          process.env.ENV_NAME === 'production' ? 'www' : 'stg'
+        }.peinan.cc${getCoverUrl()}`}
       />
 
       <div className={sharedStyles.layout}>
