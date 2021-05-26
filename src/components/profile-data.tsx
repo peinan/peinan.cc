@@ -298,7 +298,7 @@ export const publications: {
   {
     title:
       'An Empirical Study of Generating Texts for Search-Engine Advertising',
-    link: null,
+    link: 'https://www.aclweb.org/anthology/2021.naacl-industry.32',
     authors: (
       <div>
         Hidetaka Kamigaito*,{' '}
