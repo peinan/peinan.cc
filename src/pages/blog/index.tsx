@@ -207,7 +207,12 @@ const Index = ({ posts = [] }) => {
 
   return (
     <>
-      <Header titlePre="Blog" coverUrl={getCoverUrl()} />
+      <Header
+        titlePre="Blog"
+        coverUrl={`https://${
+          process.env.ENV_NAME === 'production' ? 'www' : 'stg'
+        }.peinan.cc${getCoverUrl()}`}
+      />
 
       <div className={sharedStyles.layout}>
         <h1>Peinan's Chronicle</h1>
