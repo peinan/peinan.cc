@@ -297,6 +297,27 @@ export const publications: {
 }[] = [
   {
     title:
+      'FAST: Fast Annotation tool for SmarT devices',
+    link: null,
+    authors: (
+      <div>
+        Syunyo Kawamoto,
+        Yu Sawai*,
+        Kohei Wakimoto*,{' '}
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+        *
+      </div>
+    ),
+    conf: 'EMNLP 2021 System Demonstrations',
+    tags: {
+      en: ['International', 'Refereed', '* Equal Contribution'],
+      ja: ['国際発表', '査読あり', '* 共同著者'],
+    },
+  },
+  {
+    title:
       'An Empirical Study of Generating Texts for Search-Engine Advertising',
     link: 'https://www.aclweb.org/anthology/2021.naacl-industry.32',
     authors: (
@@ -330,6 +351,76 @@ export const publications: {
     tags: {
       en: ['International', 'Refereed'],
       ja: ['国際発表', '査読あり'],
+    },
+  },
+  {
+    title: {
+      en: 'FAST: Fast Annotation tool for SmarT devices',
+      ja: 'FAST: スマートデバイス用の高速なアノテーションツール',
+    },
+    link:
+      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2021/0/JSAI2021_3H2GS9b04/_article/-char/ja/',
+    authors: {
+      en: (
+        <>
+          Syunyo Kawamoto,
+          Yu Sawai,
+          Kohei Wakimoto,{' '}
+          <u>
+            <b>Peinan Zhang</b>
+          </u>
+        </>
+      ),
+      ja: (
+        <>
+          川本 峻頌、澤井 悠、脇本 宏平、
+          <u>
+            <b>張 培楠</b>
+          </u>
+        </>
+      ),
+    },
+    conf: {
+      en: 'JSAI 2021',
+      ja: '人工知能学会 2021',
+    },
+    tags: {
+      en: ['In Japanese'],
+      ja: ['国内発表'],
+    },
+  },
+  {
+    title: {
+      en: 'Generating keywords-aware advertising texts assets using fine-tuned GPT-2',
+      ja: 'GPT-2の転移学習によるキーワードを考慮した広告文生成',
+    },
+    link:
+      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2021/0/JSAI2021_2D4OS7b03/_article/-char/ja',
+    authors: {
+      en: (
+        <>
+          Hiroyuki Osone,{' '}
+          <u>
+            <b>Peinan Zhang</b>
+          </u>
+        </>
+      ),
+      ja: (
+        <>
+          大曽根 宏幸、
+          <u>
+            <b>張 培楠</b>
+          </u>
+        </>
+      ),
+    },
+    conf: {
+      en: 'JSAI 2021',
+      ja: '人工知能学会 2021',
+    },
+    tags: {
+      en: ['In Japanese'],
+      ja: ['国内発表'],
     },
   },
   {
