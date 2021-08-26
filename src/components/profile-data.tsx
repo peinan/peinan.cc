@@ -303,7 +303,7 @@ export const publications: {
       <div>
         Syunyo Kawamoto,
         Yu Sawai*,
-        Kohei Wakimoto*,
+        Kohei Wakimoto*,{' '}
         <u>
           <b>Peinan Zhang</b>
         </u>
@@ -365,7 +365,7 @@ export const publications: {
         <>
           Syunyo Kawamoto,
           Yu Sawai,
-          Kohei Wakimoto,
+          Kohei Wakimoto,{' '}
           <u>
             <b>Peinan Zhang</b>
           </u>
@@ -399,7 +399,7 @@ export const publications: {
     authors: {
       en: (
         <>
-          Hiroyuki Osone,
+          Hiroyuki Osone,{' '}
           <u>
             <b>Peinan Zhang</b>
           </u>
