@@ -666,6 +666,25 @@ export const related_materials: {
   date: string
 }[] = [
   {
+    title: 
+      '自然言語処理分野のトップカンファレンス「EMNLP 2021」の System Demonstration Track にて論文採択 ― モバイル端末用の効率的なアノテーションツールを提案 ―',
+    link: 'https://www.cyberagent.co.jp/news/detail/id=26746',
+    desc: {
+      en: (
+        <>
+          <u>
+            <b>A press release</b>
+          </u>{' '}
+          announcing the acceptance of our paper on building an easy-to-use annotation tool
+          to EMNLP 2021's System Demonstration Track
+        </>
+      ),
+      ja: <></>,
+    },
+    media: 'CyberAgent Press Releases',
+    date: '2021-10-12'
+  },
+  {
     title:
       'AI Lab、自然言語処理分野のトップカンファレンス「NAACL-HLT 2021」にて共著論文採択　− 広告効果を考慮した広告文生成手法を提案 −',
     link: 'https://www.cyberagent.co.jp/news/detail/id=26075',
