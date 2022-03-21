@@ -355,6 +355,40 @@ export const publications: {
   },
   {
     title: {
+      en: 'LP-to-Text: Multi-modal Ad-text Generation',
+      ja: 'LP-to-Text: マルチモーダル広告文生成',
+    },
+    link: '',
+    authors: {
+      en: (
+        <>
+          Soichiro Murakami,
+          Sho Hoshino,{' '}
+          <u><b>Peinan Zhang</b></u>,
+          Hidetaka Kamigaito,
+          Hiroya Takamura,
+          Manabu Okumura
+        </>
+      ),
+      ja: (
+        <>
+          村上 聡一朗、星野 翔、
+          <u><b>張 培楠</b></u>、
+          上垣外 英剛、高村 大也、奥村 学
+        </>
+      )
+    },
+    conf: {
+      en: 'ANLP 2022',
+      ja: '言語処理学会 2022',
+    },
+    tags: {
+      en: ['In Japanese'],
+      ja: ['国内発表'],
+    },
+  },
+  {
+    title: {
       en: 'FAST: Fast Annotation tool for SmarT devices',
       ja: 'FAST: スマートデバイス用の高速なアノテーションツール',
     },
