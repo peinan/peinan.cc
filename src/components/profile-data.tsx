@@ -310,8 +310,8 @@ export const publications: {
     ),
     conf: 'NAACL-HLT 2022 Industry Track',
     tags: {
-      en: [],
-      ja: [],
+      en: ['International', 'Refereed'],
+      ja: ['国際発表', '査読あり'],
     },
   },
   {
