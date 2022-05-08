@@ -719,6 +719,21 @@ export const related_materials: {
   date: string
 }[] = [
   {
+    title: 'AI Lab、自然言語処理分野のトップカンファレンス「NAACL-HLT 2022」にて主著論文採択  ― 効果の高い広告訴求を分析 ―',
+    link: 'https://www.cyberagent.co.jp/news/detail/id=27559',
+    desc: {
+      en: (
+        <>
+          <u><b>A press release</b></u>{' '}
+          announcing the acceptance of our paper on analyzing the aspect of advertising appeals to NAACL-HLT 2022 Industry Track.
+        </>
+      ),
+      ja:  <></>,
+    },
+    media: 'CyberAgent Press Releases',
+    date: '2022-04-28',
+  },
+  {
     title: 
       '自然言語処理分野のトップカンファレンス「EMNLP 2021」の System Demonstration Track にて論文採択 ― モバイル端末用の効率的なアノテーションツールを提案 ―',
     link: 'https://www.cyberagent.co.jp/news/detail/id=26746',
