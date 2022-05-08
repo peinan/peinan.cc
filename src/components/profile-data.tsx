@@ -296,9 +296,28 @@ export const publications: {
   tags: Profile
 }[] = [
   {
+    title: 'Aspect-based Analysis of Advertising Appeals for Search Engine Advertising',
+    link: 'https://arxiv.org/abs/2204.11445',
+    authors: (
+      <div>
+        Soichiro Murakami,{' '}
+        <u><b>Peinan Zhang</b></u>,
+        Sho Hoshino,
+        Hidetaka Kamigaito,
+        Hiroya Takamura,
+        Manabu Okumura
+      </div>
+    ),
+    conf: 'NAACL-HLT 2022 Industry Track',
+    tags: {
+      en: ['International', 'Refereed'],
+      ja: ['国際発表', '査読あり'],
+    },
+  },
+  {
     title:
       'FAST: Fast Annotation tool for SmarT devices',
-    link: null,
+    link: 'https://aclanthology.org/2021.emnlp-demo.41',
     authors: (
       <div>
         Syunyo Kawamoto,
@@ -351,6 +370,40 @@ export const publications: {
     tags: {
       en: ['International', 'Refereed'],
       ja: ['国際発表', '査読あり'],
+    },
+  },
+  {
+    title: {
+      en: 'LP-to-Text: Multi-modal Ad-text Generation',
+      ja: 'LP-to-Text: マルチモーダル広告文生成',
+    },
+    link: 'https://www.anlp.jp/proceedings/annual_meeting/2022/pdf_dir/D5-3.pdf',
+    authors: {
+      en: (
+        <>
+          Soichiro Murakami,
+          Sho Hoshino,{' '}
+          <u><b>Peinan Zhang</b></u>,
+          Hidetaka Kamigaito,
+          Hiroya Takamura,
+          Manabu Okumura
+        </>
+      ),
+      ja: (
+        <>
+          村上 聡一朗、星野 翔、
+          <u><b>張 培楠</b></u>、
+          上垣外 英剛、高村 大也、奥村 学
+        </>
+      )
+    },
+    conf: {
+      en: 'ANLP 2022',
+      ja: '言語処理学会 2022',
+    },
+    tags: {
+      en: ['In Japanese'],
+      ja: ['国内発表'],
     },
   },
   {
@@ -665,6 +718,21 @@ export const related_materials: {
   media: Profile
   date: string
 }[] = [
+  {
+    title: 'AI Lab、自然言語処理分野のトップカンファレンス「NAACL-HLT 2022」にて主著論文採択  ― 効果の高い広告訴求を分析 ―',
+    link: 'https://www.cyberagent.co.jp/news/detail/id=27559',
+    desc: {
+      en: (
+        <>
+          <u><b>A press release</b></u>{' '}
+          announcing the acceptance of our paper on analyzing the aspect of advertising appeals to NAACL-HLT 2022 Industry Track.
+        </>
+      ),
+      ja:  <></>,
+    },
+    media: 'CyberAgent Press Releases',
+    date: '2022-04-28',
+  },
   {
     title: 
       '自然言語処理分野のトップカンファレンス「EMNLP 2021」の System Demonstration Track にて論文採択 ― モバイル端末用の効率的なアノテーションツールを提案 ―',
