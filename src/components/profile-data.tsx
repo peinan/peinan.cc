@@ -296,9 +296,28 @@ export const publications: {
   tags: Profile
 }[] = [
   {
+    title: 'Aspect-based Analysis of Advertising Appeals for Search Engine Advertising',
+    link: 'https://arxiv.org/abs/2204.11445',
+    authors: (
+      <div>
+        Soichiro Murakami,{' '}
+        <u><b>Peinan Zhang</b></u>,
+        Sho Hoshino,
+        Hidetaka Kamigaito,
+        Hiroya Takamura,
+        Manabu Okumura
+      </div>
+    ),
+    conf: 'NAACL-HLT 2022 Industry Track',
+    tags: {
+      en: [],
+      ja: [],
+    },
+  },
+  {
     title:
       'FAST: Fast Annotation tool for SmarT devices',
-    link: null,
+    link: 'https://aclanthology.org/2021.emnlp-demo.41',
     authors: (
       <div>
         Syunyo Kawamoto,
@@ -358,7 +377,7 @@ export const publications: {
       en: 'LP-to-Text: Multi-modal Ad-text Generation',
       ja: 'LP-to-Text: マルチモーダル広告文生成',
     },
-    link: '',
+    link: 'https://www.anlp.jp/proceedings/annual_meeting/2022/pdf_dir/D5-3.pdf',
     authors: {
       en: (
         <>
