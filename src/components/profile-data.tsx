@@ -738,7 +738,7 @@ export const related_materials: {
     link: 'https://cadc.cyberagent.co.jp/2022/program/automatically-generate-effective-sales-copy/',
     desc: {
       en: <>
-        <u><b>A talk</b></u>{' '}
+        <u><b>A talk (video + slides)</b></u>{' '}
         introducing our ad-text generation method considering ad effects and something related efforts
       </>,
       ja: <></>,
