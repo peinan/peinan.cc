@@ -745,7 +745,7 @@ export const related_materials: {
     },
     media: 'CyberAgent Developer Conference 2022',
     date: '2022-03-24',
-  }
+  },
   {
     title: 
       '自然言語処理分野のトップカンファレンス「EMNLP 2021」の System Demonstration Track にて論文採択 ― モバイル端末用の効率的なアノテーションツールを提案 ―',
