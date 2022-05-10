@@ -734,6 +734,19 @@ export const related_materials: {
     date: '2022-04-28',
   },
   {
+    title: '自然言語処理を用いた効果的な広告テキストの自動生成',
+    link: 'https://cadc.cyberagent.co.jp/2022/program/automatically-generate-effective-sales-copy/',
+    desc: {
+      en: <>
+        <u><b>A talk (video + slides)</b></u>{' '}
+        introducing our ad-text generation method considering ad effects and something related efforts
+      </>,
+      ja: <></>,
+    },
+    media: 'CyberAgent Developer Conference 2022',
+    date: '2022-03-24',
+  },
+  {
     title: 
       '自然言語処理分野のトップカンファレンス「EMNLP 2021」の System Demonstration Track にて論文採択 ― モバイル端末用の効率的なアノテーションツールを提案 ―',
     link: 'https://www.cyberagent.co.jp/news/detail/id=26746',
