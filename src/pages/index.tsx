@@ -94,9 +94,11 @@ function build_related_materials(data) {
         {use_profile_data(d.desc, LANG)}
       </div>
       <div className={sharedStyles.conference}>
-        {use_profile_data(d.media, LANG)}
-        {', '}
-        {d.date}
+        <i>
+          {use_profile_data(d.media, LANG)}
+          {', '}
+          {d.date}
+        </i>
       </div>
     </div>
   ))
@@ -230,10 +232,21 @@ const Index = () => {
 
           <div className={sharedStyles.listLayoutSection} ref={sectionRefs[5]}>
             <h2>
-              <a id={'related-materials'}>Related Materials</a>
+              <a id={'related-materials'}>Selected Articles & Talks</a>
             </h2>
             <div className={sharedStyles.postListCard__outer}>
               {build_related_materials(profile.related_materials)}
+            </div>
+            <div className={sharedStyles.seeAll}>
+              <ExtLink
+                href="https://orcabrig.notion.site/articles-and-talks"
+                ga-category={'All Articles & Talks'}
+              >
+                <div className={sharedStyles.seeAll}>
+                  SEE ALL ARTICLES & TALKS{' '}
+                  <FiChevronRight size={18} strokeWidth={3} />
+                </div>
+              </ExtLink>
             </div>
           </div>
 

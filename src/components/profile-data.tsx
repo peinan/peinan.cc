@@ -364,293 +364,58 @@ export const related_materials: {
 }[] = [
   {
     title:
-      'AI Lab、自然言語処理分野のトップカンファレンス「NAACL-HLT 2022」にて主著論文採択  ― 効果の高い広告訴求を分析 ―',
-    link: 'https://www.cyberagent.co.jp/news/detail/id=27559',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>A press release</b>
-          </u>{' '}
-          announcing the acceptance of our paper on analyzing the aspect of
-          advertising appeals to NAACL-HLT 2022 Industry Track.
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent Press Releases',
-    date: '2022-04-28',
-  },
-  {
-    title: '自然言語処理を用いた効果的な広告テキストの自動生成',
-    link:
-      'https://cadc.cyberagent.co.jp/2022/program/automatically-generate-effective-sales-copy/',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>A talk (video + slides)</b>
-          </u>{' '}
-          introducing our ad-text generation method considering ad effects and
-          something related efforts
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent Developer Conference 2022',
-    date: '2022-03-24',
-  },
-  {
-    title:
-      '自然言語処理分野のトップカンファレンス「EMNLP 2021」の System Demonstration Track にて論文採択 ― モバイル端末用の効率的なアノテーションツールを提案 ―',
-    link: 'https://www.cyberagent.co.jp/news/detail/id=26746',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>A press release</b>
-          </u>{' '}
-          announcing the acceptance of our paper on building an easy-to-use
-          annotation tool to EMNLP 2021's System Demonstration Track
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent Press Releases',
-    date: '2021-10-12',
-  },
-  {
-    title:
-      'AI Lab、自然言語処理分野のトップカンファレンス「NAACL-HLT 2021」にて共著論文採択　− 広告効果を考慮した広告文生成手法を提案 −',
-    link: 'https://www.cyberagent.co.jp/news/detail/id=26075',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>A press release</b>
-          </u>{' '}
-          announcing the acceptance of our paper on generating effective ad-text
-          to NAACL-HLT 2021's industry track
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent Press Releases',
-    date: '2021-04-14',
-  },
-  {
-    title:
-      '効果を出す「AIの共同研究」 東京工業大学 奥村・高村研究室と創る自然言語処理の未来',
-    link: 'https://www.cyberagent.co.jp/way/features/list/detail/id=25604',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>An interview</b>
-          </u>{' '}
-          about the joint research with the Tokyo Institute of Technology, in
-          which I am participating
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent Press Releases',
-    date: '2020-12-23',
-  },
-  {
-    title:
-      '「効果を出すAI - サイバーエージェントのAI研究とビジネス実装力 -」 CyberAgent IRチャンネル 第23弾',
-    link: 'https://www.youtube.com/watch?v=XuxNcucXSMU',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>A video</b>
-          </u>{' '}
-          introducing the AI products developed by CyberAgent, Inc. that I am
-          engaged in
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'YouTube',
-    date: '2020-12-03',
-  },
-  {
-    title:
-      'AI事業本部「極予測AIチーム」のデータサイエンティストによる論文が人工知能学会全国大会(JSAI2020)において優秀賞を受賞',
-    link: 'https://www.cyberagent.co.jp/techinfo/news/detail/id=25008',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>A press release</b>
-          </u>{' '}
-          announcing that our paper on keyword-based ad-text generation received
-          the JSAI Annual Conference Award
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent Press Releases',
-    date: '2020-08-05',
-  },
-  {
-    title:
-      'AIで数億キーワードの品質スコアを自動で改善　効果の出せる広告テキストを自動生成「極予測TD」の提供を開始',
-    link: 'https://www.cyberagent.co.jp/news/detail/id=24670',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>A press release</b>
-          </u>{' '}
-          on "KiwamiTD", a product I am engaged in which generates ad-texts
-          using NLP technologies
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent Press Releases',
-    date: '2020-05-22',
-  },
-  {
-    title: 'ウェブサービス事業者における研究開発インターン',
-    link:
-      'https://www.ieice.org/~nlc/wiki/wiki.cgi?page=%C2%E815%B2%F3%A5%C6%A5%AD%A5%B9%A5%C8%A5%A2%A5%CA%A5%EA%A5%C6%A5%A3%A5%AF%A5%B9%A1%A6%A5%B7%A5%F3%A5%DD%A5%B8%A5%A6%A5%E0%A1%A7%BB%B2%B2%C3%CA%E7%BD%B8',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>A talk event</b>
-          </u>{' '}
-          about research internships at web companies
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'テキストアナリティクス・シンポジウム',
-    date: '2019-09-27',
-  },
-  {
-    title: '人工知能学会 2019 参加報告',
-    link: 'https://cyberagent.ai/blog/research/2219',
+      '戦いは数だよ兄貴！Google Cloud Batch による並列化入門 〜LLMの前処理を例に〜',
+    link: 'https://zenn.dev/peinan/articles/721a908599dcf7',
     desc: {
       en: (
         <>
           <u>
             <b>An article</b>
           </u>{' '}
-          I wrote that reports JSAI 2019
+          I wrote introduces the basics of parallelization with Google Cloud
+          Batch highlighting practical applications and benefits for handling
+          big data
         </>
       ),
       ja: <></>,
     },
-    media: 'CyberAgent AI Lab Blog',
-    date: '2019-06-25',
+    media: 'Zenn.dev',
+    date: '2024/12/09',
   },
   {
-    title: 'A Deep Reinforced Model for Abstractive Summarization',
-    link:
-      'https://speakerdeck.com/peinan/a-deep-reinforced-model-for-abstractive-summarization',
+    title:
+      'AI Lab、計算言語学・自然言語処理分野に関する主要ジャーナル「Transactions of the Association for Computational Linguistics」にて論文採択 ―短絡的な予測への依存を抑制する手法を提案―',
+    link: 'https://www.cyberagent.co.jp/news/detail/id=30555',
     desc: {
       en: (
         <>
           <u>
-            <b>Presentation slides</b>
+            <b>A press release</b>
           </u>{' '}
-          I created that explains a study on summarization
+          announcing that our paper has been accepted to TACL.
         </>
       ),
       ja: <></>,
     },
-    media: 'Speakerdeck',
-    date: '2019-03-29',
+    media: 'CyberAgent Press Releases',
+    date: '2024/07/30',
   },
   {
-    title: '木星を継ぐもの 〜JupyterLab よこんにちは〜',
-    link: 'https://cyberagent.ai/blog/research/10260',
+    title:
+      'AI Lab、自然言語処理分野のトップカンファレンス「ACL 2024」にて3本の論文採択',
+    link: 'https://www.cyberagent.co.jp/news/detail/id=30532',
     desc: {
       en: (
         <>
           <u>
-            <b>An article</b>
+            <b>A press release</b>
           </u>{' '}
-          I wrote that introduces useful features of JupyterLab
+          announcing that our paper has been accepted to ACL 2024.
         </>
       ),
       ja: <></>,
     },
-    media: 'CyberAgent AI Lab Blog',
-    date: '2019-03-20',
-  },
-  {
-    title: 'Tweet ベースマッチングシステムを支える技術',
-    link: 'https://cyberagent.ai/blog/research/10257',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>An article</b>
-          </u>{' '}
-          I co-wrote that describing a matching system based on tweets, which
-          used in Design Scramble 2018
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent AI Lab Blog',
-    date: '2019-02-05',
-  },
-  {
-    title: 'ACL 参加報告',
-    link: 'https://speakerdeck.com/peinan/acl-can-jia-bao-gao',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>Presentation slides</b>
-          </u>{' '}
-          I created that reports ACL 2018
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'テキストアナリティクス・シンポジウム',
-    date: '2018-09-07',
-  },
-  {
-    title: 'ACL 2018 参加報告',
-    link: 'https://cyberagent.ai/blog/research/511',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>An article</b>
-          </u>{' '}
-          I wrote that reports ACL 2018
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent AI Lab Blog',
-    date: '2018-08-13',
-  },
-  {
-    title: '人工知能学会 2018 参加報告',
-    link: 'https://cyberagent.ai/blog/research/86',
-    desc: {
-      en: (
-        <>
-          <u>
-            <b>An article</b>
-          </u>{' '}
-          I wrote that reports JSAI 2018
-        </>
-      ),
-      ja: <></>,
-    },
-    media: 'CyberAgent AI Lab Blog',
-    date: '2018-06-18',
+    media: 'CyberAgent Press Releases',
+    date: '2024/07/24',
   },
 ]
