@@ -184,6 +184,7 @@
 .postListCard .conference {
   font-weight: 500;
   font-size: var(--text-base);
+  font-family: var(--font-sans-italic);
 }
 .postListCard .tag__outer {
   margin-top: 0.3rem;
