@@ -13,12 +13,7 @@ export const isMultiLang = (arg: unknown): arg is MultiLang =>
 
 export const summary: MultiLang = {
   en:
-    "I'm a research scientist in the NLP team at CyberAgent's AI Lab, Tokyo. " +
-    "I'm working on ad-text generation with NLP, machine learning, and other deep learning technologies. " +
-    'My main responsibility is to contribute to both industry and academia; such as incorporating methods from numerous studies that fit our business strategy, implementing prototypes and verify the performance, and writing papers on new ideas or practices that emerge from our products.\n' +
-    'Previously, I majored in NLP when I was a student in the Komachi Lab at Tokyo Metropolitan University. ' +
-    'After I graduated, I worked as a Machine Learning Engineer at Yahoo! Japan. \n' +
-    'For more detailed information, please check below or feel free to contact me.',
+    'Background: During my undergraduate studies, I specialized in Natural Language Processing (NLP). After starting my career as a machine learning engineer, I now work as a researcher, engineer, and manager. My current focus is on (1) applying NLP and machine learning technologies to the advertising domain, and (2) maximizing the performance of my team.\n\nWork: As an active contributor, I integrate methods from national and international research papers that align with our business strategies, implement prototypes, and validate their effectiveness. I also work to publish and present new ideas and methods that emerge from this process at conferences, bridging the gap between industry and academia. Recently, my responsibilities have expanded to include management tasks, where I focus on maximizing team performance.\n\nAchievements: I led a research project aimed at automatically generating effective advertising texts, which culminated in the launch of a product centered around this capability, called KiwamiTD. I also transformed product challenges into research topics, resulting in papers submitted to and accepted at prestigious international conferences such as ACL, NAACL, and EMNLP, which are among the top tier conferences in the NLP field. For more detailed information, please check below or feel free to contact me.',
   ja:
     '私は AI Lab の自然言語処理チームに所属しているリサーチサイエンティストです。' +
     '現在は、自然言語処理や機械学習などの技術を使って広告文の自動生成に取り組んでいます。' +
@@ -47,10 +42,7 @@ export const interests: { title: Profile; body: Profile }[] = [
     title: { en: 'Photography', ja: '写真撮影' },
     body: {
       en:
-        'I feel that there is something special about photographs and videos. ' +
-        'Thanks to recent advances in technology, high-performance photographic equipment is now relatively easy to obtain, even for individuals. ' +
-        'I also have a DSLR camera, and I like to wander off to unfamiliar places and take pictures while strolling around. ' +
-        'Most of my photos are landscapes, but I also enjoy taking portraits.',
+        'I believe there is something special about photographs and videos. Thanks to recent technological advances, high-performance photographic equipment is now relatively easy for individuals to obtain. I also have a DSLR camera, and I enjoy wandering off to unfamiliar places and taking pictures while strolling around. Most of my photos are landscapes, but I also enjoy taking portraits.',
       ja:
         '私は写真や動画といったメディアになにか特別なものを感じています。' +
         '最近は技術の進歩も手伝って、高性能な撮影機器が個人レベルでも比較的簡単に入手できるようになってきました。' +
@@ -62,9 +54,7 @@ export const interests: { title: Profile; body: Profile }[] = [
     title: { en: 'Football', ja: 'サッカー・フットサル' },
     body: {
       en:
-        'I was a member of a football club when I was in my childhood, and I like to actually play football, watch games, and play football video games. ' +
-        'I sometimes join futsal games on my days off. ' +
-        'My favorite football team is Inter Milan, and my favorite player is Ronaldinho.',
+        'I was a member of a football club during my childhood, and I enjoy playing football, watching matches, and playing football video games. I sometimes join futsal games on my days off. My favorite football team is Inter Milan, and my favorite player is Ronaldinho.',
       ja:
         '小さい頃にサッカー部に所属していたこともあり、実際にサッカーをやるのも試合を見るのもサッカーゲームを遊ぶのも好きです。' +
         '休みの日にフットサルに参加することもあります。' +
@@ -75,10 +65,7 @@ export const interests: { title: Profile; body: Profile }[] = [
     title: { en: 'Game', ja: 'ゲーム' },
     body: {
       en:
-        'I am a big gamer. ' +
-        "I've played numerous types of games, including action, FPS/TPS, shooting, simulation, sports, strategy, puzzle, and racing. " +
-        "Recently, I've been addicted to action games like Bloodborne, Sekiro, and Dark Souls made by From Software. " +
-        'There are many other games I enjoy and I would love to talk about more of them, but this margin is too narrow to contain.',
+        "I'm an avid gamer. I've played numerous types of games, including action, FPS/TPS, shooting, simulation, sports, strategy, puzzle, and racing. Recently, I've been hooked on action games like Bloodborne, Sekiro, and Dark Souls by From Software. There are many other games I enjoy and would love to discuss, but this margin is too narrow to contain.",
       ja:
         '私は大のゲーム好きです。' +
         'アクション、FPS/TPS、シューティング、シミュレーション、スポーツ、ストラテジー、パズル、レーシングなどとそれなりの種類のゲームを遊んできました。' +
@@ -99,23 +86,27 @@ export const experience: {
   {
     title: { en: 'CyberAgent, Inc.', ja: '株式会社サイバーエージェント' },
     url: 'https://www.cyberagent.co.jp/',
-    subtitle: { en: 'Research Scientist', ja: 'リサーチサイエンティスト' },
-    period_from: '2018-06',
+    subtitle: {
+      en: 'Senior Research Scientist',
+      ja: 'リサーチサイエンティスト',
+    },
+    period_from: '2018/06',
     period_to: { en: 'Present', ja: '現在' },
     body: {
       en: (
         <>
-          I'm a Research Scientist at CyberAgent's{' '}
+          I'm a Research Scientist at{' '}
           <ExtLink
             href={'https://cyberagent.ai/ailab/'}
             ga-category={'Experience'}
           >
-            AI Lab
+            CyberAgent AI Lab
           </ExtLink>
-          , working on ad generation and predicting ad effects. I use a broad
-          NLP/ML technologies, especially natural language generation including
-          machine translation and summarization, few-/zero-shot learning,
-          pre-trained language model, and reinforcement learning.
+          , working on ad generation and predicting ad performance. I utilize a
+          wide range of NLP/ML technologies, particularly natural language
+          generation, including machine translation and summarization, as well
+          as few-/zero-shot learning, pre-trained language models, and
+          reinforcement learning.
         </>
       ),
       ja: (
@@ -137,16 +128,16 @@ export const experience: {
   {
     title: { en: 'Yahoo! Japan, Inc.', ja: 'ヤフー株式会社' },
     url: 'https://about.yahoo.co.jp/',
-    subtitle: { en: 'ML Engineer', ja: '機械学習エンジニア' },
-    period_from: '2016-04',
-    period_to: '2018-04',
+    subtitle: { en: 'Machine Learning Engineer', ja: '機械学習エンジニア' },
+    period_from: '2016/04',
+    period_to: '2018/04',
     body: {
       en: (
         <>
-          I joined Yahoo! Japan as an ML engineer after graduating. In the push
-          notification team, I implemented a personalization feature using
-          NLP/ML and Hadoop technology for over ten millions of users, and
-          deployed it as an in-house application.
+          I joined Yahoo! Japan as an machine learning engineer after
+          graduating. On the push notification team, I implemented a
+          personalization feature using NLP/ML and Hadoop technology for over
+          ten million users and deployed it as an in-house application.
         </>
       ),
       ja: (
@@ -162,15 +153,15 @@ export const experience: {
     title: 'HRI Japan',
     url: 'https://www.jp.honda-ri.com/index.html',
     subtitle: { en: 'Internship', ja: 'インターンシップ' },
-    period_from: '2014-08',
-    period_to: '2014-09',
+    period_from: '2014/08',
+    period_to: '2014/09',
     body: {
       en: (
         <>
-          I interned at Honda Research Institute (HRI) Japan for two months
-          working on the two themes described below: (1) classification of
-          speech acts and (2) creating a language model for speech recognition
-          using Nested Pitman-Yor Language Model (NPYLM).
+          I interned at Honda Research Institute (HRI) Japan for two months,
+          working on the following two projects: (1) classification of speech
+          acts and (2) developing a language model for speech recognition using
+          the Nested Pitman-Yor Language Model (NPYLM).
         </>
       ),
       ja: (
@@ -198,15 +189,15 @@ export const education: {
     title: { en: 'Tokyo Metropolitan Univ.', ja: '東京都立大学大学院' },
     url: 'https://cs.sd.tmu.ac.jp/',
     subtitle: { en: 'Master of Engineering', ja: '修士（工学）' },
-    period_from: '2014-04',
-    period_to: '2016-03',
+    period_from: '2014/04',
+    period_to: '2016/03',
     body: {
       en: (
         <>
-          I worked on sentiment analysis as my Master's research. Our paper
+          I worked on sentiment analysis for my Master's research. Our paper,
           "Japanese Sentiment Classification with Stacked Denoising Auto-Encoder
-          using Distributed Word Representation" was accepted to PACLIC 2015,
-          which demonstrated state-of-the-art performance on Japanese dataset at
+          using Distributed Word Representation," was accepted at PACLIC 2015
+          and demonstrated state-of-the-art performance on Japanese datasets at
           the time.
         </>
       ),
@@ -226,24 +217,24 @@ export const education: {
     title: { en: 'Tokyo Metropolitan Univ.', ja: '東京都立大学' },
     url: 'https://www.tmu.ac.jp/',
     subtitle: { en: 'Bachelor of Engineering', ja: '学士（工学）' },
-    period_from: '2010-04',
-    period_to: '2014-03',
+    period_from: '2010/04',
+    period_to: '2014/03',
     body: {
       en: (
         <>
-          When I in my junior year of university, I met{' '}
+          In my junior year of university, I met {''}
           <ExtLink
             href={'http://cl.sd.tmu.ac.jp/~komachi/'}
             ga-category={'Education'}
           >
             Professor Komachi
           </ExtLink>
-          , who would have a great influence on my later life. I was assigned to{' '}
+          , who would greatly influence my later life. I was assigned to{' '}
           <ExtLink href={'http://cl.sd.tmu.ac.jp/'} ga-category={'Education'}>
             Komachi Lab
           </ExtLink>{' '}
-          as the first generation student and was fascinated by NLP and other AI
-          technologies. During my time in the lab, I was interested in making
+          as a first-generation student and was fascinated by NLP and other AI
+          technologies. During my time in the lab, I became interested in making
           computers more human-like.
         </>
       ),
@@ -269,13 +260,13 @@ export const education: {
     title: { en: 'Kaijo High School', ja: '海城高等学校' },
     url: 'https://www.kaijo.ed.jp/',
     subtitle: { en: 'High School Diploma', ja: '高校卒業' },
-    period_from: '2007-04',
-    period_to: '2010-03',
+    period_from: '2007/04',
+    period_to: '2010/03',
     body: {
       en: (
         <>
           I moved from Hiroshima Prefecture to Tokyo after graduating from
-          junior high school, and entered Kaijo High School, one of the best
+          junior high school and enrolled in Kaijo High School, one of the top
           private schools in Tokyo.
         </>
       ),

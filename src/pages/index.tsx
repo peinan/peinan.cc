@@ -44,7 +44,7 @@ function build_history_card(data, ga_category) {
         {use_profile_data(d.subtitle, LANG)}
       </div>
       <div className={sharedStyles.lead}>
-        {d.period_from} ~ {use_profile_data(d.period_to, LANG)}
+        {d.period_from} — {use_profile_data(d.period_to, LANG)}
       </div>
       <p className={sharedStyles.desc}>{use_profile_data(d.body, LANG)}</p>
     </div>
@@ -158,7 +158,7 @@ const Index = () => {
 
         <h1 style={{ marginTop: 0 }}>Peinan Zhang</h1>
         <div className={contactStyles.name}>
-          NLP Research Scientist @{' '}
+          Senior Research Scientist @{' '}
           <ExtLink href="https://cyberagent.ai/ailab/" ga-category={'Profile'}>
             AI Lab of CyberAgent, Inc.
           </ExtLink>
@@ -252,7 +252,7 @@ const Index = () => {
 
           <div className={sharedStyles.introLayoutSection} ref={sectionRefs[6]}>
             <h2>
-              <a id={'interests'}>Interests</a>
+              <a id={'interests'}>Hobbies</a>
             </h2>
             <div className={sharedStyles.postCard__outer}>
               {build_interests(profile.interests)}
