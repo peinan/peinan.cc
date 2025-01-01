@@ -202,13 +202,7 @@
 }
 
 .seeAll {
-  display: flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-}
-.seeAll__inner {
+  font-size: var(--text-lg);
   display: flex;
   align-content: center;
   align-items: center;

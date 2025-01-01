@@ -220,7 +220,7 @@ const Index = () => {
                 href="https://orcabrig.notion.site/publications"
                 ga-category={'All Publications'}
               >
-                <div className={sharedStyles.seeAll__inner}>
+                <div className={sharedStyles.seeAll}>
                   SEE ALL PUBLICATIONS{' '}
                   <FiChevronRight size={18} strokeWidth={3} />
                 </div>
