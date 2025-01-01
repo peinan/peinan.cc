@@ -184,6 +184,7 @@
 .postListCard .conference {
   font-weight: 500;
   font-size: var(--text-base);
+  font-family: var(--font-sans-italic);
 }
 .postListCard .tag__outer {
   margin-top: 0.3rem;
@@ -198,6 +199,20 @@
   padding: 0.175rem 0.5rem;
   margin: 0 0.125rem 0 0.125rem;
   border-radius: 0.6rem;
+}
+
+.seeAll {
+  font-size: var(--text-lg);
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 0.5rem 1rem;
+}
+.seeAll a:hover {
+  color: var(--text-gray-400);
+  transition: all 0.3s;
 }
 
 @media screen and (max-width: 700px) {

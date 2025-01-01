@@ -2,12 +2,12 @@
   "name": "peinan-cc",
   "version": "0.1.0",
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next dev",
     "prestart": "yarn run build:tailwind",
     "start": "next start",
     "prebuild": "yarn run build:tailwind",
     "build:tailwind": "tailwindcss build src/styles/tailwind.css -o src/styles/tailwind.output.css",
-    "build": "next build && node .next/server/build-rss.js",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build && node .next/server/build-rss.js",
     "postbuild": "next-sitemap",
     "format": "prettier --write \"**/*.{js,jsx,json,ts,tsx,md,mdx,css,html,yml,yaml,scss,sass}\" --ignore-path .gitignore",
     "lint-staged": "lint-staged"

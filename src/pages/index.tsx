@@ -5,6 +5,7 @@ import ExtLink from '../components/ext-link'
 import { contacts, getCoverUrl } from '../lib/blog-helpers'
 
 import contactStyles from '../styles/contact.module.css'
+import { FiChevronRight } from 'react-icons/fi'
 
 import * as profile from '../components/profile-data'
 import React, { useRef } from 'react'
@@ -43,7 +44,7 @@ function build_history_card(data, ga_category) {
         {use_profile_data(d.subtitle, LANG)}
       </div>
       <div className={sharedStyles.lead}>
-        {d.period_from} ~ {use_profile_data(d.period_to, LANG)}
+        {d.period_from} — {use_profile_data(d.period_to, LANG)}
       </div>
       <p className={sharedStyles.desc}>{use_profile_data(d.body, LANG)}</p>
     </div>
@@ -66,7 +67,7 @@ function build_publications(data) {
         {use_profile_data(d.authors, LANG)}
       </div>
       <div className={sharedStyles.conference}>
-        {use_profile_data(d.conf, LANG)}
+        <i>{use_profile_data(d.conf, LANG)}</i>
       </div>
       <div className={sharedStyles.tag__outer}>
         {use_profile_data(d.tags, LANG).map((tag) => (
@@ -93,9 +94,11 @@ function build_related_materials(data) {
         {use_profile_data(d.desc, LANG)}
       </div>
       <div className={sharedStyles.conference}>
-        {use_profile_data(d.media, LANG)}
-        {', '}
-        {d.date}
+        <i>
+          {use_profile_data(d.media, LANG)}
+          {', '}
+          {d.date}
+        </i>
       </div>
     </div>
   ))
@@ -155,7 +158,7 @@ const Index = () => {
 
         <h1 style={{ marginTop: 0 }}>Peinan Zhang</h1>
         <div className={contactStyles.name}>
-          NLP Research Scientist @{' '}
+          Senior Research Scientist @{' '}
           <ExtLink href="https://cyberagent.ai/ailab/" ga-category={'Profile'}>
             AI Lab of CyberAgent, Inc.
           </ExtLink>
@@ -209,25 +212,47 @@ const Index = () => {
 
           <div className={sharedStyles.listLayoutSection} ref={sectionRefs[4]}>
             <h2>
-              <a id={'publications'}>Publications</a>
+              <a id={'publications'}>Selected Publications</a>
             </h2>
             <div className={sharedStyles.postListCard__outer}>
               {build_publications(profile.publications)}
+            </div>
+            <div className={sharedStyles.seeAll}>
+              <ExtLink
+                href="https://orcabrig.notion.site/publications"
+                ga-category={'All Publications'}
+              >
+                <div className={sharedStyles.seeAll}>
+                  SEE ALL PUBLICATIONS{' '}
+                  <FiChevronRight size={18} strokeWidth={3} />
+                </div>
+              </ExtLink>
             </div>
           </div>
 
           <div className={sharedStyles.listLayoutSection} ref={sectionRefs[5]}>
             <h2>
-              <a id={'related-materials'}>Related Materials</a>
+              <a id={'related-materials'}>Selected Articles & Talks</a>
             </h2>
             <div className={sharedStyles.postListCard__outer}>
               {build_related_materials(profile.related_materials)}
+            </div>
+            <div className={sharedStyles.seeAll}>
+              <ExtLink
+                href="https://orcabrig.notion.site/articles-and-talks"
+                ga-category={'All Articles & Talks'}
+              >
+                <div className={sharedStyles.seeAll}>
+                  SEE ALL ARTICLES & TALKS{' '}
+                  <FiChevronRight size={18} strokeWidth={3} />
+                </div>
+              </ExtLink>
             </div>
           </div>
 
           <div className={sharedStyles.introLayoutSection} ref={sectionRefs[6]}>
             <h2>
-              <a id={'interests'}>Interests</a>
+              <a id={'interests'}>Hobbies</a>
             </h2>
             <div className={sharedStyles.postCard__outer}>
               {build_interests(profile.interests)}
