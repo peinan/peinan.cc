@@ -296,417 +296,61 @@ export const publications: {
   tags: Profile
 }[] = [
   {
-    title: 'Aspect-based Analysis of Advertising Appeals for Search Engine Advertising',
-    link: 'https://arxiv.org/abs/2204.11445',
+    title:
+      'Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding',
+    link: 'https://aclanthology.org/2024.tacl-1.70/',
     authors: (
       <div>
-        Soichiro Murakami,{' '}
-        <u><b>Peinan Zhang</b></u>,
-        Sho Hoshino,
-        Hidetaka Kamigaito,
-        Hiroya Takamura,
-        Manabu Okumura
+        Ukyo Honda, Tatsushi Oka,{' '}
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+        , Masato Mita
       </div>
     ),
-    conf: 'NAACL-HLT 2022 Industry Track',
+    conf:
+      'In Transactions of the Association for Computational Linguistics (TACL), 2024',
     tags: {
-      en: ['International', 'Refereed'],
+      en: ['Journal Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
     },
   },
   {
     title:
-      'FAST: Fast Annotation tool for SmarT devices',
-    link: 'https://aclanthology.org/2021.emnlp-demo.41',
+      'Striking Gold in Advertising: Standardization and Exploration of Ad Text Generation',
+    link: 'https://aclanthology.org/2024.acl-long.54/',
     authors: (
       <div>
-        Syunyo Kawamoto,
-        Yu Sawai*,
-        Kohei Wakimoto*,{' '}
+        Masato Mita, Soichiro Murakami, Akihiko Kato,{' '}
         <u>
           <b>Peinan Zhang</b>
         </u>
-        *
       </div>
     ),
-    conf: 'EMNLP 2021 System Demonstrations',
+    conf:
+      'In Proceedings of the Association for Computational Linguistics (ACL), 2024',
     tags: {
-      en: ['International', 'Refereed', '* Equal Contribution'],
-      ja: ['国際発表', '査読あり', '* 共同著者'],
-    },
-  },
-  {
-    title:
-      'An Empirical Study of Generating Texts for Search-Engine Advertising',
-    link: 'https://www.aclweb.org/anthology/2021.naacl-industry.32',
-    authors: (
-      <div>
-        Hidetaka Kamigaito*,{' '}
-        <u>
-          <b>Peinan Zhang</b>
-        </u>
-        *, Hiroya Takamura, Manabu Okumura
-      </div>
-    ),
-    conf: 'NAACL-HLT 2021 Industry Track',
-    tags: {
-      en: ['International', 'Refereed', '* Equal Contribution'],
-      ja: ['国際発表', '査読あり', '* 共同著者'],
-    },
-  },
-  {
-    title:
-      'Japanese Sentiment Classification with Stacked Denoising Auto-Encoder using Distributed Word Representation',
-    link: 'https://www.aclweb.org/anthology/Y15-1018',
-    authors: (
-      <div>
-        <u>
-          <b>Peinan Zhang</b>
-        </u>
-        , Mamoru Komachi
-      </div>
-    ),
-    conf: 'PACLIC 2015',
-    tags: {
-      en: ['International', 'Refereed'],
+      en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
     },
   },
   {
-    title: {
-      en: 'LP-to-Text: Multi-modal Ad-text Generation',
-      ja: 'LP-to-Text: マルチモーダル広告文生成',
-    },
-    link: 'https://www.anlp.jp/proceedings/annual_meeting/2022/pdf_dir/D5-3.pdf',
-    authors: {
-      en: (
-        <>
-          Soichiro Murakami,
-          Sho Hoshino,{' '}
-          <u><b>Peinan Zhang</b></u>,
-          Hidetaka Kamigaito,
-          Hiroya Takamura,
-          Manabu Okumura
-        </>
-      ),
-      ja: (
-        <>
-          村上 聡一朗、星野 翔、
-          <u><b>張 培楠</b></u>、
-          上垣外 英剛、高村 大也、奥村 学
-        </>
-      )
-    },
-    conf: {
-      en: 'ANLP 2022',
-      ja: '言語処理学会 2022',
-    },
+    title:
+      'Generating Diverse and High-Quality Texts by Minimum Bayes Risk Decoding',
+    link: 'https://aclanthology.org/2024.findings-acl.503/',
+    authors: (
+      <div>
+        Yuu Jinnai, Ukyo Honda, Tetsuro Morimura,{' '}
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+      </div>
+    ),
+    conf:
+      'In Proceedings of the Findings of the Association for Computational Linguistics (ACL), 2024',
     tags: {
-      en: ['In Japanese'],
-      ja: ['国内発表'],
-    },
-  },
-  {
-    title: {
-      en: 'FAST: Fast Annotation tool for SmarT devices',
-      ja: 'FAST: スマートデバイス用の高速なアノテーションツール',
-    },
-    link:
-      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2021/0/JSAI2021_3H2GS9b04/_article/-char/ja/',
-    authors: {
-      en: (
-        <>
-          Syunyo Kawamoto,
-          Yu Sawai,
-          Kohei Wakimoto,{' '}
-          <u>
-            <b>Peinan Zhang</b>
-          </u>
-        </>
-      ),
-      ja: (
-        <>
-          川本 峻頌、澤井 悠、脇本 宏平、
-          <u>
-            <b>張 培楠</b>
-          </u>
-        </>
-      ),
-    },
-    conf: {
-      en: 'JSAI 2021',
-      ja: '人工知能学会 2021',
-    },
-    tags: {
-      en: ['In Japanese'],
-      ja: ['国内発表'],
-    },
-  },
-  {
-    title: {
-      en: 'Generating keywords-aware advertising texts assets using fine-tuned GPT-2',
-      ja: 'GPT-2の転移学習によるキーワードを考慮した広告文生成',
-    },
-    link:
-      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2021/0/JSAI2021_2D4OS7b03/_article/-char/ja',
-    authors: {
-      en: (
-        <>
-          Hiroyuki Osone,{' '}
-          <u>
-            <b>Peinan Zhang</b>
-          </u>
-        </>
-      ),
-      ja: (
-        <>
-          大曽根 宏幸、
-          <u>
-            <b>張 培楠</b>
-          </u>
-        </>
-      ),
-    },
-    conf: {
-      en: 'JSAI 2021',
-      ja: '人工知能学会 2021',
-    },
-    tags: {
-      en: ['In Japanese'],
-      ja: ['国内発表'],
-    },
-  },
-  {
-    title: {
-      en: 'Keyword-based Text Generation for Internet Advertisement',
-      ja: 'インターネット広告におけるキーワードに基づく広告文の自動生成',
-    },
-    link:
-      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2020/0/JSAI2020_4Rin170/_article/-char/ja',
-    authors: {
-      en: (
-        <>
-          Kohei Wakimoto, Shunyo Kawamoto,{' '}
-          <u>
-            <b>Peinan Zhang</b>
-          </u>
-        </>
-      ),
-      ja: (
-        <>
-          脇本 宏平、川本 峻頌、
-          <u>
-            <b>張 培楠</b>
-          </u>
-        </>
-      ),
-    },
-    conf: {
-      en: 'JSAI 2020',
-      ja: '人工知能学会 2020',
-    },
-    tags: {
-      en: ['In Japanese', 'Awarded'],
-      ja: ['国内発表', '受賞論文'],
-    },
-  },
-  {
-    title: {
-      en:
-        'A Proposal for Evaluation Metrics and Assistant Tools for Automatically Generated Textual Ads',
-      ja: '自動生成された広告文の人手評価における評価指標と支援ツールの提案',
-    },
-    link:
-      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2020/0/JSAI2020_3Rin480/_article/-char/ja',
-    authors: {
-      en: (
-        <>
-          Yu Sawai,{' '}
-          <u>
-            <b>Peinan Zhang</b>
-          </u>
-          , Akifumi Yoshimoto
-        </>
-      ),
-      ja: (
-        <>
-          澤井 悠、
-          <u>
-            <b>張 培楠</b>
-          </u>
-          、吉本 暁文
-        </>
-      ),
-    },
-    conf: {
-      en: 'JSAI 2020',
-      ja: '人工知能学会 2020',
-    },
-    tags: {
-      en: ['In Japanese'],
-      ja: ['国内発表'],
-    },
-  },
-  {
-    title: {
-      en: 'POS-VAE: Diverse Ad-text Generation with Style Control',
-      ja: 'スタイル制御を考慮した多様な広告文生成',
-    },
-    link:
-      'https://www.anlp.jp/proceedings/annual_meeting/2020/pdf_dir/P6-14.pdf',
-    authors: {
-      en: (
-        <>
-          Shunyo Kawamoto,{' '}
-          <u>
-            <b>Peinan Zhang</b>
-          </u>
-        </>
-      ),
-      ja: (
-        <>
-          川本 峻頌、
-          <u>
-            <b>張 培楠</b>
-          </u>
-        </>
-      ),
-    },
-    conf: {
-      en: 'ANLP 2020',
-      ja: '言語処理学会 2020',
-    },
-    tags: {
-      en: ['In Japanese'],
-      ja: ['国内発表'],
-    },
-  },
-  {
-    title: {
-      en: 'Effect-Rewarded Reinforcement Learning for Ad Text Generation',
-      ja: '広告効果を報酬とした強化学習に基づく広告文の自動生成',
-    },
-    link: 'https://ci.nii.ac.jp/naid/170000150667/',
-    authors: {
-      en: (
-        <>
-          Hidetaka Kamigaito*,{' '}
-          <u>
-            <b>Peinan Zhang</b>
-          </u>
-          *, Hiroya Takamura, Manabu Okumura
-        </>
-      ),
-      ja: (
-        <>
-          上垣外 英剛*、
-          <u>
-            <b>張 培楠</b>
-          </u>
-          *、高村 大也、奥村 学
-        </>
-      ),
-    },
-    conf: 'WebDB Forum 2019',
-    tags: {
-      en: ['In Japanese', 'Refereed', '* Equal Contribution'],
-      ja: ['国内発表', '査読あり', '* 共同著者'],
-    },
-  },
-  {
-    title: {
-      en:
-        'Product Name Extraction from Product Entries on Electronic Commerce Pages',
-      ja: 'ECサイトにおける商品タイトルからの商品名抽出',
-    },
-    link:
-      'https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_4Rin123/_article/-char/ja',
-    authors: {
-      en: (
-        <>
-          <u>
-            <b>Peinan Zhang</b>
-          </u>
-        </>
-      ),
-      ja: (
-        <>
-          <u>
-            <b>張 培楠</b>
-          </u>
-        </>
-      ),
-    },
-    conf: {
-      en: 'JSAI 2019',
-      ja: '人工知能学会 2019',
-    },
-    tags: {
-      en: ['In Japanese'],
-      ja: ['国内発表'],
-    },
-  },
-  {
-    title: {
-      en:
-        'Japanese Sentiment Classification with Stacked Denoising Auto-Encoder using Distributed Word Representation',
-      ja: '単語分散表現を用いた多層 Denoising Auto-Encoder による評価極性分類',
-    },
-    link: null,
-    authors: {
-      en: (
-        <>
-          <u>
-            <b>Peinan Zhang</b>
-          </u>
-        </>
-      ),
-      ja: (
-        <>
-          <u>
-            <b>張 培楠</b>
-          </u>
-        </>
-      ),
-    },
-    conf: {
-      en: "Master's Thesis 2016",
-      ja: '修士論文 2016',
-    },
-    tags: {
-      en: ['In Japanese', 'Thesis'],
-      ja: ['国内発表', '学位論文'],
-    },
-  },
-  {
-    title: {
-      en: 'Sentiment Classification with Higher Order Dependency Structure',
-      ja: '高次の係り受け関係を考慮した評価極性分類',
-    },
-    link: null,
-    authors: {
-      en: (
-        <>
-          <u>
-            <b>Peinan Zhang</b>
-          </u>
-        </>
-      ),
-      ja: (
-        <>
-          <u>
-            <b>張 培楠</b>
-          </u>
-        </>
-      ),
-    },
-    conf: {
-      en: "Bachelor's Thesis 2014",
-      ja: '学士論文 2014',
-    },
-    tags: {
-      en: ['In Japanese', 'Thesis'],
-      ja: ['国内発表', '学位論文'],
+      en: ['Conference Paper', 'Refereed'],
+      ja: ['国際発表', '査読あり'],
     },
   },
 ]
@@ -719,35 +363,45 @@ export const related_materials: {
   date: string
 }[] = [
   {
-    title: 'AI Lab、自然言語処理分野のトップカンファレンス「NAACL-HLT 2022」にて主著論文採択  ― 効果の高い広告訴求を分析 ―',
+    title:
+      'AI Lab、自然言語処理分野のトップカンファレンス「NAACL-HLT 2022」にて主著論文採択  ― 効果の高い広告訴求を分析 ―',
     link: 'https://www.cyberagent.co.jp/news/detail/id=27559',
     desc: {
       en: (
         <>
-          <u><b>A press release</b></u>{' '}
-          announcing the acceptance of our paper on analyzing the aspect of advertising appeals to NAACL-HLT 2022 Industry Track.
+          <u>
+            <b>A press release</b>
+          </u>{' '}
+          announcing the acceptance of our paper on analyzing the aspect of
+          advertising appeals to NAACL-HLT 2022 Industry Track.
         </>
       ),
-      ja:  <></>,
+      ja: <></>,
     },
     media: 'CyberAgent Press Releases',
     date: '2022-04-28',
   },
   {
     title: '自然言語処理を用いた効果的な広告テキストの自動生成',
-    link: 'https://cadc.cyberagent.co.jp/2022/program/automatically-generate-effective-sales-copy/',
+    link:
+      'https://cadc.cyberagent.co.jp/2022/program/automatically-generate-effective-sales-copy/',
     desc: {
-      en: <>
-        <u><b>A talk (video + slides)</b></u>{' '}
-        introducing our ad-text generation method considering ad effects and something related efforts
-      </>,
+      en: (
+        <>
+          <u>
+            <b>A talk (video + slides)</b>
+          </u>{' '}
+          introducing our ad-text generation method considering ad effects and
+          something related efforts
+        </>
+      ),
       ja: <></>,
     },
     media: 'CyberAgent Developer Conference 2022',
     date: '2022-03-24',
   },
   {
-    title: 
+    title:
       '自然言語処理分野のトップカンファレンス「EMNLP 2021」の System Demonstration Track にて論文採択 ― モバイル端末用の効率的なアノテーションツールを提案 ―',
     link: 'https://www.cyberagent.co.jp/news/detail/id=26746',
     desc: {
@@ -756,14 +410,14 @@ export const related_materials: {
           <u>
             <b>A press release</b>
           </u>{' '}
-          announcing the acceptance of our paper on building an easy-to-use annotation tool
-          to EMNLP 2021's System Demonstration Track
+          announcing the acceptance of our paper on building an easy-to-use
+          annotation tool to EMNLP 2021's System Demonstration Track
         </>
       ),
       ja: <></>,
     },
     media: 'CyberAgent Press Releases',
-    date: '2021-10-12'
+    date: '2021-10-12',
   },
   {
     title:

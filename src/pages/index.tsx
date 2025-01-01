@@ -5,6 +5,7 @@ import ExtLink from '../components/ext-link'
 import { contacts, getCoverUrl } from '../lib/blog-helpers'
 
 import contactStyles from '../styles/contact.module.css'
+import { FiChevronRight } from 'react-icons/fi'
 
 import * as profile from '../components/profile-data'
 import React, { useRef } from 'react'
@@ -209,10 +210,21 @@ const Index = () => {
 
           <div className={sharedStyles.listLayoutSection} ref={sectionRefs[4]}>
             <h2>
-              <a id={'publications'}>Publications</a>
+              <a id={'publications'}>Selected Publications</a>
             </h2>
             <div className={sharedStyles.postListCard__outer}>
               {build_publications(profile.publications)}
+            </div>
+            <div className={sharedStyles.seeAll}>
+              <ExtLink
+                href="https://orcabrig.notion.site/publications"
+                ga-category={'All Publications'}
+              >
+                <div className={sharedStyles.seeAll__inner}>
+                  SEE ALL PUBLICATIONS{' '}
+                  <FiChevronRight size={18} strokeWidth={3} />
+                </div>
+              </ExtLink>
             </div>
           </div>
 

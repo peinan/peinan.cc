@@ -201,6 +201,26 @@
   border-radius: 0.6rem;
 }
 
+.seeAll {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.seeAll__inner {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  padding: 0.5rem 1rem;
+}
+.seeAll a:hover {
+  color: var(--text-gray-400);
+  transition: all 0.3s;
+}
+
 @media screen and (max-width: 700px) {
   .layout {
     margin-top: 2rem;
