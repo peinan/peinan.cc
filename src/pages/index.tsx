@@ -126,9 +126,9 @@ const Index = () => {
       1: 'Summary',
       2: 'Experience',
       3: 'Education',
-      4: 'Publications',
-      5: 'Related Materials',
-      6: 'Interests',
+      4: 'Selected Publications',
+      5: 'Selected Articles & Talks',
+      6: 'Hobbies',
     }[sectionRef]
   }
 
