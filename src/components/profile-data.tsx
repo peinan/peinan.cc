@@ -284,6 +284,7 @@ export const publications: {
   link?: string
   authors: Profile
   conf: Profile
+  conf_comment: Profile
   tags: Profile
 }[] = [
     {
