@@ -67,7 +67,7 @@ function build_publications(data) {
         {use_profile_data(d.authors, LANG)}
       </div>
       <div className={sharedStyles.conference}>
-        In <i>{use_profile_data(d.conf, LANG)}</i>
+        In <i>{use_profile_data(d.conf, LANG)}</i> {use_profile_data(d.conf_comment, LANG)}
       </div>
       <div className={sharedStyles.tag__outer}>
         {use_profile_data(d.tags, LANG).map((tag) => (
