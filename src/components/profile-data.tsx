@@ -286,6 +286,45 @@ export const publications: {
   conf: Profile
   tags: Profile
 }[] = [
+    {
+    title:
+      'AdTEC: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising',
+    link: 'https://arxiv.org/abs/2408.05906',
+    authors: (
+      <div>
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+        , Yusuke Sakai, Masato Mita, Hiroki Ouchi, Taro Watanabe
+      </div>
+    ),
+    conf:
+      'In NAACL 2025 (To Appear)',
+    tags: {
+      en: ['Conference Paper', 'Refereed'],
+      ja: ['国際発表', '査読あり'],
+    },
+  },
+  {
+    title:
+      'AdParaphrase: Paraphrase Dataset for Analyzing Linguistic Features toward Generating Attractive Ad Texts',
+    link: 'https://arxiv.org/abs/2502.04674',
+    authors: (
+      <div>
+        Soichiro Murakami,{' '}
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+        , Hidetaka Kamigaito, Hiroya Takamura, Manabu Okumura
+      </div>
+    ),
+    conf:
+      'In NAACL 2025 Findings (To Appear)',
+    tags: {
+      en: ['Conference Paper', 'Refereed'],
+      ja: ['国際発表', '査読あり'],
+    },
+  },
   {
     title:
       'Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding',
@@ -300,7 +339,7 @@ export const publications: {
       </div>
     ),
     conf:
-      'In Transactions of the Association for Computational Linguistics (TACL), 2024',
+      'In TACL (Presented in EMNLP 2024)',
     tags: {
       en: ['Journal Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
@@ -319,7 +358,7 @@ export const publications: {
       </div>
     ),
     conf:
-      'In Proceedings of the Association for Computational Linguistics (ACL), 2024',
+      'In ACL 2024',
     tags: {
       en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
@@ -338,7 +377,7 @@ export const publications: {
       </div>
     ),
     conf:
-      'In Proceedings of the Findings of the Association for Computational Linguistics (ACL), 2024',
+      'In ACL 2024 Findings',
     tags: {
       en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
