@@ -299,7 +299,9 @@ export const publications: {
       </div>
     ),
     conf:
-      'In NAACL 2025 (To Appear)',
+      'NAACL 2025',
+    conf_comment:
+      '(To Appear)',
     tags: {
       en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
@@ -319,7 +321,9 @@ export const publications: {
       </div>
     ),
     conf:
-      'In NAACL 2025 Findings (To Appear)',
+      'NAACL 2025 Findings',
+    conf_comment:
+      '(To Appear)',
     tags: {
       en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
@@ -339,7 +343,9 @@ export const publications: {
       </div>
     ),
     conf:
-      'In TACL (Presented in EMNLP 2024)',
+      'TACL',
+    conf_comment:
+      '(Presented in EMNLP 2024)',
     tags: {
       en: ['Journal Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
@@ -358,7 +364,9 @@ export const publications: {
       </div>
     ),
     conf:
-      'In ACL 2024',
+      'ACL 2024',
+    conf_comment:
+      '',
     tags: {
       en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
@@ -377,7 +385,9 @@ export const publications: {
       </div>
     ),
     conf:
-      'In ACL 2024 Findings',
+      'ACL 2024 Findings',
+    conf_comment:
+      '',
     tags: {
       en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
