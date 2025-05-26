@@ -287,7 +287,27 @@ export const publications: {
   conf_comment: Profile
   tags: Profile
 }[] = [
-    {
+  {
+    title:
+      'AdParaphrase v2.0: Generating Attractive Ad Texts Using a Preference-Annotated Paraphrase Dataset',
+    link: '',
+    authors: (
+      <div>
+        Murakami Soichiro,{' '}
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+        , Hidetaka Kamigaito, Hiroya Takamura, and Manabu Okumura
+      </div>
+    ),
+    conf: 'ACL 2025 Findings',
+    conf_comment: '(To Appear)',
+    tags: {
+      en: ['Conference Paper', 'Refereed'],
+      ja: ['国際発表', '査読あり'],
+    },
+  },
+  {
     title:
       'AdTEC: A Unified Benchmark for Evaluating Text Quality in Search Engine Advertising',
     link: 'https://arxiv.org/abs/2408.05906',
@@ -296,13 +316,11 @@ export const publications: {
         <u>
           <b>Peinan Zhang</b>
         </u>
-        , Yusuke Sakai, Masato Mita, Hiroki Ouchi, Taro Watanabe
+        , Yusuke Sakai, Masato Mita, Hiroki Ouchi, and Taro Watanabe
       </div>
     ),
-    conf:
-      'NAACL 2025',
-    conf_comment:
-      '(To Appear)',
+    conf: 'NAACL 2025',
+    conf_comment: '',
     tags: {
       en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
@@ -318,13 +336,11 @@ export const publications: {
         <u>
           <b>Peinan Zhang</b>
         </u>
-        , Hidetaka Kamigaito, Hiroya Takamura, Manabu Okumura
+        , Hidetaka Kamigaito, Hiroya Takamura, and Manabu Okumura
       </div>
     ),
-    conf:
-      'NAACL 2025 Findings',
-    conf_comment:
-      '(To Appear)',
+    conf: 'NAACL 2025 Findings',
+    conf_comment: '',
     tags: {
       en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
@@ -340,57 +356,13 @@ export const publications: {
         <u>
           <b>Peinan Zhang</b>
         </u>
-        , Masato Mita
+        , and Masato Mita
       </div>
     ),
-    conf:
-      'TACL',
-    conf_comment:
-      '(Presented in EMNLP 2024)',
+    conf: 'TACL',
+    conf_comment: '(Presented in EMNLP 2024)',
     tags: {
       en: ['Journal Paper', 'Refereed'],
-      ja: ['国際発表', '査読あり'],
-    },
-  },
-  {
-    title:
-      'Striking Gold in Advertising: Standardization and Exploration of Ad Text Generation',
-    link: 'https://aclanthology.org/2024.acl-long.54/',
-    authors: (
-      <div>
-        Masato Mita, Soichiro Murakami, Akihiko Kato,{' '}
-        <u>
-          <b>Peinan Zhang</b>
-        </u>
-      </div>
-    ),
-    conf:
-      'ACL 2024',
-    conf_comment:
-      '',
-    tags: {
-      en: ['Conference Paper', 'Refereed'],
-      ja: ['国際発表', '査読あり'],
-    },
-  },
-  {
-    title:
-      'Generating Diverse and High-Quality Texts by Minimum Bayes Risk Decoding',
-    link: 'https://aclanthology.org/2024.findings-acl.503/',
-    authors: (
-      <div>
-        Yuu Jinnai, Ukyo Honda, Tetsuro Morimura,{' '}
-        <u>
-          <b>Peinan Zhang</b>
-        </u>
-      </div>
-    ),
-    conf:
-      'ACL 2024 Findings',
-    conf_comment:
-      '',
-    tags: {
-      en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
     },
   },
