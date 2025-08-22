@@ -289,11 +289,49 @@ export const publications: {
 }[] = [
   {
     title:
+      'BannerBench: Benchmarking Vision Language Models for Multi-Ad Selection with Human Preferences',
+    link: '',
+    authors: (
+      <div>
+        Hiroto Otake,{' '}
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+        , Yusuke Sakai, Masato Mita, Hiroki Ouchi, and Taro Watanabe
+      </div>
+    ),
+    conf: 'EMNLP 2025 Findings',
+    conf_comment: '(To Appear)',
+    tags: {
+      en: ['Conference Paper', 'Refereed'],
+      ja: ['国際発表', '査読あり'],
+    },
+  },
+  {
+    title: 'Distilling Many-Shot In-Context Learning into a Cheat Sheet',
+    link: '',
+    authors: (
+      <div>
+        Ukyo Honda, Soichiro Murakami, and{' '}
+        <u>
+          <b>Peinan Zhang</b>
+        </u>
+      </div>
+    ),
+    conf: 'EMNLP 2025 Findings',
+    conf_comment: '(To Appear)',
+    tags: {
+      en: ['Conference Paper', 'Refereed'],
+      ja: ['国際発表', '査読あり'],
+    },
+  },
+  {
+    title:
       'AdParaphrase v2.0: Generating Attractive Ad Texts Using a Preference-Annotated Paraphrase Dataset',
     link: '',
     authors: (
       <div>
-        Murakami Soichiro,{' '}
+        Soichiro Murakami,{' '}
         <u>
           <b>Peinan Zhang</b>
         </u>
@@ -301,7 +339,7 @@ export const publications: {
       </div>
     ),
     conf: 'ACL 2025 Findings',
-    conf_comment: '(To Appear)',
+    conf_comment: '',
     tags: {
       en: ['Conference Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
@@ -343,26 +381,6 @@ export const publications: {
     conf_comment: '',
     tags: {
       en: ['Conference Paper', 'Refereed'],
-      ja: ['国際発表', '査読あり'],
-    },
-  },
-  {
-    title:
-      'Not Eliminate but Aggregate: Post-Hoc Control over Mixture-of-Experts to Address Shortcut Shifts in Natural Language Understanding',
-    link: 'https://aclanthology.org/2024.tacl-1.70/',
-    authors: (
-      <div>
-        Ukyo Honda, Tatsushi Oka,{' '}
-        <u>
-          <b>Peinan Zhang</b>
-        </u>
-        , and Masato Mita
-      </div>
-    ),
-    conf: 'TACL',
-    conf_comment: '(Presented in EMNLP 2024)',
-    tags: {
-      en: ['Journal Paper', 'Refereed'],
       ja: ['国際発表', '査読あり'],
     },
   },
